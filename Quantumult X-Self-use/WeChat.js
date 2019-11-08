@@ -8,10 +8,7 @@ http-request ^https://mp\.weixin\.qq\.com/mp/getappmsgad script-path=https://Cho
 hostname = mp.weixin.qq.com
 */
 
-var data = {
-  body: "{}",
-  headers: {
-    "Content-Type": "application/json"
-  }
-};
-$done({response: data});
+var obj = JSON.parse($response.body);
+obj.advertisement_num = 0;
+obj.advertisement_info = [];
+$done({body: JSON.stringify(obj)}); 
