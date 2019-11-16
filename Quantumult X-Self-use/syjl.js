@@ -1,5 +1,5 @@
 /**
- * @supported F7664BCE
+ * @supported F7664BCEDFBE
  */
 /*
 Watermark sprite vip （Author: Alex0510）
