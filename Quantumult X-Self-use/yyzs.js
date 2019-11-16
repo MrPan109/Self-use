@@ -1,5 +1,5 @@
 /**
- * @supported F7664BCE
+ * @supported F7664BCEDFBE
  */
 /*
 # 用药助手解锁专业版 (By Primovist)
