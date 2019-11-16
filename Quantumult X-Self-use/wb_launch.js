@@ -1,5 +1,5 @@
 /**
- * @supported F7664BCE
+ * @supported F7664BCEDFBE
  */
 const path1 = "/interface/sdk/sdkad.php";
 const path2 = "/wbapplua/wbpullad.lua";
