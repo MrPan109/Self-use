@@ -1,5 +1,5 @@
 /**
- * @supported F7664BCE
+ * @supported F7664BCEDFBE
  */
 const path1 = "/groups/timeline";
 const path2 = "/statuses/unread";
