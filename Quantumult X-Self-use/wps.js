@@ -1,5 +1,5 @@
 /**
- * @supported F7664BCEDFBE
+ @supported F7664BCEDFBE
  */
 
 var obj = JSON.parse($response.body);
