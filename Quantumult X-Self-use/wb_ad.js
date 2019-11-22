@@ -1,6 +1,5 @@
-/*
-README：https://github.com/yichahucha/surge/tree/master
-@supported F7664BCEDFBE
+/**
+ @supported F7664BCEDFBE
  */
 
 const path1 = "/groups/timeline";
