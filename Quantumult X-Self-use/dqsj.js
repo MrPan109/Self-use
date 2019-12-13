@@ -1,6 +1,3 @@
-/**
- * @supported F7664BCEDFBE
- */
 /*
 DaQianShiJie unlock
 Surge4：
