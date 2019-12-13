@@ -1,7 +1,3 @@
-/**
- * @supported F7664BCEDFBE
- */
-
 /*
 Banana video unlock vip
 app download link : http://tinyurl.com/y57j6hjg
