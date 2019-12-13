@@ -1,6 +1,3 @@
-/**
- * @supported F7664BCEDFBE
- */
 /*
 # 用药助手解锁专业版 (By Primovist)
 ^https?:\/\/(i|newdrugs)\.dxy\.cn\/(snsapi\/username\/|app\/user\/(pro\/stat\?|init\?timestamp=)) url script-response-body Self-User/Script-other/Surge/JS/yyzs.js
