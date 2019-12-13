@@ -1,7 +1,3 @@
-/**
- * @supported F7664BCEDFBE
- */
-
 /*
 蜜桃漫画 unlock vip
 QX:
