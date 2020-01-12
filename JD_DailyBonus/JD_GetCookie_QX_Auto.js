@@ -1,9 +1,13 @@
 /*
 JingDong Check in Get Cookie. by NobyDa
+
 Need to manually log in to the https://bean.m.jd.com checkin to get cookie. When QX pops up to get a successful notification, you can disable the script.
 Note that the following config is only a local script configuration, please put this script into Quantumult X/Script
+
 [rewrite_local]
-https:\/\/api\.m\.jd\.com\/client\.action.*functionId=signBeanIndex url script-response-body JD_GetCookie_QX_Auto.js
+# Get JingDong cookie. 【QX TF188+】:
+https:\/\/api\.m\.jd\.com\/client\.action.*functionId=signBeanIndex url script-request-header JD_GetCookie_QX_Auto.js
+
 MITM = api.m.jd.com
 */
 
