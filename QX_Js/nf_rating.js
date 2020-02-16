@@ -29,7 +29,7 @@ if (!$tool.isResponse) {
     $done({ url });
 } else {
     var IMDbApikeys = IMDbApikeys();
-    var IMDbApikey = $tool.getCache(imdbApikeyCacheKey);
+    var IMDbApikey = $tool.read(imdbApikeyCacheKey);
     if (!IMDbApikey) updateIMDbApikey();
     let obj = JSON.parse($response.body);
     if (consoleLog) console.log("Netflix Original Body:\n" + $response.body);
@@ -72,13 +72,13 @@ if (!$tool.isResponse) {
 }
 
 function getTitleMap() {
-    const map = $tool.getCache(netflixTitleCacheKey);
+    const map = $tool.read(netflixTitleCacheKey);
     return map ? JSON.parse(map) : {};
 }
 
 function setTitleMap(id, title, map) {
     map[id] = title;
-    $tool.setCache(JSON.stringify(map), netflixTitleCacheKey);
+    $tool.write(JSON.stringify(map), netflixTitleCacheKey);
 }
 
 function requestDoubanRating(imdbId) {
@@ -145,7 +145,7 @@ function updateIMDbApikey() {
     if (IMDbApikey) IMDbApikeys.splice(IMDbApikeys.indexOf(IMDbApikey), 1);
     const index = Math.floor(Math.random() * IMDbApikeys.length);
     IMDbApikey = IMDbApikeys[index];
-    $tool.setCache(IMDbApikey, imdbApikeyCacheKey);
+    $tool.write(IMDbApikey, imdbApikeyCacheKey);
 }
 
 function get_IMDb_message(data) {
@@ -491,9 +491,9 @@ function countryEmoji(name) {
 }
 
 function tool() {
-    const isResponse = typeof $response != "undefined"
     const isSurge = typeof $httpClient != "undefined"
     const isQuanX = typeof $task != "undefined"
+    const isResponse = typeof $response != "undefined"
     const node = (() => {
         if (typeof require == "function") {
             const request = require('request')
@@ -507,19 +507,21 @@ function tool() {
         if (isSurge) $notification.post(title, subtitle, message)
         if (node) console.log(JSON.stringify({ title, subtitle, message }));
     }
-    const setCache = (value, key) => {
+    const write = (value, key) => {
         if (isQuanX) return $prefs.setValueForKey(value, key)
         if (isSurge) return $persistentStore.write(value, key)
     }
-    const getCache = (key) => {
+    const read = (key) => {
         if (isQuanX) return $prefs.valueForKey(key)
         if (isSurge) return $persistentStore.read(key)
     }
     const adapterStatus = (response) => {
-        if (response.status) {
-            response["statusCode"] = response.status
-        } else if (response.statusCode) {
-            response["status"] = response.statusCode
+        if (response) {
+            if (response.status) {
+                response["statusCode"] = response.status
+            } else if (response.statusCode) {
+                response["status"] = response.statusCode
+            }
         }
         return response
     }
@@ -559,5 +561,5 @@ function tool() {
             })
         }
     }
-    return { isResponse, isQuanX, isSurge, notify, setCache, getCache, get, post }
+    return { isQuanX, isSurge, isResponse, notify, write, read, get, post }
 }
