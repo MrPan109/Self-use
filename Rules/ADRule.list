@@ -1,0 +1,7 @@
+# Advertising 广告
+# > General
+DOMAIN-KEYWORD,advertiser,REJECT
+
+# (K)
+# > kugou
+DOMAIN,adsfileretry.service.kugou.com,REJECT
