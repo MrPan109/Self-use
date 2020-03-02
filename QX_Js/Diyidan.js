@@ -10,6 +10,7 @@ QuantumultX(远程):
 QuantumultX(本地):
 ^https:\/\/api\.diyidan\.net\/v0\.3\/(user\/personal_homepage|vip_user\/info|tv_series\/index\?appChanne) url script-response-body Diyidan.js
 
+hostname = api.diyidan.net
 */
 
 let url = $request.url;
