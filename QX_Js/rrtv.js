@@ -1,6 +1,9 @@
 /*
 #人人视频 (by@george Jiang)
 ^https:\/\/api\.rr\.tv(\/user\/privilege\/list|\/ad\/getAll) url script-response-body https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Script/rrtv.js
+
+hostname = *.rr.tv
+
 */
 
 var body = $response.body;
