@@ -1,11 +1,12 @@
 /*
 Weibo remove ads
 [rewrite_local]
-^https?://m?api\.weibo\.c(n|om)/2/(statuses/(unread|extend|positives/get|(friends|video)(/|_)timeline)|stories/(video_stream|home_list)|(groups|fangle)/timeline|profile/statuses|comments/build_comments|photo/recommend_list|service/picfeed|searchall|cardlist|page|\!/photos/pic_recommend_status) url script-response-body https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/File/wb_ad.js
+^https?://m?api\.weibo\.c(n|om)/2/(statuses/(unread|extend|positives/get|(friends|video)(/|_)(mix)?timeline)|stories/(video_stream|home_list)|(groups|fangle)/timeline|profile/statuses|comments/build_comments|photo/recommend_list|service/picfeed|searchall|cardlist|page|!/photos/pic_recommend_status)  url script-response-body https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/File/wb_ad.js
 ^https?://(sdk|wb)app\.uve\.weibo\.com(/interface/sdk/sdkad.php|/wbapplua/wbpullad.lua) url script-response-body https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/File/wb_launch.js
 [mitm]
 hostname = api.weibo.cn, mapi.weibo.com, *.uve.weibo.com
  */
+
 
 const path1 = "/groups/timeline";
 const path2 = "/statuses/unread";
@@ -25,6 +26,7 @@ const path15 = "/statuses/video_timeline";
 const path16 = "/page";
 const path17 = "/statuses/friends_timeline";
 const path18 = "/!/photos/pic_recommend_status";
+const path19 = "/statuses/video_mixtimeline";
 
 const url = $request.url;
 var body = $response.body;
@@ -117,6 +119,12 @@ if (
     body = JSON.stringify(obj);
 }
 
+if (url.indexOf(path19) != -1) {
+    let obj = JSON.parse(body);
+    delete obj.expandable_view;
+    body = JSON.stringify(obj);
+}
+
 $done({ body });
 
 function filter_timeline_statuses(statuses) {
@@ -154,14 +162,16 @@ function filter_timeline_cards(cards) {
                 while (i--) {
                     let card_group_item = card_group[i];
                     let card_type = card_group_item.card_type;
-                    if (card_type && card_type == 9) {
-                        if (is_timeline_ad(card_group_item.mblog)) card_group.splice(i, 1);
-                    } else if (card_type && card_type == 118) {
-                        card_group.splice(i, 1);
-                    } else if (card_type && card_type == 42) {
-                        if (card_group_item.desc == '\u53ef\u80fd\u611f\u5174\u8da3\u7684\u4eba') {
-                            cards.splice(j, 1);
-                            break;
+                    if (card_type) {
+                        if (card_type == 9) {
+                            if (is_timeline_ad(card_group_item.mblog)) card_group.splice(i, 1);
+                        } else if (card_type == 118 || card_type == 89) {
+                            card_group.splice(i, 1);
+                        } else if (card_type == 42) {
+                            if (card_group_item.desc == '\u53ef\u80fd\u611f\u5174\u8da3\u7684\u4eba') {
+                                cards.splice(j, 1);
+                                break;
+                            }
                         }
                     }
                 }
@@ -186,5 +196,3 @@ function is_timeline_ad(mblog) {
 function is_timeline_likerecommend(title) {
     return title && title.type && title.type == "likerecommend" ? true : false;
 }
-
-// by yichahucha
