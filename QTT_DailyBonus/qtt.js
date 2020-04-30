@@ -1,4 +1,4 @@
-// 赞赏:趣头条邀请码`A1040276307`,农妇山泉 -> 有点咸
+// 赞赏:趣头条邀请码`A1051669796`,农妇山泉 -> 有点咸
 const cookieName = '趣头条'
 const signKey = 'senku_signKey_qtt'
 const signXTKKey = 'senku_signXTK_qtt'
