@@ -1,5 +1,5 @@
 /*
-2020.04.26
+2020.08.12
 README：https://github.com/yichahucha/surge/tree/master
 [rewrite_local]
 ^https?://api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig) url script-response-body jd_price.js
