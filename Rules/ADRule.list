@@ -9,5 +9,6 @@ DOMAIN,business.msstatic.com,REJECT
 # (K)
 # > kugou
 DOMAIN,adsfileretry.service.kugou.com,REJECT
+DOMAIN,adsfileretry.kglink.cn,REJECT
 
 
