@@ -1,353 +1,233 @@
-/*
-百度贴吧签到脚本
+// 修改自chavy大佬 https://raw.githubusercontent.com/ChuheGit/1/main/QuantumultX/Extra/tieba.js （就改了两个emoji）
 
-脚本修改自: https://github.com/sazs34/TaskConfig
-兼容: QuantumultX, Surge4, Loon
+const $ = new Env('百度签到')
+$.VAL_cookies = $.getdata('chavy_cookie_tieba') || $.getdata('CookieTB')
 
-获取Cookie说明：
-打开百度贴吧App后(AppStore中国区, 非内部版)，点击"我的", 如通知成功获取cookie, 则可以使用此签到脚本.
-获取Cookie后, 请将Cookie脚本禁用并移除主机名，以免产生不必要的MITM.
-脚本将在每天上午9:00执行, 您可以修改执行时间。
+$.CFG_isOrderBars = $.getdata('CFG_tieba_isOrderBars') || 'false' // 1: 经验排序, 2: 连签排序
+$.CFG_maxShowBars = $.getdata('CFG_tieba_maxShowBars') * 50 || 50 //每次通知数量
+$.CFG_maxSignBars = $.getdata('CFG_tieba_maxSignBars') * 1 || 5 // 每次并发执行多少个任务
+$.CFG_signWaitTime = $.getdata('CFG_tieba_signWaitTime') * 1 || 2000 // 每次并发间隔时间 (毫秒)
 
-************************
-Surge 4.2.0+ 脚本配置:
-************************
+!(async () => {
+  await tieba()
+  await zhidao()
+  await showmsg()
+})()
+  .catch((e) => $.logErr(e))
+  .finally(() => $.done())
 
-[Script]
-贴吧签到 = type=cron,cronexp=0 9 * * *,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/BDTieBa-DailyBonus/TieBa.js
-
-贴吧获取Cookie = type=http-request,pattern=https?:\/\/(c\.tieba\.baidu\.com|180\.97\.\d+\.\d+)\/c\/s\/login,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/BDTieBa-DailyBonus/TieBa.js
-
-[MITM] 
-hostname= c.tieba.baidu.com
-
-************************
-QuantumultX 本地脚本配置:
-************************
-
-[task_local]
-# 贴吧签到
-0 9 * * * TieBa.js
-
-[rewrite_local]
-# 获取Cookie
-https?:\/\/(c\.tieba\.baidu\.com|180\.97\.\d+\.\d+)\/c\/s\/login url script-request-header TieBa.js
-
-[mitm] 
-hostname= c.tieba.baidu.com
-
-************************
-Loon 2.1.0+ 脚本配置:
-************************
-
-[Script]
-# 贴吧签到
-cron "0 9 * * *" script-path=https://raw.githubusercontent.com/NobyDa/Script/master/BDTieBa-DailyBonus/TieBa.js
-
-# 获取Cookie
-http-request https?:\/\/(c\.tieba\.baidu\.com|180\.97\.\d+\.\d+)\/c\/s\/login script-path=https://raw.githubusercontent.com/NobyDa/Script/master/BDTieBa-DailyBonus/TieBa.js
-
-[Mitm] 
-hostname= c.tieba.baidu.com
-
-
-*/
-var $nobyda = nobyda();
-var cookieVal = $nobyda.read("CookieTB");
-var useParallel = 0; //0自动切换,1串行,2并行(当贴吧数量大于30个以后,并行可能会导致QX崩溃,所以您可以自动切换)
-var singleNotifyCount = 50; //想签到几个汇总到一个通知里,这里就填几个(比如我有13个要签到的,这里填了5,就会分三次消息通知过去)
-var process = {
-  total: 0,
-  result: [
-    // {
-    //     bar:'',
-    //     level:0,
-    //     exp:0,
-    //     errorCode:0,
-    //     errorMsg:''
-    // }
-  ]
-};
-var url_fetch_sign = {
-  url: "https://tieba.baidu.com/mo/q/newmoindex",
-  headers: {
-    "Content-Type": "application/octet-stream",
-    Referer: "https://tieba.baidu.com/index/tbwise/forum",
-    Cookie: cookieVal,
-    "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 12_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/16A366"
-  }
-};
-var url_fetch_add = {
-  url: "https://tieba.baidu.com/sign/add",
-  method: "POST",
-  headers: {
-    "Content-Type": "application/x-www-form-urlencoded",
-    Cookie: cookieVal,
-    "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 10_1_1 like Mac OS X; zh-CN) AppleWebKit/537.51.1 (KHTML, like Gecko) Mobile/14B100 UCBrowser/10.7.5.650 Mobile"
-  },
-  body: ""
-};
-if ($nobyda.isRequest) {
-  GetCookie()
-} else {
-  signTieBa()
-}
-
-
-function signTieBa() {
-  useParallel = $nobyda.read("BDTB_DailyBonus_Mode") || useParallel
-  singleNotifyCount = $nobyda.read("BDTB_DailyBonus_notify") || singleNotifyCount
-  if (!cookieVal) {
-    $nobyda.notify("贴吧签到", "签到失败", "未获取到cookie");
-    return $nobyda.done()
-  }
-  $nobyda.get(url_fetch_sign, function(error, response, data) {
-    if (error) {
-      $nobyda.notify("贴吧签到", "签到失败", "未获取到签到列表");
-      $nobyda.done()
-    } else {
-      // $nobyda.notify("贴吧签到", "贴吧列表", response.body);
-      var body = JSON.parse(data);
-      var isSuccessResponse = body && body.no == 0 && body.error == "success" && body.data.tbs;
-      if (!isSuccessResponse) {
-        $nobyda.notify("贴吧签到", "签到失败", (body && body.error) ? body.error : "接口数据获取失败");
-        return $nobyda.done()
-      }
-      process.total = body.data.like_forum.length;
-      if (body.data.like_forum && body.data.like_forum.length > 0) {
-        if (useParallel == 1 || (useParallel == 0 && body.data.like_forum.length >= 30)) {
-          signBars(body.data.like_forum, body.data.tbs, 0);
-        } else {
-          for (const bar of body.data.like_forum) {
-            signBar(bar, body.data.tbs);
-          }
+// 贴吧
+function tieba() {
+  return new Promise((resove) => {
+    const url = { url: 'https://tieba.baidu.com/mo/q/newmoindex', headers: { Cookie: $.VAL_cookies } }
+    $.get(url, async (err, resp, data) => {
+      try {
+        const _data = JSON.parse(data)
+        // 处理异常
+        if (_data.no !== 0) {
+          throw new Error(`获取清单失败! 原因: ${_data.error}`)
         }
-      } else {
-        $nobyda.notify("贴吧签到", "签到失败", "请确认您有关注的贴吧");
-        return $nobyda.done()
+        // 组装数据
+        $.bars = []
+        $.tieba = { tbs: _data.data.tbs }
+        _data.data.like_forum.forEach((bar) => $.bars.push(barWrapper(bar)))
+        $.bars = $.bars.sort((a, b) => b.exp - a.exp)
+        // 开始签到
+        await signbars($.bars)
+        await getbars($.bars)
+      } catch (e) {
+        $.logErr(e, resp)
+      } finally {
+        resove()
       }
-    }
+    })
   })
 }
 
-function signBar(bar, tbs) {
-  if (bar.is_sign == 1) { //已签到的,直接不请求接口了
-    process.result.push({
-      bar: `${bar.forum_name}`,
-      level: bar.user_level,
-      exp: bar.user_exp,
-      errorCode: 9999,
-      errorMsg: "已签到"
-    });
-    checkIsAllProcessed();
-  } else {
-    url_fetch_add.body = `tbs=${tbs}&kw=${bar.forum_name}&ie=utf-8`;
-    $nobyda.post(url_fetch_add, function(error, response, data) {
-      if (error) {
-        process.result.push({
-          bar: bar.forum_name,
-          errorCode: 999,
-          errorMsg: '接口错误'
-        });
-        checkIsAllProcessed();
-      } else {
+async function signbars(bars) {
+  let signbarActs = []
+  // 处理`已签`数据
+  bars.filter((bar) => bar.isSign).forEach((bar) => (bar.iscurSign = false))
+  // 处理`未签`数据
+  let _curbarIdx = 1
+  let _signbarCnt = 0
+  bars.filter((bar) => !bar.isSign).forEach((bar) => _signbarCnt++)
+  for (let bar of bars.filter((bar) => !bar.isSign)) {
+    const signbarAct = (resove) => {
+      const url = { url: 'https://tieba.baidu.com/sign/add', headers: { Cookie: $.VAL_cookies } }
+      url.body = `ie=utf-8&kw=${encodeURIComponent(bar.name)}&tbs=${$.tieba.tbs}`
+      url.headers['Host'] = 'tieba.baidu.com'
+      url.headers['User-Agent'] = 'User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1 Mobile/15E148 Safari/604.1'
+      $.post(url, (err, resp, data) => {
         try {
-          var addResult = JSON.parse(data);
-          if (addResult.no == 0) {
-            process.result.push({
-              bar: bar.forum_name,
-              errorCode: 0,
-              errorMsg: `获得${addResult.data.uinfo.cont_sign_num}积分,第${addResult.data.uinfo.user_sign_rank}个签到`
-            });
-          } else {
-            process.result.push({
-              bar: bar.forum_name,
-              errorCode: addResult.no,
-              errorMsg: addResult.error
-            });
-          }
+          const _data = JSON.parse(data)
+          bar.iscurSign = true
+          bar.issignSuc = _data.no === 0 || _data.no === 1101
+          bar.signNo = _data.no
+          bar.signMsg = _data.no === 1102 ? '签得太快!' : _data.error
+          bar.signMsg = _data.no === 2150040 ? '需要验证码!' : _data.error
         } catch (e) {
-          $nobyda.notify("贴吧签到", "贴吧签到数据处理异常", JSON.stringify(e));
-          $nobyda.done()
-        }
-        checkIsAllProcessed();
-      }
-    })
-  }
-}
-
-function signBars(bars, tbs, index) {
-  //$nobyda.notify("贴吧签到", `进度${index}/${bars.length}`, "");
-  if (index >= bars.length) {
-    //$nobyda.notify("贴吧签到", "签到已满", `${process.result.length}`);
-    checkIsAllProcessed();
-  } else {
-    var bar = bars[index];
-    if (bar.is_sign == 1) { //已签到的,直接不请求接口了
-      process.result.push({
-        bar: `${bar.forum_name}`,
-        level: bar.user_level,
-        exp: bar.user_exp,
-        errorCode: 9999,
-        errorMsg: "已签到"
-      });
-      signBars(bars, tbs, ++index);
-    } else {
-      url_fetch_add.body = `tbs=${tbs}&kw=${bar.forum_name}&ie=utf-8`;
-      $nobyda.post(url_fetch_add, function(error, response, data) {
-        if (error) {
-          process.result.push({
-            bar: bar.forum_name,
-            errorCode: 999,
-            errorMsg: '接口错误'
-          });
-          signBars(bars, tbs, ++index);
-        } else {
-          try {
-            var addResult = JSON.parse(data);
-            if (addResult.no == 0) {
-              process.result.push({
-                bar: bar.forum_name,
-                errorCode: 0,
-                errorMsg: `获得${addResult.data.uinfo.cont_sign_num}积分,第${addResult.data.uinfo.user_sign_rank}个签到`
-              });
-            } else {
-              process.result.push({
-                bar: bar.forum_name,
-                errorCode: addResult.no,
-                errorMsg: addResult.error
-              });
-            }
-          } catch (e) {
-            $nobyda.notify("贴吧签到", "贴吧签到数据处理异常", JSON.stringify(e));
-            $nobyda.done()
-          }
-          signBars(bars, tbs, ++index)
+          bar.iscurSign = true
+          bar.issignSuc = false
+          bar.signNo = null
+          bar.signMsg = err !== null ? error : e
+          $.logErr(e, resp)
+        } finally {
+          $.log(`❕ 贴吧:【${bar.name}】签到完成!`)
+          resove()
         }
       })
     }
-  }
-}
-
-function checkIsAllProcessed() {
-  //$nobyda.notify("贴吧签到", `最终进度${process.result.length}/${process.total}`, "");
-  if (process.result.length != process.total) return;
-  for (var i = 0; i < Math.ceil(process.total / singleNotifyCount); i++) {
-    var notify = "";
-    var spliceArr = process.result.splice(0, singleNotifyCount);
-    var notifySuccessCount = 0;
-    for (const res of spliceArr) {
-      if (res.errorCode == 0 || res.errorCode == 9999) {
-        notifySuccessCount++;
-      }
-      if (res.errorCode == 9999) {
-        notify += `【${res.bar}】已经签到，当前等级${res.level},经验${res.exp}
-`;
-      } else {
-        notify += `【${res.bar}】${res.errorCode==0?'签到成功':'签到失败'}，${res.errorCode==0?res.errorMsg:('原因：'+res.errorMsg)}
-`;
-      }
+    signbarActs.push(new Promise(signbarAct))
+    if (signbarActs.length === $.CFG_maxSignBars || _signbarCnt === _curbarIdx) {
+      $.log('', `⏳ 正在发起 ${signbarActs.length} 个签到任务!`)
+      await Promise.all(signbarActs)
+      await $.wait($.CFG_signWaitTime)
+      signbarActs = []
     }
-    $nobyda.notify("贴吧签到", `签到${spliceArr.length}个,成功${notifySuccessCount}个`, notify);
-    $nobyda.done()
+    _curbarIdx++
   }
 }
 
-function GetCookie() {
-  var headerCookie = $request.headers["Cookie"];
-  if (headerCookie) {
-    if ($nobyda.read("CookieTB") != undefined) {
-      if ($nobyda.read("CookieTB") != headerCookie) {
-        if (headerCookie.indexOf("BDUSS") != -1) {
-          var cookie = $nobyda.write(headerCookie, "CookieTB");
-          if (!cookie) {
-            $nobyda.notify("更新贴吧Cookie失败‼️", "", "");
-          } else {
-            $nobyda.notify("更新贴吧Cookie成功 🎉", "", "");
-          }
+function getbars(bars) {
+  const getBarActs = []
+  for (let bar of bars) {
+    const getBarAct = (resove) => {
+      const url = { url: `http://tieba.baidu.com/sign/loadmonth?kw=${encodeURIComponent(bar.name)}&ie=utf-8`, headers: { Cookie: $.VAL_cookies } }
+      url.headers['Host'] = 'tieba.baidu.com'
+      url.headers['User-Agent'] = 'User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1 Mobile/15E148 Safari/604.1'
+      $.get(url, (err, resp, data) => {
+        try {
+          const _signinfo = JSON.parse(data).data.sign_user_info
+          bar.signRank = _signinfo.rank
+          bar.contsignCnt = _signinfo.sign_keep
+          bar.totalsignCnt = _signinfo.sign_total
+        } catch (e) {
+          bar.contsignCnt = '❓'
+          $.logErr(e, resp)
+        } finally {
+          resove()
         }
-      }
-    } else {
-      if (headerCookie.indexOf("BDUSS") != -1) {
-        var cookie = $nobyda.write(headerCookie, "CookieTB");
-        if (!cookie) {
-          $nobyda.notify("首次写入贴吧Cookie失败‼️", "", "");
-        } else {
-          $nobyda.notify("首次写入贴吧Cookie成功 🎉", "", "");
-        }
-      }
-    }
-  }
-  $nobyda.done()
-}
-
-function nobyda() {
-  const isRequest = typeof $request != "undefined"
-  const isSurge = typeof $httpClient != "undefined"
-  const isQuanX = typeof $task != "undefined"
-  const notify = (title, subtitle, message) => {
-    if (isQuanX) $notify(title, subtitle, message)
-    if (isSurge) $notification.post(title, subtitle, message)
-  }
-  const write = (value, key) => {
-    if (isQuanX) return $prefs.setValueForKey(value, key)
-    if (isSurge) return $persistentStore.write(value, key)
-  }
-  const read = (key) => {
-    if (isQuanX) return $prefs.valueForKey(key)
-    if (isSurge) return $persistentStore.read(key)
-  }
-  const adapterStatus = (response) => {
-    if (response) {
-      if (response.status) {
-        response["statusCode"] = response.status
-      } else if (response.statusCode) {
-        response["status"] = response.statusCode
-      }
-    }
-    return response
-  }
-  const get = (options, callback) => {
-    if (isQuanX) {
-      if (typeof options == "string") options = {
-        url: options
-      }
-      options["method"] = "GET"
-      $task.fetch(options).then(response => {
-        callback(null, adapterStatus(response), response.body)
-      }, reason => callback(reason.error, null, null))
-    }
-    if (isSurge) $httpClient.get(options, (error, response, body) => {
-      callback(error, adapterStatus(response), body)
-    })
-  }
-  const post = (options, callback) => {
-    if (isQuanX) {
-      if (typeof options == "string") options = {
-        url: options
-      }
-      options["method"] = "POST"
-      $task.fetch(options).then(response => {
-        callback(null, adapterStatus(response), response.body)
-      }, reason => callback(reason.error, null, null))
-    }
-    if (isSurge) {
-      $httpClient.post(options, (error, response, body) => {
-        callback(error, adapterStatus(response), body)
       })
     }
+    getBarActs.push(new Promise(getBarAct))
   }
-  const done = (value = {}) => {
-    if (isQuanX) return $done(value)
-    if (isSurge) isRequest ? $done(value) : $done()
+  return Promise.all(getBarActs)
+}
+
+async function zhidao() {
+  await loginZhidao()
+  await signZhidao()
+}
+
+function loginZhidao() {
+  return new Promise((resove) => {
+    const url = { url: 'https://zhidao.baidu.com/', headers: { Cookie: $.VAL_cookies } }
+    url.headers['Host'] = 'zhidao.baidu.com'
+    url.headers['User-Agent'] = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1.1 Safari/605.1.15'
+    $.zhidao = {}
+    $.post(url, (err, resp, data) => {
+      try {
+        $.zhidao.stoken = data.match(/"stoken"[^"]*"([^"]*)"/)[1]
+        if (!$.zhidao.stoken) {
+          throw new Error(`获取 stoken 失败! stoken: ${$.zhidao.stoken}`)
+        }
+        $.zhidao.isloginSuc = true
+        $.zhidao.loginMsg = '登录成功'
+      } catch (e) {
+        $.zhidao.isloginSuc = false
+        $.zhidao.loginMsg = '登录失败'
+        $.logErr(e, resp)
+      } finally {
+        resove()
+      }
+    })
+  })
+}
+
+function signZhidao() {
+  // 登录失败, 直接跳出
+  if (!$.zhidao.isloginSuc) {
+    return null
   }
-  return {
-    isRequest,
-    notify,
-    write,
-    read,
-    get,
-    post,
-    done
-  }
-};
+  return new Promise((resove) => {
+    const url = { url: 'https://zhidao.baidu.com/submit/user', headers: { Cookie: $.VAL_cookies } }
+    url.headers['Host'] = 'zhidao.baidu.com'
+    url.headers['User-Agent'] = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1.1 Safari/605.1.15'
+    const timestamp = Date.parse(new Date())
+    const utdata = `61,61,7,0,0,0,12,61,5,2,12,4,24,5,4,1,4,${timestamp}`
+    url.body = `cm=100509&utdata=${utdata}&stoken=${$.zhidao.stoken}`
+    $.post(url, (err, resp, data) => {
+      try {
+        const _data = JSON.parse(data)
+        $.zhidao.isSignSuc = true
+        $.zhidao.signNo = _data.errorNo
+        $.zhidao.signMsg = _data.errorMsg
+      } catch (e) {
+        $.zhidao.isSignSuc = false
+        $.zhidao.signNo = null
+        $.zhidao.signMsg = e
+        $.logErr(e, resp)
+      } finally {
+        resove()
+      }
+    })
+  })
+}
+
+function barWrapper(bar) {
+  return { id: bar.forum_id, name: bar.forum_name, exp: bar.user_exp, level: bar.user_level, isSign: bar.is_sign === 1 }
+}
+
+function showmsg() {
+  return new Promise((resolve) => {
+    // 数据: 签到数量
+    const allbarCnt = $.bars.length
+    let allsignCnt = 0
+    let cursignCnt = 0
+    let curfailCnt = 0
+    $.bars.filter((bar) => bar.isSign).forEach((bar) => (allsignCnt += 1))
+    $.bars.filter((bar) => bar.iscurSign && bar.issignSuc).forEach((bar) => (cursignCnt += 1))
+    $.bars.filter((bar) => bar.iscurSign && !bar.issignSuc).forEach((bar) => (curfailCnt += 1))
+    $.bars = [true, 'true'].includes($.CFG_isOrderBars) ? $.bars.sort((a, b) => b.contsignCnt - a.contsignCnt) : $.bars
+    allsignCnt += cursignCnt
+    // 通知: 副标题
+    let tiebasubt = '贴吧: '
+    if (allbarCnt == allsignCnt) tiebasubt += '成功'
+    else if (allbarCnt == curfailCnt) tiebasubt += '失败'
+    else tiebasubt += '部分'
+    let zhidaosubt = '知道: '
+    if ($.zhidao.isSignSuc && $.zhidao.signNo === 0) zhidaosubt += '成功'
+    else if ($.zhidao.isSignSuc && $.zhidao.signNo === 2) zhidaosubt += '重复'
+    else zhidaosubt += '失败'
+    // 通知: 详情
+    let _curPage = 1
+    const _totalPage = Math.ceil(allbarCnt / $.CFG_maxShowBars)
+
+    $.desc = []
+    $.bars.forEach((bar, index) => {
+      const barno = index + 1
+      const signbar = `${bar.isSign || bar.issignSuc ? '🎉' : '❗️'} [${barno}]【${bar.name}】排名: ${bar.signRank}`
+      const signlevel = `等级: ${bar.level}`
+      const signexp = `经验: ${bar.exp}`
+      const signcnt = `连签: ${bar.contsignCnt}/${bar.totalsignCnt}天`
+      const signmsg = `${bar.isSign || bar.issignSuc ? '' : `失败原因: ${bar.signMsg}\n`}`
+      $.desc.push(`${signbar}`)
+      $.desc.push(`${signlevel}, ${signexp}, ${signcnt}`)
+      $.desc.push(`${signmsg}`)
+      if (barno % $.CFG_maxShowBars === 0 || barno === allbarCnt) {
+        const _descinfo = []
+        _descinfo.push(`共签: ${allsignCnt}/${allbarCnt}, 本次成功: ${cursignCnt}, 本次失败: ${curfailCnt}`)
+        _descinfo.push(`点击查看详情, 第 ${_curPage++}/${_totalPage} 页`)
+        $.subt = `${tiebasubt}, ${zhidaosubt}`
+        $.desc = [..._descinfo, '', ...$.desc].join('\n')
+        $.msg($.name, $.subt, $.desc)
+        $.desc = []
+      }
+    })
+    resolve()
+  })
+}
+
+// prettier-ignore
+function Env(t,e){class s{constructor(t){this.env=t}send(t,e="GET"){t="string"==typeof t?{url:t}:t;let s=this.get;return"POST"===e&&(s=this.post),new Promise((e,i)=>{s.call(this,t,(t,s,r)=>{t?i(t):e(s)})})}get(t){return this.send.call(this.env,t)}post(t){return this.send.call(this.env,t,"POST")}}return new class{constructor(t,e){this.name=t,this.http=new s(this),this.data=null,this.dataFile="box.dat",this.logs=[],this.isMute=!1,this.isNeedRewrite=!1,this.logSeparator="\n",this.startTime=(new Date).getTime(),Object.assign(this,e),this.log("",`\ud83d\udd14${this.name}, \u5f00\u59cb!`)}isNode(){return"undefined"!=typeof module&&!!module.exports}isQuanX(){return"undefined"!=typeof $task}isSurge(){return"undefined"!=typeof $httpClient&&"undefined"==typeof $loon}isLoon(){return"undefined"!=typeof $loon}toObj(t,e=null){try{return JSON.parse(t)}catch{return e}}toStr(t,e=null){try{return JSON.stringify(t)}catch{return e}}getjson(t,e){let s=e;const i=this.getdata(t);if(i)try{s=JSON.parse(this.getdata(t))}catch{}return s}setjson(t,e){try{return this.setdata(JSON.stringify(t),e)}catch{return!1}}getScript(t){return new Promise(e=>{this.get({url:t},(t,s,i)=>e(i))})}runScript(t,e){return new Promise(s=>{let i=this.getdata("@chavy_boxjs_userCfgs.httpapi");i=i?i.replace(/\n/g,"").trim():i;let r=this.getdata("@chavy_boxjs_userCfgs.httpapi_timeout");r=r?1*r:20,r=e&&e.timeout?e.timeout:r;const[o,h]=i.split("@"),a={url:`http://${h}/v1/scripting/evaluate`,body:{script_text:t,mock_type:"cron",timeout:r},headers:{"X-Key":o,Accept:"*/*"}};this.post(a,(t,e,i)=>s(i))}).catch(t=>this.logErr(t))}loaddata(){if(!this.isNode())return{};{this.fs=this.fs?this.fs:require("fs"),this.path=this.path?this.path:require("path");const t=this.path.resolve(this.dataFile),e=this.path.resolve(process.cwd(),this.dataFile),s=this.fs.existsSync(t),i=!s&&this.fs.existsSync(e);if(!s&&!i)return{};{const i=s?t:e;try{return JSON.parse(this.fs.readFileSync(i))}catch(t){return{}}}}}writedata(){if(this.isNode()){this.fs=this.fs?this.fs:require("fs"),this.path=this.path?this.path:require("path");const t=this.path.resolve(this.dataFile),e=this.path.resolve(process.cwd(),this.dataFile),s=this.fs.existsSync(t),i=!s&&this.fs.existsSync(e),r=JSON.stringify(this.data);s?this.fs.writeFileSync(t,r):i?this.fs.writeFileSync(e,r):this.fs.writeFileSync(t,r)}}lodash_get(t,e,s){const i=e.replace(/\[(\d+)\]/g,".$1").split(".");let r=t;for(const t of i)if(r=Object(r)[t],void 0===r)return s;return r}lodash_set(t,e,s){return Object(t)!==t?t:(Array.isArray(e)||(e=e.toString().match(/[^.[\]]+/g)||[]),e.slice(0,-1).reduce((t,s,i)=>Object(t[s])===t[s]?t[s]:t[s]=Math.abs(e[i+1])>>0==+e[i+1]?[]:{},t)[e[e.length-1]]=s,t)}getdata(t){let e=this.getval(t);if(/^@/.test(t)){const[,s,i]=/^@(.*?)\.(.*?)$/.exec(t),r=s?this.getval(s):"";if(r)try{const t=JSON.parse(r);e=t?this.lodash_get(t,i,""):e}catch(t){e=""}}return e}setdata(t,e){let s=!1;if(/^@/.test(e)){const[,i,r]=/^@(.*?)\.(.*?)$/.exec(e),o=this.getval(i),h=i?"null"===o?null:o||"{}":"{}";try{const e=JSON.parse(h);this.lodash_set(e,r,t),s=this.setval(JSON.stringify(e),i)}catch(e){const o={};this.lodash_set(o,r,t),s=this.setval(JSON.stringify(o),i)}}else s=this.setval(t,e);return s}getval(t){return this.isSurge()||this.isLoon()?$persistentStore.read(t):this.isQuanX()?$prefs.valueForKey(t):this.isNode()?(this.data=this.loaddata(),this.data[t]):this.data&&this.data[t]||null}setval(t,e){return this.isSurge()||this.isLoon()?$persistentStore.write(t,e):this.isQuanX()?$prefs.setValueForKey(t,e):this.isNode()?(this.data=this.loaddata(),this.data[e]=t,this.writedata(),!0):this.data&&this.data[e]||null}initGotEnv(t){this.got=this.got?this.got:require("got"),this.cktough=this.cktough?this.cktough:require("tough-cookie"),this.ckjar=this.ckjar?this.ckjar:new this.cktough.CookieJar,t&&(t.headers=t.headers?t.headers:{},void 0===t.headers.Cookie&&void 0===t.cookieJar&&(t.cookieJar=this.ckjar))}get(t,e=(()=>{})){t.headers&&(delete t.headers["Content-Type"],delete t.headers["Content-Length"]),this.isSurge()||this.isLoon()?(this.isSurge()&&this.isNeedRewrite&&(t.headers=t.headers||{},Object.assign(t.headers,{"X-Surge-Skip-Scripting":!1})),$httpClient.get(t,(t,s,i)=>{!t&&s&&(s.body=i,s.statusCode=s.status),e(t,s,i)})):this.isQuanX()?(this.isNeedRewrite&&(t.opts=t.opts||{},Object.assign(t.opts,{hints:!1})),$task.fetch(t).then(t=>{const{statusCode:s,statusCode:i,headers:r,body:o}=t;e(null,{status:s,statusCode:i,headers:r,body:o},o)},t=>e(t))):this.isNode()&&(this.initGotEnv(t),this.got(t).on("redirect",(t,e)=>{try{if(t.headers["set-cookie"]){const s=t.headers["set-cookie"].map(this.cktough.Cookie.parse).toString();s&&this.ckjar.setCookieSync(s,null),e.cookieJar=this.ckjar}}catch(t){this.logErr(t)}}).then(t=>{const{statusCode:s,statusCode:i,headers:r,body:o}=t;e(null,{status:s,statusCode:i,headers:r,body:o},o)},t=>{const{message:s,response:i}=t;e(s,i,i&&i.body)}))}post(t,e=(()=>{})){if(t.body&&t.headers&&!t.headers["Content-Type"]&&(t.headers["Content-Type"]="application/x-www-form-urlencoded"),t.headers&&delete t.headers["Content-Length"],this.isSurge()||this.isLoon())this.isSurge()&&this.isNeedRewrite&&(t.headers=t.headers||{},Object.assign(t.headers,{"X-Surge-Skip-Scripting":!1})),$httpClient.post(t,(t,s,i)=>{!t&&s&&(s.body=i,s.statusCode=s.status),e(t,s,i)});else if(this.isQuanX())t.method="POST",this.isNeedRewrite&&(t.opts=t.opts||{},Object.assign(t.opts,{hints:!1})),$task.fetch(t).then(t=>{const{statusCode:s,statusCode:i,headers:r,body:o}=t;e(null,{status:s,statusCode:i,headers:r,body:o},o)},t=>e(t));else if(this.isNode()){this.initGotEnv(t);const{url:s,...i}=t;this.got.post(s,i).then(t=>{const{statusCode:s,statusCode:i,headers:r,body:o}=t;e(null,{status:s,statusCode:i,headers:r,body:o},o)},t=>{const{message:s,response:i}=t;e(s,i,i&&i.body)})}}time(t){let e={"M+":(new Date).getMonth()+1,"d+":(new Date).getDate(),"H+":(new Date).getHours(),"m+":(new Date).getMinutes(),"s+":(new Date).getSeconds(),"q+":Math.floor(((new Date).getMonth()+3)/3),S:(new Date).getMilliseconds()};/(y+)/.test(t)&&(t=t.replace(RegExp.$1,((new Date).getFullYear()+"").substr(4-RegExp.$1.length)));for(let s in e)new RegExp("("+s+")").test(t)&&(t=t.replace(RegExp.$1,1==RegExp.$1.length?e[s]:("00"+e[s]).substr((""+e[s]).length)));return t}msg(e=t,s="",i="",r){const o=t=>{if(!t)return t;if("string"==typeof t)return this.isLoon()?t:this.isQuanX()?{"open-url":t}:this.isSurge()?{url:t}:void 0;if("object"==typeof t){if(this.isLoon()){let e=t.openUrl||t.url||t["open-url"],s=t.mediaUrl||t["media-url"];return{openUrl:e,mediaUrl:s}}if(this.isQuanX()){let e=t["open-url"]||t.url||t.openUrl,s=t["media-url"]||t.mediaUrl;return{"open-url":e,"media-url":s}}if(this.isSurge()){let e=t.url||t.openUrl||t["open-url"];return{url:e}}}};if(this.isMute||(this.isSurge()||this.isLoon()?$notification.post(e,s,i,o(r)):this.isQuanX()&&$notify(e,s,i,o(r))),!this.isMuteLog){let t=["","==============\ud83d\udce3\u7cfb\u7edf\u901a\u77e5\ud83d\udce3=============="];t.push(e),s&&t.push(s),i&&t.push(i),console.log(t.join("\n")),this.logs=this.logs.concat(t)}}log(...t){t.length>0&&(this.logs=[...this.logs,...t]),console.log(t.join(this.logSeparator))}logErr(t,e){const s=!this.isSurge()&&!this.isQuanX()&&!this.isLoon();s?this.log("",`\u2757\ufe0f${this.name}, \u9519\u8bef!`,t.stack):this.log("",`\u2757\ufe0f${this.name}, \u9519\u8bef!`,t)}wait(t){return new Promise(e=>setTimeout(e,t))}done(t={}){const e=(new Date).getTime(),s=(e-this.startTime)/1e3;this.log("",`\ud83d\udd14${this.name}, \u7ed3\u675f! \ud83d\udd5b ${s} \u79d2`),this.log(),(this.isSurge()||this.isQuanX()||this.isLoon())&&$done(t)}}(t,e)}
