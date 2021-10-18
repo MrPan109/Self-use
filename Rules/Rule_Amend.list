@@ -28,3 +28,4 @@ host, million-api.aiclk.com, direct
 host, p14-buy.itunes.apple.com, Apple
 host, www.hddapian.com, proxy
 ;host, imgxx.link, proxy
+host, www.lanzous.com, 黑白名单
