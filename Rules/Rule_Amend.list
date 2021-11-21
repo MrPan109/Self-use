@@ -2,6 +2,8 @@
 # 片段文件将保存在 Quantumult X 目录下的 Profiles 子目录中。
 # 样例可参见 https://raw.githubusercontent.com/crossutility/Quantumult-X/master/filter.txt
 # 自用修正
+
+host-suffix, gstat.myzaker.com, direct
 host, sub.api.cn.xeotd.cn, 黑白名单
 host-suffix, cd.bendibao.com, direct
 ;host-suffix, myzaker.com, 黑白名单
