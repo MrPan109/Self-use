@@ -3,15 +3,17 @@
 # 样例可参见 https://raw.githubusercontent.com/crossutility/Quantumult-X/master/filter.txt
 # 自用修正
 
-host-suffix, gstat.myzaker.com, direct
+host-suffix, adm.myzaker.com, China
+host-suffix, myip.myzaker.com, China
+host-suffix, gstat.myzaker.com, China
 host, sub.api.cn.xeotd.cn, 黑白名单
-host-suffix, cd.bendibao.com, direct
+host-suffix, cd.bendibao.com, China
 ;host-suffix, myzaker.com, 黑白名单
-host, wbapp.uve.weibo.com, direct
-host, dp.im.weibo.cn, direct
-host, hmma.baidu.com, direct
-host, dxp.baidu.com, direct
-host-suffix, amdc.alipay.com, direct
+host, wbapp.uve.weibo.com, China
+host, dp.im.weibo.cn, China
+host, hmma.baidu.com, China
+host, dxp.baidu.com, China
+host-suffix, amdc.alipay.com, China
 host, comic.hangxianglx.cn, 黑白名单
 host, fh87i.bjjttc.cn, 黑白名单
 host-keyword, toptoon, 黑白名单
@@ -20,13 +22,13 @@ host, picture.ik123.com, 黑白名单
 host, www.x-air.org, 黑白名单
 host-keyword, 18comic, 黑白名单
 host, api.wenyikeji.com, 黑白名单
-host, ccclub.cmbchina.com, direct
+host, ccclub.cmbchina.com, China
 host, app-measurement.com, 黑白名单
 host, pre-login.row-release-pub-v2.game.wr.pvp.net, 黑白名单
-host, wawj0109.iok.la, direct
+host, wawj0109.iok.la, China
 host, boxjs.com, 黑白名单
 host, qidian.qpic.cn, reject
-host, million-api.aiclk.com, direct
+host, million-api.aiclk.com, China
 host, p14-buy.itunes.apple.com, Apple
 host, www.hddapian.com, proxy
 ;host, imgxx.link, proxy
