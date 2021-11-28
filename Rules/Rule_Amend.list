@@ -1,8 +1,9 @@
 # 分流规则配置片段包含若干条分流规则；可通过资源引用的方式使用。
 # 片段文件将保存在 Quantumult X 目录下的 Profiles 子目录中。
 # 样例可参见 https://raw.githubusercontent.com/crossutility/Quantumult-X/master/filter.txt
-# 自用修正
+# 自用分流修正
 
+host-suffix, huawei.com, direct
 host-suffix, adm.myzaker.com, China
 host-suffix, myip.myzaker.com, China
 host-suffix, gstat.myzaker.com, China
@@ -25,9 +26,8 @@ host, api.wenyikeji.com, 黑白名单
 host, ccclub.cmbchina.com, China
 host, app-measurement.com, 黑白名单
 host, pre-login.row-release-pub-v2.game.wr.pvp.net, 黑白名单
-host, wawj0109.iok.la, China
+host, wawj0109.iok.la, direct
 host, boxjs.com, 黑白名单
-host, qidian.qpic.cn, reject
 host, million-api.aiclk.com, China
 host, p14-buy.itunes.apple.com, Apple
 host, www.hddapian.com, proxy

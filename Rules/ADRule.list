@@ -11,4 +11,9 @@ DOMAIN,business.msstatic.com,REJECT
 DOMAIN,adsfileretry.service.kugou.com,REJECT
 DOMAIN,adserviceretry.kglink.cn,REJECT
 
+# > toutiao
+host, tnc3-aliec2.snssdk.com, reject
+host, sf3-be-pack.pglstatp-toutiao.com, reject
 
+# > qidian
+host, qidian.qpic.cn, reject
