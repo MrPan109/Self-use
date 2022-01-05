@@ -5,7 +5,7 @@
 
 host-suffix, huawei.com, direct
 host-suffix, adm.myzaker.com, China
-host-suffix, myip.myzaker.com, China
+host, myip.myzaker.com, China
 host-suffix, gstat.myzaker.com, China
 host, sub.api.cn.xeotd.cn, 黑白名单
 host-suffix, cd.bendibao.com, China
