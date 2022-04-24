@@ -33,3 +33,7 @@ host, p14-buy.itunes.apple.com, Apple
 host, www.hddapian.com, proxy
 ;host, imgxx.link, proxy
 host, www.lanzous.com, 黑白名单
+host-suffix, rouman5.com 黑白名单
+host, wgo.mmstat.com, China
+host, gm.mmstat.com, China
+HOST-SUFFIX, APPDOWNLOAD.ALICDN.COM, China
