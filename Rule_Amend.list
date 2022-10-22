@@ -1,0 +1,37 @@
+# 修正日期：2022.10.22
+# 分流修正与自用quantumultx同步
+# 自用分流修正
+
+domain-suffix, huawei.com, direct
+domain-suffix, adm.myzaker.com, China
+domain, myip.myzaker.com, China
+domain-suffix, gstat.myzaker.com, China
+domain, sub.api.cn.xeotd.cn, 黑白名单
+domain-suffix, cd.bendibao.com, China
+domain, wbapp.uve.weibo.com, China
+domain, dp.im.weibo.cn, China
+domain, hmma.baidu.com, China
+domain, dxp.baidu.com, China
+domain-suffix, amdc.alipay.com, China
+domain, comic.hangxianglx.cn, 黑白名单
+domain, fh87i.bjjttc.cn, 黑白名单
+domain-keyword, toptoon, 黑白名单
+domain, www.kelemh.com, 黑白名单
+domain, picture.ik123.com, 黑白名单
+domain, www.x-air.org, 黑白名单
+domain-keyword, 18comic, 黑白名单
+domain, api.wenyikeji.com, 黑白名单
+domain, ccclub.cmbchina.com, China
+domain, app-measurement.com, 黑白名单
+domain, pre-login.row-release-pub-v2.game.wr.pvp.net, 黑白名单
+domain, wawj0109.iok.la, direct
+domain, boxjs.com, 黑白名单
+domain, million-api.aiclk.com, China
+domain, p14-buy.itunes.apple.com, Apple
+domain, www.hddapian.com, 黑白名单
+domain, www.lanzous.com, 黑白名单
+domain-suffix, rouman5.com, 黑白名单
+domain, wgo.mmstat.com, China
+domain, gm.mmstat.com, China
+domain, m.5freed.com, 黑白名单
+domain-SUFFIX, APPDOWNLOAD.ALICDN.COM, China
