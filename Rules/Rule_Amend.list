@@ -3,6 +3,16 @@
 # 样例可参见 https://raw.githubusercontent.com/crossutility/Quantumult-X/master/filter.txt
 # 自用分流修正
 
+host-suffix, api-access.pangolin-sdk-toutiao-b.com, 黑白名单
+host, sdk.e.qq.com, China
+host, alogs.umengcloud.com, 黑白名单
+host-suffix, umeng.com, 黑白名单
+host, api-access.pangolin-sdk-toutiao.com, 黑白名单
+host, www.rocketgirls.space, 黑白名单
+host-suffix, kumw5.com, 黑白名单
+host-suffix, qq.com, China
+host-suffix, api.lncldglobal.com, 黑白名单
+host, www.qimenshijia.com, 黑白名单
 host-suffix, huawei.com, direct
 host-suffix, adm.myzaker.com, China
 host, myip.myzaker.com, China
