@@ -12,7 +12,7 @@ DOMAIN-SUFFIX,alogs.umengcloud.com,黑白名单
 DOMAIN,api-access.pangolin-sdk-toutiao-b.com,黑白名单
 DOMAIN-KEYWORD,tiktokcdn-,TikTok
 DOMAIN,sdk.e.qq.com,China
-DOMAIN-SUFFIX,huawei.com,direct
+DOMAIN-SUFFIX,huawei.com,China
 DOMAIN-SUFFIX,adm.myzaker.com,China
 DOMAIN,myip.myzaker.com,China
 DOMAIN-SUFFIX,gstat.myzaker.com,China
@@ -34,7 +34,7 @@ DOMAIN,api.wenyikeji.com,黑白名单
 DOMAIN,ccclub.cmbchina.com,China
 DOMAIN,app-measurement.com,黑白名单
 DOMAIN,pre-login.row-release-pub-v2.game.wr.pvp.net,黑白名单
-DOMAIN,wawj0109.iok.la,direct
+DOMAIN,wawj0109.iok.la,DIRECT
 DOMAIN,boxjs.com,黑白名单
 DOMAIN,million-api.aiclk.com,China
 DOMAIN,p14-buy.itunes.apple.com,Apple
