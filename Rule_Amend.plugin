@@ -12,7 +12,7 @@ DOMAIN-SUFFIX,alogs.umengcloud.com,黑白名单
 DOMAIN,api-access.pangolin-sdk-toutiao-b.com,黑白名单
 DOMAIN-KEYWORD,tiktokcdn-,TikTok
 DOMAIN,sdk.e.qq.com,China
-DOMAIN-SUFFIX,huawei.com,China
+DOMAIN-SUFFIX,huawei.com,DIRECT
 DOMAIN-SUFFIX,adm.myzaker.com,China
 DOMAIN,myip.myzaker.com,China
 DOMAIN-SUFFIX,gstat.myzaker.com,China
