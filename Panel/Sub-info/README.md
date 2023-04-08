@@ -26,7 +26,7 @@
 
 > 3.url转义其实也只是为了符合url的规范而已。因为在标准的url规范中中文和很多的字符是不允许出现在url中的。
 
-<img src="assets/iShot_2023-03-19_10.19.15.png" alt="iShot_2023-03-19_10.19.15" style="zoom:50%;" />
+<img width="1034" alt="iShot_2023-03-19_10 19 15" src="https://user-images.githubusercontent.com/56900454/230712872-f4a0fdd8-f66f-4920-81db-a209b95b78f1.png">
 
 这里放一张encode前后对比截图就能知道encode的作用了。
 
