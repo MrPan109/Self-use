@@ -34,9 +34,15 @@
 
 用encode后的链接替换"url="后面的[机场节点链接] -> 完成!
 
-<img src="assets/IMG_1395.PNG" alt="IMG_1395" style="zoom:50%;" />
+![IMG_1395](https://user-images.githubusercontent.com/56900454/230712943-a81fe475-c0bb-4fea-bf2f-6f0ca0816779.png)
 
-<img src="assets/iShot_2023-03-19_10.26.29.png" alt="iShot_2023-03-19_10.26.29" style="zoom:50%;" />
+<img width="1125" alt="iShot_2023-03-19_10 26 29" src="https://user-images.githubusercontent.com/56900454/230712950-1a4c54e4-681a-4b6c-b3e8-de533a5f0557.png">
+
+
+如果你有多个机场：
+如果有多个机场，请按照下面截图的例子进行 图中1、2分别对应即可。
+
+<img width="375" alt="iShot_2023-03-19_10 38 55" src="https://user-images.githubusercontent.com/56900454/230712956-53d68d0b-0a89-4b98-97c9-34505292fa0d.png">
 
 ### 5. 更新模块方式
 **请按照以下步骤更新**<br>
