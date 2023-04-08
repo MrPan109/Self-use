@@ -16,7 +16,7 @@ AppStore 版 4.9.3 或更新版本
 TestFlight 版 4.11.0 (2014) 或更新版本
 
 2. 模块安装链接
-稳定版 : https://raw.githubusercontent.com/Rabbit-Spec/Surge/Master/Module/Panel/Sub-info/Moore/Sub-info.sgmodule
+稳定版 : https://raw.githubusercontent.com/MrPan109/Self-use/Surge%26Loon/Panel/Sub-info/Sub-info.sgmodule
 
 3. 安装方式
 打开 Surge -> 模块 -> 新建本地模块 -> 复制粘贴上方的安装链接里的模块内容到本地（不是复制链接！）-> 先将带有流量信息的节点订阅链接encode，用encode后的链接替换"url="后面的[机场节点链接] -> 完成!
