@@ -19,7 +19,26 @@
 
 **encode链接：** https://www.urlencoder.org
 
-### 4. 更新模块方式
+> 为什么要encode？
+> 1.是因为当字符串数据以url的形式传递给web服务器时,字符串中是不允许出现空格和特殊字符的。
+
+> 2.因为 url 对字符有限制，比如把一个邮箱放入 url，就需要使用 urlencode 函数，因为 url 中不能包含 @ 字符。
+
+> 3.url转义其实也只是为了符合url的规范而已。因为在标准的url规范中中文和很多的字符是不允许出现在url中的。
+
+<img src="assets/iShot_2023-03-19_10.19.15.png" alt="iShot_2023-03-19_10.19.15" style="zoom:50%;" />
+
+这里放一张encode前后对比截图就能知道encode的作用了。
+
+### 4.将encode后的订阅链接替换本地面板里面相应字符
+
+用encode后的链接替换"url="后面的[机场节点链接] -> 完成!
+
+<img src="assets/IMG_1395.PNG" alt="IMG_1395" style="zoom:50%;" />
+
+<img src="assets/iShot_2023-03-19_10.26.29.png" alt="iShot_2023-03-19_10.26.29" style="zoom:50%;" />
+
+### 5. 更新模块方式
 **请按照以下步骤更新**<br>
 #### 更新外部资源 : 
 >点击首页最上方打开 Profile 页面 -> 更新外部资源 <br>
