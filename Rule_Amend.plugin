@@ -8,9 +8,6 @@
 
 [Rule]
 DOMAIN,sub-store.vercel.app,兜底策略
-DOMAIN-SUFFIX,umeng.com,兜底策略
-DOMAIN-SUFFIX,alogs.umengcloud.com,兜底策略
-DOMAIN,api-access.pangolin-sdk-toutiao-b.com,兜底策略
 DOMAIN-KEYWORD,tiktokcdn-,TikTok
 DOMAIN,sdk.e.qq.com,China
 DOMAIN-SUFFIX,huawei.com,DIRECT
