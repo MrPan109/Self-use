@@ -5,9 +5,6 @@
 
 host-suffix, api-access.pangolin-sdk-toutiao-b.com, 黑白名单
 host, sdk.e.qq.com, China
-host, alogs.umengcloud.com, 黑白名单
-host-suffix, umeng.com, 黑白名单
-host, api-access.pangolin-sdk-toutiao.com, 黑白名单
 host, www.rocketgirls.space, 黑白名单
 host-suffix, kumw5.com, 黑白名单
 host-suffix, api.lncldglobal.com, 黑白名单
