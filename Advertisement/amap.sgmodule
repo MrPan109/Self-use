@@ -1,7 +1,7 @@
 #!name= 高德地图去广告
 #!desc= 自用
 #!author= RuCu6
-# 修改自：https://raw.githubusercontent.com/kokoryh/Script/master/Surge/module/amap.sgmodule
+# 修改自：https://raw.githubusercontent.com/kokoryh/Script/master/Surge/module/amap.sgmodule and https://raw.githubusercontent.com/ClydeTime/Surge/main/Script/AMAP/amap.sgmodule
 
 [Rule]
 DOMAIN,amap-aos-info-nogw.amap.com,REJECT
