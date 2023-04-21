@@ -7,40 +7,26 @@
 
 
 [Rule]
+# > 访问AX86U
+AND,((NOT,((SUBNET,"SSID: MyHome"))),(IP-CIDR,172.16.16.254/32,no-resolve)),WAWJ
+DOMAIN,wawj0109.iok.la,DIRECT
+# > sub-store修正
 DOMAIN,sub-store.vercel.app,兜底策略
-DOMAIN-KEYWORD,tiktokcdn-,TikTok
-DOMAIN,sdk.e.qq.com,China
+# > boxjs
+DOMAIN,boxjs.com,兜底策略
+# > 华为走直连
 DOMAIN-SUFFIX,huawei.com,DIRECT
-DOMAIN-SUFFIX,adm.myzaker.com,China
-DOMAIN,myip.myzaker.com,China
-DOMAIN-SUFFIX,gstat.myzaker.com,China
-DOMAIN,sub.api.cn.xeotd.cn,兜底策略
-DOMAIN-SUFFIX,cd.bendibao.com,China
-DOMAIN,wbapp.uve.weibo.com,China
-DOMAIN,dp.im.weibo.cn,China
-DOMAIN,hmma.baidu.com,China
-DOMAIN,dxp.baidu.com,China
-DOMAIN-SUFFIX,amdc.alipay.com,China
+# > 皮皮喵看漫画
 DOMAIN,comic.hangxianglx.cn,兜底策略
 DOMAIN,fh87i.bjjttc.cn,兜底策略
 DOMAIN-KEYWORD,toptoon,兜底策略
 DOMAIN,www.kelemh.com,兜底策略
 DOMAIN,picture.ik123.com,兜底策略
-DOMAIN,www.x-air.org,兜底策略
 DOMAIN-KEYWORD,18comic,兜底策略
 DOMAIN,api.wenyikeji.com,兜底策略
-DOMAIN,ccclub.cmbchina.com,China
 DOMAIN,app-measurement.com,兜底策略
-DOMAIN,pre-login.row-release-pub-v2.game.wr.pvp.net,兜底策略
-DOMAIN,wawj0109.iok.la,DIRECT
-DOMAIN,boxjs.com,兜底策略
-DOMAIN,million-api.aiclk.com,China
-DOMAIN,p14-buy.itunes.apple.com,Apple
 DOMAIN,www.hddapian.com,兜底策略
 DOMAIN,www.lanzous.com,兜底策略
 DOMAIN-SUFFIX,rouman5.com,兜底策略
-DOMAIN,wgo.mmstat.com,China
-DOMAIN,gm.mmstat.com,China
 DOMAIN,m.5freed.com,兜底策略
-DOMAIN-SUFFIX,appdownload.alicdn.com,China
-DOMAIN,rsshub.app,兜底策略
+
