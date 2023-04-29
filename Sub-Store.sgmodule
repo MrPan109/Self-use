@@ -1,5 +1,7 @@
 #!name=Sub-Store
 #!desc=高级订阅管理工具 定时更新分离 @Peng-YM
+#!源作者地址:https://raw.githubusercontent.com/Peng-YM/Sub-Store/master/config/Surge.sgmodule
+
 [MITM]
 hostname=%APPEND% sub.store
 
