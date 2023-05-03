@@ -35,3 +35,7 @@ DOMAIN,login.live.com,China
 DOMAIN-SUFFIX,hotmail.com,China
 # > 京东店铺会员
 DOMAIN,gia.jd.com,China
+# > 有道翻译官
+DOMAIN-SUFFIX,youdao.com,China
+# > 台湾Dcard
+DOMAIN-SUFFIX,dcard.tw,台湾C_Auto
