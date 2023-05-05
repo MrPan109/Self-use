@@ -66,5 +66,5 @@ http-request ^https:\/\/weibo\.cn\/sinaurl\?(.*&)?(u|toasturl|goto)= url script-
 http-request ^https:\/\/shop\.sc\.weibo\.com\/h5\/jump\/error\?(.*&)?url= script-path = https://gitlab.com/lodepuly/vpn_tool/raw/main/Resource/Script/Weibo/Weibo_remove_redirect.js, tag = 跳过重定向
 http-response ^https:\/\/(sinaurl|t)\.cn\/ script-path = https://gitlab.com/lodepuly/vpn_tool/raw/main/Resource/Script/Weibo/Weibo_remove_redirect.js, tag = 跳过重定向
 
-[Mitm]
-hostname = %APPEND% *api.weibo.cn,*.uve.weibo.com,card.weibo.com,weibo.com,weibo.cn,shop.sc.weibo.com,t.cn,sinaurl.cn
+[MITM]
+hostname = %APPEND% *api.weibo.cn, *.uve.weibo.com, card.weibo.com, weibo.com, weibo.cn, shop.sc.weibo.com, t.cn, sinaurl.cn
