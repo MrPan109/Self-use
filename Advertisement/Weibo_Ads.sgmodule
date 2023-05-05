@@ -10,30 +10,30 @@ DOMAIN, sdkaction.biz.weibo.com, REJECT
 DOMAIN, sdkclick.biz.weibo.com, REJECT
 DOMAIN, sdkmonitor.biz.weibo.com, REJECT
 
-[Rewrite]
+[Map Local]
 # 首页 签到、发布按钮、侧边栏、右上角红包、侧边栏提醒、超话tab悬浮、顶部直播
-^https:\/\/api\.weibo\.cn\/2\/(ug\/checkin\/list|push\/daily)\? reject-dict
-^https:\/\/api\.weibo\.cn\/2\/!\/live\/media_homelist\? reject-dict
+^https:\/\/api\.weibo\.cn\/2\/(ug\/checkin\/list|push\/daily)\? data="https://raw.githubusercontent.com/MrPan109/Self-use/Surge%26Loon/Advertisement/reject-dict.json"
+^https:\/\/api\.weibo\.cn\/2\/!\/live\/media_homelist\? data="https://raw.githubusercontent.com/MrPan109/Self-use/Surge%26Loon/Advertisement/reject-dict.json"
 
 # 详情页 超话、评论区、看图界面、个人主页、我的页面、信息流、商品橱窗、视频流、视频号、话题卡片
-^https:\/\/api\.weibo\.cn\/2\/comments\/bullet_screens\? reject-dict
-^https:\/\/api\.weibo\.cn\/2\/photo\/info\? reject-dict
-^https:\/\/api\.weibo\.cn\/2\/statuses\/(container_positive|push_info)\? reject-dict
-^https:\/\/api\.weibo\.cn\/2\/!\/huati\/(discovery_home_bottom_getdotinfo|mobile_discovery_searchchange)\? reject-dict
+^https:\/\/api\.weibo\.cn\/2\/comments\/bullet_screens\? data="https://raw.githubusercontent.com/MrPan109/Self-use/Surge%26Loon/Advertisement/reject-dict.json"
+^https:\/\/api\.weibo\.cn\/2\/photo\/info\? data="https://raw.githubusercontent.com/MrPan109/Self-use/Surge%26Loon/Advertisement/reject-dict.json"
+^https:\/\/api\.weibo\.cn\/2\/statuses\/(container_positive|push_info)\? data="https://raw.githubusercontent.com/MrPan109/Self-use/Surge%26Loon/Advertisement/reject-dict.json"
+^https:\/\/api\.weibo\.cn\/2\/!\/huati\/(discovery_home_bottom_getdotinfo|mobile_discovery_searchchange)\? data="https://raw.githubusercontent.com/MrPan109/Self-use/Surge%26Loon/Advertisement/reject-dict.json"
 
 # 发现页 热门微博信息流、搜索列表、热搜提醒、猜你想搜、视频流红包
-^https:\/\/api\.weibo\.cn\/2\/search\/container_discover\? reject-dict
-^https:\/\/api\.weibo\.cn\/2\/hot\/hours_spotlight\? reject-dict
-^https:\/\/api\.weibo\.cn\/2\/video\/redpacket\? reject-dict
-^https:\/\/api\.weibo\.cn\/!\/sug\/list\/finderchange\? reject-dict
+^https:\/\/api\.weibo\.cn\/2\/search\/container_discover\? data="https://raw.githubusercontent.com/MrPan109/Self-use/Surge%26Loon/Advertisement/reject-dict.json"
+^https:\/\/api\.weibo\.cn\/2\/hot\/hours_spotlight\? data="https://raw.githubusercontent.com/MrPan109/Self-use/Surge%26Loon/Advertisement/reject-dict.json"
+^https:\/\/api\.weibo\.cn\/2\/video\/redpacket\? data="https://raw.githubusercontent.com/MrPan109/Self-use/Surge%26Loon/Advertisement/reject-dict.json"
+^https:\/\/api\.weibo\.cn\/!\/sug\/list\/finderchange\? data="https://raw.githubusercontent.com/MrPan109/Self-use/Surge%26Loon/Advertisement/reject-dict.json"
 
 # 开屏广告 //*.uve.weibo.com
-^https:\/\/bootrealtime\.uve\.weibo\.com\/v2\/ad\/realtime$ reject-dict
-^https:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/(get-lbs-cell-info\.php$|sdkconfig\.php\?) reject
+^https:\/\/bootrealtime\.uve\.weibo\.com\/v2\/ad\/realtime$ data="https://raw.githubusercontent.com/MrPan109/Self-use/Surge%26Loon/Advertisement/reject-dict.json"
+^https:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/(get-lbs-cell-info\.php$|sdkconfig\.php\?) data="https://raw.githubusercontent.com/MrPan109/Self-use/Surge%26Loon/Advertisement/reject-dict.json"
 
 # 微博长文章推广
-^https:\/\/card\.weibo\.com\/article\/m\/aj\/(reward|uvead)\? reject-dict
-^https:\/\/weibo\.com\/ttarticle\/x\/m\/aj\/(reward|uvead)\? reject-dict
+^https:\/\/card\.weibo\.com\/article\/m\/aj\/(reward|uvead)\? data="https://raw.githubusercontent.com/MrPan109/Self-use/Surge%26Loon/Advertisement/reject-dict.json"
+^https:\/\/weibo\.com\/ttarticle\/x\/m\/aj\/(reward|uvead)\? data="https://raw.githubusercontent.com/MrPan109/Self-use/Surge%26Loon/Advertisement/reject-dict.json"
 
 [Script]
 # 首页 签到、发布按钮、侧边栏、右上角红包、侧边栏提醒、超话tab悬浮、顶部直播
