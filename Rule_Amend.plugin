@@ -30,9 +30,9 @@ DOMAIN,www.lanzous.com,兜底策略
 DOMAIN-SUFFIX,rouman5.com,兜底策略
 DOMAIN,m.5freed.com,兜底策略
 # > 微软outlook邮箱
-DOMAIN,login.microsoftonline.com,China
-DOMAIN,login.live.com,China
-DOMAIN-SUFFIX,hotmail.com,China
+DOMAIN,login.microsoftonline.com,Bing
+DOMAIN,login.live.com,Bing
+DOMAIN-SUFFIX,hotmail.com,Bing
 # > 京东店铺会员
 DOMAIN,gia.jd.com,China
 # > 有道翻译官
