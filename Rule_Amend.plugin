@@ -10,8 +10,6 @@
 # > 访问AX86U
 AND,((NOT,((SUBNET,"SSID: MyHome"))),(IP-CIDR,172.16.16.254/32,no-resolve)),WAWJ
 DOMAIN,wawj0109.iok.la,DIRECT
-# > sub-store修正
-DOMAIN,sub-store.vercel.app,兜底策略
 # > boxjs
 DOMAIN,boxjs.com,兜底策略
 # > 华为走直连
