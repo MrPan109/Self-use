@@ -9,4 +9,4 @@
 ^https?:\/\/run\.api\.qyfxgd\.cn:\d+\/api\/v\d\/advert - reject
 
 [MITM]
-hostname = run.api.qyfxgd.cn
+hostname = %APPEND% run.api.qyfxgd.cn
