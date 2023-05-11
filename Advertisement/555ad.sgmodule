@@ -1,0 +1,12 @@
+#!name=555视频去广告
+#!desc=555视频，内置广告
+#!来源 = 墨鱼
+
+[Script]
+555视频=type=http-response,pattern=^https?:\/\/run\.api\.qyfxgd\.cn:\d+\/api\/v\d\/movie\/index_recommend,requires-body=1,script-path=https://raw.githubusercontent.com/MrPan109/Self-use/Surge%26Loon/Advertisement/555ad.js
+
+[URL Rewrite]
+^https?:\/\/run\.api\.qyfxgd\.cn:\d+\/api\/v\d\/advert - reject
+
+[MITM]
+hostname = run.api.qyfxgd.cn
