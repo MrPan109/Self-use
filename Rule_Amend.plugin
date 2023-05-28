@@ -8,7 +8,8 @@
 
 [Rule]
 # > 访问AX86U
-AND,((NOT,((SUBNET,"SSID: MyHome"))),(OR,(IP-CIDR,172.16.16.254/32,no-resolve)(DOMAIN,www.asusrouter.com)),WAWJ
+AND,((NOT,((SUBNET,SSID: MyHome))), (PROTOCOL,HTTPS), (DOMAIN,www.asusrouter.com), (DEST-PORT,8443)),WAWJ
+AND,((NOT,((SUBNET,"SSID: MyHome"))),(PROTOCOL,HTTPS),(IP-CIDR,172.16.16.254/32,no-resolve), (DEST-PORT,8443)),WAWJ
 DOMAIN,wawj0109.iok.la,DIRECT
 # > boxjs
 DOMAIN,boxjs.com,兜底策略
