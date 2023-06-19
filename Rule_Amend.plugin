@@ -7,6 +7,8 @@
 
 
 [Rule]
+# > 访问AX86U(外)
+DOMAIN,wawj0109.iok.la,DIRECT
 # > boxjs
 DOMAIN,boxjs.com,兜底策略
 # > 华为走直连
