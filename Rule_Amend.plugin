@@ -39,3 +39,6 @@ DOMAIN-SUFFIX,youdao.com,China
 DOMAIN-SUFFIX,dcard.tw,台湾_Auto
 # > instagram修正
 DOMAIN-SUFFIX,fna.fbcdn.net,兜底策略
+# > 大师兄视频修正
+DOMAIN,pcvideoaliyun.titan.mgtv.com,China
+DOMAIN,i1.go2yd.com,China
