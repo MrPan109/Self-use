@@ -42,3 +42,5 @@ DOMAIN-SUFFIX,fna.fbcdn.net,兜底策略
 # > 大师兄视频修正
 DOMAIN,pcvideoaliyun.titan.mgtv.com,China
 DOMAIN,i1.go2yd.com,China
+# > 马蜂窝修正
+DOMAIN,stats.jpush.cn,China
