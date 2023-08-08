@@ -37,6 +37,7 @@ DOMAIN,gia.jd.com,China
 DOMAIN-SUFFIX,youdao.com,China
 # > 台湾Dcard
 DOMAIN-SUFFIX,dcard.tw,台湾_Auto
+DOMAIN,sb.scorecardresearch.com,台湾_Auto
 # > instagram修正
 DOMAIN-SUFFIX,fna.fbcdn.net,兜底策略
 # > 大师兄视频修正
