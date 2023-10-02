@@ -5,6 +5,10 @@ DOMAIN-SUFFIX,umeng.com
 DOMAIN-SUFFIX,umengcloud.com
 # > pangolin
 DOMAIN,api-access.pangolin-sdk-toutiao-b.com
+# > 淘宝
+DOMAIN,wgo.mmstat.com,China
+DOMAIN-SUFFIX,ifs.tanx.com,China
+#
 # > 其他
 DOMAIN,h.trace.qq.com
 DOMAIN,otheve.beacon.qq.com
