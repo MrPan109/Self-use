@@ -7,7 +7,7 @@ DOMAIN-SUFFIX,umengcloud.com
 DOMAIN,api-access.pangolin-sdk-toutiao-b.com
 # > 淘宝
 DOMAIN,wgo.mmstat.com,China
-DOMAIN-SUFFIX,ifs.tanx.com,China
+DOMAIN-SUFFIX,tanx.com,China
 #
 # > 其他
 DOMAIN,h.trace.qq.com
