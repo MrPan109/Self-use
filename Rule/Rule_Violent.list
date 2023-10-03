@@ -8,6 +8,7 @@ DOMAIN,api-access.pangolin-sdk-toutiao-b.com
 # > 淘宝
 DOMAIN,wgo.mmstat.com,China
 DOMAIN-SUFFIX,tanx.com,China
+DOMAIN,applog.uc.cn,China
 #
 # > 其他
 DOMAIN,h.trace.qq.com
