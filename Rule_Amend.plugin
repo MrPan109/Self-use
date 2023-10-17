@@ -3,7 +3,7 @@
 #!author = Mr.Pan
 #!homepage = https://github.com/MrPan109/Self-use/tree/Surge%26Loon
 #!icon = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Static.png
-#!Date = 2023.09.29
+#!Date = 2023.10.17
 
 
 [Rule]
@@ -45,3 +45,5 @@ DOMAIN,pcvideoaliyun.titan.mgtv.com,China
 DOMAIN,i1.go2yd.com,China
 # > 马蜂窝修正
 DOMAIN,stats.jpush.cn,China
+# > 腾讯视频 去开屏（重装app）
+OR,((DOMAIN,pgdt.gtimg.cn), (AND,((USER-AGENT,live4iphoneRel*), (IP-CIDR,0.0.0.0/0,no-resolve)))),REJECT-TINYGIF

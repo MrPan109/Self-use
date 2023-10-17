@@ -1,5 +1,4 @@
-# > 腾讯视频 去开屏（重装app）
-OR,((DOMAIN,pgdt.gtimg.cn), (AND,((USER-AGENT,live4iphoneRel*), (IP-CIDR,0.0.0.0/0,no-resolve))))
+#!Date = 2023.10.17
 # > 友盟
 #DOMAIN-SUFFIX,umeng.com
 #DOMAIN-SUFFIX,umengcloud.com
