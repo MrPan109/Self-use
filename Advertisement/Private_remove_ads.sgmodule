@@ -26,4 +26,4 @@
 "^https?:\/\/gm\.mmstat\.com" data="https://raw.githubusercontent.com/MrPan109/Self-use/Surge%26Loon/Advertisement/reject-dict.json"
 #
 [MITM]
-hostname = %APPEND% hd.mina.mi.com
+hostname = %APPEND% hd.mina.mi.com,api-access.pangolin-sdk-toutiao-b.com,wgo.mmstat.com,ifs.tanx.com,applog.uc.cn,kgb-ifs.tanx.com,h.trace.qq.com,otheve.beacon.qq.com,s-gm.mmstat.com,px.effirst.com,px.ucweb.com,dw-online.ksosoft.com
