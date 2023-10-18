@@ -22,6 +22,8 @@
 "^https?:\/\/px\.effirst\.com" data="https://raw.githubusercontent.com/MrPan109/Self-use/Surge%26Loon/Advertisement/reject-dict.json"
 "^https?:\/\/px\.ucweb\.com" data="https://raw.githubusercontent.com/MrPan109/Self-use/Surge%26Loon/Advertisement/reject-dict.json"
 "^https?:\/\/dw-online\.ksosoft\.com" data="https://raw.githubusercontent.com/MrPan109/Self-use/Surge%26Loon/Advertisement/reject-dict.json"
+"^https?:\/\/wgo\.mmstat\.com" data="https://raw.githubusercontent.com/MrPan109/Self-use/Surge%26Loon/Advertisement/reject-dict.json"
+"^https?:\/\/gm\.mmstat\.com" data="https://raw.githubusercontent.com/MrPan109/Self-use/Surge%26Loon/Advertisement/reject-dict.json"
 #
 [MITM]
 hostname = %APPEND% hd.mina.mi.com
