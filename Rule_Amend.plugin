@@ -3,7 +3,7 @@
 #!author = Mr.Pan
 #!homepage = https://github.com/MrPan109/Self-use/tree/Surge%26Loon
 #!icon = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Static.png
-#!Date = 2023.10.17
+#!Date = 2023.10.18
 
 
 [Rule]
@@ -47,3 +47,13 @@ DOMAIN,i1.go2yd.com,China
 DOMAIN,stats.jpush.cn,China
 # > 腾讯视频 去开屏（重装app）
 OR,((DOMAIN,pgdt.gtimg.cn), (AND,((USER-AGENT,live4iphoneRel*), (IP-CIDR,0.0.0.0/0,no-resolve)))),REJECT-TINYGIF
+#
+#
+[Script]
+# > 京东开屏去广告
+京东_开屏去广告 = type=http-response,script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/startup/startup.js,pattern="^https?:\/\/hd\.mina\.mi\.com\/splashscreen\/alert",requires-body=1
+#
+#
+[MITM]
+hostname = %APPEND% hd.mina.mi.com
+
