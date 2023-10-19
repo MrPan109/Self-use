@@ -23,8 +23,8 @@
 "^https?:\/\/px\.ucweb\.com" data="https://raw.githubusercontent.com/MrPan109/Self-use/Surge%26Loon/Advertisement/reject-dict.json"
 "^https?:\/\/dw-online\.ksosoft\.com" data="https://raw.githubusercontent.com/MrPan109/Self-use/Surge%26Loon/Advertisement/reject-dict.json"
 "^https?:\/\/gm\.mmstat\.com" data="https://raw.githubusercontent.com/MrPan109/Self-use/Surge%26Loon/Advertisement/reject-dict.json"
-"^https?:\/\/(([a-z\d]+\.)?umeng\.com(\/*(.*\/)?|$))" data="https://raw.githubusercontent.com/MrPan109/Self-use/Surge%26Loon/Advertisement/reject-dict.json"
-"^https?:\/\/(([a-z\d]+\.)?umengcloud\.com(\/*(.*\/)?|$))" data="https://raw.githubusercontent.com/MrPan109/Self-use/Surge%26Loon/Advertisement/reject-dict.json"
+"^https?:\/\/^[a-zA-Z0-9] [-a-zA-Z0-9] {0,62}\. ( [a-zA-Z0-9] [-a-zA-Z0-9] {0,62}\.)*umeng\.com$/" data="https://raw.githubusercontent.com/MrPan109/Self-use/Surge%26Loon/Advertisement/reject-dict.json"
+"^https?:\/\/^[a-zA-Z0-9] [-a-zA-Z0-9] {0,62}\. ( [a-zA-Z0-9] [-a-zA-Z0-9] {0,62}\.)*umengcloud\.com$/ data="https://raw.githubusercontent.com/MrPan109/Self-use/Surge%26Loon/Advertisement/reject-dict.json"
 "^https?:\/\/h-adashx\.ut\.taobao\.com" data="https://raw.githubusercontent.com/MrPan109/Self-use/Surge%26Loon/Advertisement/reject-dict.json"
 #
 [MITM]
