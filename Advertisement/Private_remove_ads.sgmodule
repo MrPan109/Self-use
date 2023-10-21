@@ -26,6 +26,7 @@
 "^(http|https)://([a-zA-Z0-9]+\.)*umeng\.com(/.*)?$" data="https://raw.githubusercontent.com/MrPan109/Self-use/Surge%26Loon/Advertisement/reject-dict.json"
 "^(http|https)://([a-zA-Z0-9]+\.)*umengcloud\.com(/.*)?$" data="https://raw.githubusercontent.com/MrPan109/Self-use/Surge%26Loon/Advertisement/reject-dict.json"
 "^https?:\/\/h-adashx\.ut\.taobao\.com" data="https://raw.githubusercontent.com/MrPan109/Self-use/Surge%26Loon/Advertisement/reject-dict.json"
+"^https?:\/\/ylog\.huya\.com" data="https://raw.githubusercontent.com/MrPan109/Self-use/Surge%26Loon/Advertisement/reject-dict.json"
 #
 [MITM]
-hostname = %APPEND% hd.mina.mi.com,api-access.pangolin-sdk-toutiao-b.com,wgo.mmstat.com,ifs.tanx.com,applog.uc.cn,kgb-ifs.tanx.com,h.trace.qq.com,otheve.beacon.qq.com,s-gm.mmstat.com,px.effirst.com,px.ucweb.com,dw-online.ksosoft.com,gm.mmstat.com,*.umeng.com,*.umengcloud.com,h-adashx.ut.taobao.com
+hostname = %APPEND% hd.mina.mi.com,api-access.pangolin-sdk-toutiao-b.com,wgo.mmstat.com,ifs.tanx.com,applog.uc.cn,kgb-ifs.tanx.com,h.trace.qq.com,otheve.beacon.qq.com,s-gm.mmstat.com,px.effirst.com,px.ucweb.com,dw-online.ksosoft.com,gm.mmstat.com,*.umeng.com,*.umengcloud.com,h-adashx.ut.taobao.com,ylog.huya.com
