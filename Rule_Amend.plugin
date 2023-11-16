@@ -3,7 +3,7 @@
 #!author = Mr.Pan
 #!homepage = https://github.com/MrPan109/Self-use/tree/Surge%26Loon
 #!icon = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Static.png
-#!Date = 2023.10.18
+#!Date = 2023.11.16
 
 
 [Rule]
@@ -12,40 +12,39 @@ DOMAIN,wawj0109.iok.la,DIRECT
 # > boxjs
 DOMAIN,boxjs.com,兜底策略
 # > 华为走直连
-DOMAIN-SUFFIX,huawei.com,DIRECT
+DOMAIN-SUFFIX,huawei.com,extended-matching,DIRECT
 # > 皮皮喵看漫画
-DOMAIN,comic.hangxianglx.cn,兜底策略
-DOMAIN,fh87i.bjjttc.cn,兜底策略
-DOMAIN-KEYWORD,toptoon,兜底策略
-DOMAIN,www.kelemh.com,兜底策略
-DOMAIN,picture.ik123.com,兜底策略
-DOMAIN-KEYWORD,18comic,兜底策略
-DOMAIN,api.wenyikeji.com,兜底策略
-DOMAIN,app-measurement.com,兜底策略
-DOMAIN,www.hddapian.com,兜底策略
-DOMAIN,www.lanzous.com,兜底策略
-DOMAIN-SUFFIX,rouman5.com,兜底策略
-DOMAIN,m.5freed.com,兜底策略
-DOMAIN-KEYWORD,jmcomic,兜底策略
+DOMAIN,comic.hangxianglx.cn,extended-matching,兜底策略
+DOMAIN,fh87i.bjjttc.cn,extended-matching,兜底策略
+DOMAIN-KEYWORD,toptoon,extended-matching,兜底策略
+DOMAIN,www.kelemh.com,extended-matching,兜底策略
+DOMAIN,picture.ik123.com,extended-matching,兜底策略
+DOMAIN-KEYWORD,18comic,extended-matching,兜底策略
+DOMAIN,api.wenyikeji.com,extended-matching,兜底策略
+DOMAIN,app-measurement.com,extended-matching,兜底策略
+DOMAIN,www.hddapian.com,extended-matching,兜底策略
+DOMAIN,www.lanzous.com,extended-matching,兜底策略
+DOMAIN-SUFFIX,rouman5.com,extended-matching,兜底策略
+DOMAIN,m.5freed.com,extended-matching,兜底策略
+DOMAIN-KEYWORD,jmcomic,extended-matching,兜底策略
 # > 微软outlook邮箱
-DOMAIN,login.microsoftonline.com,China
-DOMAIN,login.live.com,China
-DOMAIN-SUFFIX,hotmail.com,China
+DOMAIN,login.microsoftonline.com,extended-matching,China
+DOMAIN,login.live.com,extended-matching,China
+DOMAIN-SUFFIX,hotmail.com,extended-matching,China
 # > 京东店铺会员
-DOMAIN,gia.jd.com,China
+DOMAIN,gia.jd.com,extended-matching,China
 # > 有道翻译官
-DOMAIN-SUFFIX,youdao.com,China
-# > 台湾Dcard
-DOMAIN-SUFFIX,dcard.tw,台湾_Auto
-DOMAIN,sb.scorecardresearch.com,台湾_Auto
+DOMAIN-SUFFIX,youdao.com,extended-matching,China
 # > instagram修正
-DOMAIN-SUFFIX,fna.fbcdn.net,兜底策略
+DOMAIN-SUFFIX,fna.fbcdn.net,extended-matching,兜底策略
 # > 大师兄视频修正
-DOMAIN,pcvideoaliyun.titan.mgtv.com,China
-DOMAIN,i1.go2yd.com,China
+DOMAIN,pcvideoaliyun.titan.mgtv.com,extended-matching,China
+DOMAIN,i1.go2yd.com,extended-matching,China
 # > 马蜂窝修正
-DOMAIN,stats.jpush.cn,China
+DOMAIN,stats.jpush.cn,extended-matching,China
 # > 腾讯视频 去开屏（重装app）
-OR,((DOMAIN,pgdt.gtimg.cn), (AND,((USER-AGENT,live4iphoneRel*), (IP-CIDR,0.0.0.0/0,no-resolve)))),REJECT-TINYGIF
+OR,((DOMAIN,pgdt.gtimg.cn,extended-matching), (AND,((USER-AGENT,live4iphoneRel*), (IP-CIDR,0.0.0.0/0,no-resolve)))),REJECT-TINYGIF
+# 高德 / 菜鸟 必须屏蔽
+AND,((OR,((USER-AGENT,Cainiao*), (USER-AGENT,AMap*))), (DOMAIN,amdc.m.taobao.com,extended-matching)),REJECT-DROP
 
 
