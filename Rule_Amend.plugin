@@ -48,3 +48,5 @@ OR,((DOMAIN,pgdt.gtimg.cn,extended-matching), (AND,((USER-AGENT,live4iphoneRel*)
 AND,((OR,((USER-AGENT,Cainiao*), (USER-AGENT,AMap*))), (DOMAIN,amdc.m.taobao.com,extended-matching)),REJECT-DROP
 # > 滴滴打车（订单）
 AND,((DEST-PORT,25641), (DOMAIN,gwp.xiaojukeji.com,extended-matching)),China
+# > 天津银行扫码支付
+DOMAIN,s3.pstatp.com,China
