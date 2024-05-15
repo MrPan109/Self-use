@@ -16,3 +16,19 @@ DOMAIN-SUFFIX,lookup-api.apple.com // Dictionary
 DOMAIN-SUFFIX,me.com
 PROCESS-NAME,storedownloadd // Mac App Store
 USER-AGENT,com.apple.appstored* // iOS App Store
+#2024.5.15
+DOMAIN,github.githubassets.com
+DOMAIN,mobile.jymhapp.com
+DOMAIN,91-mh.xyz
+DOMAIN,nnhanman.xyz
+DOMAIN,91mh03.xyz
+DOMAIN,www.ikanhm.top
+DOMAIN,nnhanman.org
+DOMAIN,www.jjmhw.cc
+DOMAIN,manual.nssurge.com
+DOMAIN,api.revenuecat.com
+DOMAIN,www.ccsub.online
+DOMAIN,url.ayanami-subscribe-url.online
+DOMAIN,www.surge-activation.com
+DOMAIN,m.hotmail.com
+DOMAIN,login.microsoftonline.com
