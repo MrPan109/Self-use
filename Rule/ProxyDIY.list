@@ -16,6 +16,37 @@ DOMAIN-SUFFIX,lookup-api.apple.com // Dictionary
 DOMAIN-SUFFIX,me.com
 PROCESS-NAME,storedownloadd // Mac App Store
 USER-AGENT,com.apple.appstored* // iOS App Store
+#spotify
+DOMAIN,audio4-ak-spotify-com.akamaized.net
+DOMAIN,cdn-spotify-experiments.conductrics.com
+DOMAIN,heads-ak-spotify-com.akamaized.net
+DOMAIN,spotify.com.edgesuite.net
+DOMAIN,spotify.map.fastly.net
+DOMAIN,spotify.map.fastlylb.net
+DOMAIN-SUFFIX,audio-ak-spotify-com.akamaized.net
+DOMAIN-SUFFIX,byspotify.com
+DOMAIN-SUFFIX,heads4-ak-spotify-com.akamaized.net
+DOMAIN-SUFFIX,pscdn.co
+DOMAIN-SUFFIX,scdn.co
+DOMAIN-SUFFIX,spoti.fi
+DOMAIN-SUFFIX,spotify-com.akamaized.net
+DOMAIN-SUFFIX,spotify-everywhere.com
+DOMAIN-SUFFIX,spotify.com
+DOMAIN-SUFFIX,spotify.design
+DOMAIN-SUFFIX,spotifycdn.com
+DOMAIN-SUFFIX,spotifycdn.net
+DOMAIN-SUFFIX,spotifycharts.com
+DOMAIN-SUFFIX,spotifycodes.com
+DOMAIN-SUFFIX,spotifyforbrands.com
+DOMAIN-SUFFIX,spotifyjobs.com
+DOMAIN-SUFFIX,spotifynewsroom.jp
+DOMAIN-SUFFIX,spotilocal.com
+DOMAIN-SUFFIX,tospotify.com
+DOMAIN-KEYWORD,-spotify-
+DOMAIN-KEYWORD,spotify.com
+IP-CIDR,104.154.127.126/32,no-resolve
+IP-CIDR,35.186.224.47/32,no-resolve
+USER-AGENT,Spotify*
 #2024.5.15
 DOMAIN,github.githubassets.com
 DOMAIN,mobile.jymhapp.com
@@ -48,6 +79,12 @@ DOMAIN,emby.bangumi.ca
 DOMAIN,emby.imetyou.top
 DOMAIN,bili.bili.rip
 DOMAIN,cache.dciwx.com //佳明
+DOMAIN,sub-store.vercel.app //sub store
+DOMAIN,gallery.scriptable.app
+DOMAIN,workers.fileball.app
+DOMAIN,in.appcenter.ms
+DOMAIN-SUFFIX,netflix.com
+DOMAIN-SUFFIX,netflix.net
 DOMAIN-SUFFIX,ctfassets.net
 DOMAIN-SUFFIX,azurefd.net
 DOMAIN-SUFFIX,godaddy.com
@@ -60,4 +97,8 @@ DOMAIN-SUFFIX,jtvnw.net
 DOMAIN-SUFFIX,embyplus.org //纸片人
 DOMAIN-SUFFIX,tmdb.org
 DOMAIN-SUFFIX,reddust.link
+DOMAIN-SUFFIX,scdn.co
+DOMAIN-SUFFIX,jsdelivr.net
+DOMAIN-SUFFIX,xteko.com
+DOMAIN-SUFFIX,usertrust.com
 DOMAIN-KEYWORD,ttvnw
