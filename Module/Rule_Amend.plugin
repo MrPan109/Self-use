@@ -1,0 +1,16 @@
+#!name = 规则修正v2.0
+#!desc = 自带选择策略
+#!author = Mr.Pan
+#!homepage = https://github.com/MrPan109/Self-use/tree/Surge%26Loon
+#!icon = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Static.png
+#!Date = 2024.05.08
+#!category=基础模块
+
+[General]
+# > 跳过代理(120是华医通app)
+skip-proxy = %INSERT% *.cd120.info
+[Rule]
+# > 微软outlook邮箱(避免频繁跳验证)
+#DOMAIN,login.microsoftonline.com,China,extended-matching
+#DOMAIN,login.live.com,China,extended-matching
+#DOMAIN-SUFFIX,hotmail.com,China,extended-matching
