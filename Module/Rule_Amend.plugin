@@ -22,5 +22,5 @@ DOMAIN,wgo.mmstat.com,兜底策略,extended-matching
 DOMAIN,metric.huya.com,China,extended-matching
 #
 [MITM]
-# > 修正
+# > 修正腾讯视频不能下载
 hostname = %INSERT% -vv.video.qq.com
