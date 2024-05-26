@@ -1,22 +1,26 @@
-#!name = 规则修正v2.1
+#!name = 规则修正v2.2
 #!desc = 主修正和防暴力请求(带策略选择)
 #!author = Mr.Pan
 #!homepage = https://github.com/MrPan109/Self-use/tree/Surge%26Loon
 #!icon = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Static.png
-#!Date = 2024.05.19
+#!Date = 2024.05.26
 #!category=基础模块
 
 [Rule]
 # > 修正
 # > 暴力请求
 #B站刷屏
-IP-CIDR,203.107.1.0/24,BiliBili,no-resolve
-DOMAIN,dataflow.biliapi.com,BiliBili,extended-matching
-DOMAIN,data.bilibili.com,BiliBili,extended-matching
-DOMAIN,cm.bilibili.com,BiliBili,extended-matching
-DOMAIN,live-trace.bilibili.com,BiliBili,extended-matching
+IP-CIDR,203.107.1.0/24,China,no-resolve
+DOMAIN,dataflow.biliapi.com,China,extended-matching
+DOMAIN,data.bilibili.com,China,extended-matching
+DOMAIN,cm.bilibili.com,China,extended-matching
+DOMAIN,live-trace.bilibili.com,China,extended-matching
 #苹果
 DOMAIN,ca.iadsdk.apple.com,兜底策略,extended-matching
 #其他
 DOMAIN,wgo.mmstat.com,兜底策略,extended-matching
 DOMAIN,metric.huya.com,China,extended-matching
+#
+[MITM]
+# > 修正
+hostname = %INSERT% -vv.video.qq.com
