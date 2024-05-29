@@ -13,7 +13,8 @@ DOMAIN-SUFFIX,lookup-api.apple.com // Dictionary
 DOMAIN-SUFFIX,me.com
 PROCESS-NAME,storedownloadd // Mac App Store
 USER-AGENT,com.apple.appstored* // iOS App Store
-#spotify
+
+# Spotify
 DOMAIN,audio4-ak-spotify-com.akamaized.net
 DOMAIN,cdn-spotify-experiments.conductrics.com
 DOMAIN,heads-ak-spotify-com.akamaized.net
@@ -44,7 +45,11 @@ DOMAIN-KEYWORD,spotify.com
 IP-CIDR,104.154.127.126/32,no-resolve
 IP-CIDR,35.186.224.47/32,no-resolve
 USER-AGENT,Spotify*
-#2024.5.15
+
+# Jabra
+DOMAIN-SUFFIX,jabra.com
+
+# Other Domain(update:2024.05.29)
 DOMAIN,github.githubassets.com
 DOMAIN,mobile.jymhapp.com
 DOMAIN,91-mh.xyz
