@@ -2,7 +2,7 @@
 
 // 记录请求信息的函数
 function logRequest(request) {
-    const logEntry = `Time: ${new Date().toISOString()}, Hostname: ${request.hostname}, URL: ${request.url}`;
+    const logEntry = `Hostname: ${request.hostname}, URL: ${request.url}`;
     
     // 将日志条目输出到控制台
     console.log(logEntry);
