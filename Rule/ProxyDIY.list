@@ -1,6 +1,3 @@
-# Misakaf
-DOMAIN,emby.misakaf.org
-DOMAIN-WILDCARD,stream?.misakaf.org
 # Apple
 DOMAIN,xp.apple.com // iOS & macOS System Upgrade
 DOMAIN-SUFFIX,cdn-apple.com
@@ -93,7 +90,6 @@ DOMAIN-SUFFIX,cloudfront.net
 DOMAIN-SUFFIX,twitch.tv
 DOMAIN-SUFFIX,twitchcdn.net
 DOMAIN-SUFFIX,jtvnw.net
-DOMAIN-SUFFIX,embyplus.org //纸片人
 DOMAIN-SUFFIX,tmdb.org
 DOMAIN-SUFFIX,reddust.link
 DOMAIN-SUFFIX,scdn.co
