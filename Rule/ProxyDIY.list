@@ -49,7 +49,7 @@ USER-AGENT,Spotify*
 # Jabra
 DOMAIN-SUFFIX,jabra.com
 
-# Other Domain(update:2024.05.29)
+# Other Domain(update:2024.05.30)
 DOMAIN,github.githubassets.com
 DOMAIN,mobile.jymhapp.com
 DOMAIN,91-mh.xyz
@@ -84,6 +84,7 @@ DOMAIN,sub-store.vercel.app //sub store
 DOMAIN,gallery.scriptable.app
 DOMAIN,workers.fileball.app
 DOMAIN,in.appcenter.ms
+DOMAIN,mxs13.cc
 DOMAIN-SUFFIX,netflix.com
 DOMAIN-SUFFIX,netflix.net
 DOMAIN-SUFFIX,ctfassets.net
