@@ -16,3 +16,6 @@ DOMAIN-SUFFIX,CN
 DOMAIN-KEYWORD,baidu
 # Apple
 DOMAIN-SUFFIX,store.apple.com
+# 贝壳
+DOMAIN,mlvbdc.live.tlivesource.com
+DOMAIN-SUFFIX,ke.com
