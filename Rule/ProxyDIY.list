@@ -1,5 +1,9 @@
+# Description:增加apple news
+# Update:2024.05.31
+#
 # Apple
 DOMAIN,xp.apple.com // iOS & macOS System Upgrade
+DOMAIN,c.apple.news
 DOMAIN-SUFFIX,cdn-apple.com
 DOMAIN-SUFFIX,mzstatic.com // App Store & iTunes Images
 DOMAIN-SUFFIX,aaplimg.com
@@ -13,7 +17,7 @@ DOMAIN-SUFFIX,lookup-api.apple.com // Dictionary
 DOMAIN-SUFFIX,me.com
 PROCESS-NAME,storedownloadd // Mac App Store
 USER-AGENT,com.apple.appstored* // iOS App Store
-
+#
 # Spotify
 DOMAIN,audio4-ak-spotify-com.akamaized.net
 DOMAIN,cdn-spotify-experiments.conductrics.com
@@ -45,11 +49,11 @@ DOMAIN-KEYWORD,spotify.com
 IP-CIDR,104.154.127.126/32,no-resolve
 IP-CIDR,35.186.224.47/32,no-resolve
 USER-AGENT,Spotify*
-
+#
 # Jabra
 DOMAIN-SUFFIX,jabra.com
-
-# Other Domain(update:2024.05.30)
+#
+# Other Domain
 DOMAIN,github.githubassets.com
 DOMAIN,mobile.jymhapp.com
 DOMAIN,91-mh.xyz
