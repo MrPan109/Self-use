@@ -112,6 +112,9 @@ DOMAIN,cugspeed.chinaunicomglobal.com
 DOMAIN,httpbin.org
 DOMAIN,workingcopy.app
 DOMAIN,bitbucket.org
+DOMAIN,p4.jmpic.xyz
+DOMAIN,p4.jmpic.org
+DOMAIN-SUFFIX,github.io
 DOMAIN-SUFFIX,netflix.com
 DOMAIN-SUFFIX,netflix.net
 DOMAIN-SUFFIX,ctfassets.net
