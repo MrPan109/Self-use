@@ -142,6 +142,6 @@ DOMAIN-SUFFIX,jiuyaomanhua.com
 DOMAIN-SUFFIX,11manhua.net
 DOMAIN-SUFFIX,happymh.com
 DOMAIN-SUFFIX,microsoftapp.net
-DOMAIN-WILDCARD,*.fsttls.t.co
+DOMAIN-SUFFIX,fsttls.t.co
 DOMAIN-KEYWORD,ttvnw
 AND,((NOT,((GEOIP,CN,no-resolve))), (DOMAIN-KEYWORD,mozilla,extended-matching))
