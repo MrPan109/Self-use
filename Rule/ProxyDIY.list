@@ -1,5 +1,5 @@
-# Description:增加emby流媒体
-# Update:2024.06.14
+# Description:增加Auto规则
+# Update:2024.06.16
 #
 # Apple
 DOMAIN,xp.apple.com // iOS & macOS System Upgrade
@@ -168,3 +168,7 @@ DOMAIN-SUFFIX,microsoftapp.net
 DOMAIN-SUFFIX,fsttls.t.co
 DOMAIN-KEYWORD,ttvnw
 AND,((NOT,((GEOIP,CN,no-resolve))), (DOMAIN-KEYWORD,mozilla,extended-matching))
+#
+# Auto Self规则
+DOMAIN-SUFFIX,myweipin.com
+DOMAIN-SUFFIX,typekit.net

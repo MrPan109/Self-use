@@ -1,3 +1,6 @@
+# Description:增加Auto规则
+# Update:2024.06.16
+#
 # China Apps
 USER-AGENT,MicroMessenger Client
 USER-AGENT,WeChat*
@@ -21,3 +24,8 @@ DOMAIN,mlvbdc.live.tlivesource.com
 DOMAIN-SUFFIX,ke.com
 # 汽油价格
 DOMAIN,m.qiyoujiage.com
+# Auto Self规则
+DOMAIN-SUFFIX,163.com
+DOMAIN-SUFFIX,kugou.com
+DOMAIN-SUFFIX,qq.com
+DOMAIN-SUFFIX,bilivideo.com
