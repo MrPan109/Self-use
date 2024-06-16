@@ -172,3 +172,5 @@ AND,((NOT,((GEOIP,CN,no-resolve))), (DOMAIN-KEYWORD,mozilla,extended-matching))
 # Auto Self规则
 DOMAIN-SUFFIX,myweipin.com
 DOMAIN-SUFFIX,typekit.net
+DOMAIN-SUFFIX,ipinfo.io
+DOMAIN-SUFFIX,net.in
