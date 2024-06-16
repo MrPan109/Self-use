@@ -170,7 +170,13 @@ DOMAIN-KEYWORD,ttvnw
 AND,((NOT,((GEOIP,CN,no-resolve))), (DOMAIN-KEYWORD,mozilla,extended-matching))
 #
 # Auto Self规则
+DOMAIN,cloudflare-dns.com
 DOMAIN-SUFFIX,myweipin.com
 DOMAIN-SUFFIX,typekit.net
 DOMAIN-SUFFIX,ipinfo.io
 DOMAIN-SUFFIX,net.in
+DOMAIN-SUFFIX,adjust.world
+DOMAIN-SUFFIX,mynetisp-kcn.net
+DOMAIN-SUFFIX,onetrust.io
+DOMAIN-SUFFIX,quad9.net
+DOMAIN-SUFFIX,smartone.com
