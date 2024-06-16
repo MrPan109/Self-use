@@ -180,3 +180,6 @@ DOMAIN-SUFFIX,mynetisp-kcn.net
 DOMAIN-SUFFIX,onetrust.io
 DOMAIN-SUFFIX,quad9.net
 DOMAIN-SUFFIX,smartone.com
+#
+# Log提取
+DOMAIN,global.poe.live-video.net
