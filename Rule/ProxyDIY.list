@@ -1,5 +1,5 @@
-# Description:增加Auto规则
-# Update:2024.06.16
+# Description:增加telegramASN
+# Update:2024.06.18
 #
 # Apple
 DOMAIN,xp.apple.com // iOS & macOS System Upgrade
@@ -17,6 +17,18 @@ DOMAIN-SUFFIX,lookup-api.apple.com // Dictionary
 DOMAIN-SUFFIX,me.com
 PROCESS-NAME,storedownloadd // Mac App Store
 USER-AGENT,com.apple.appstored* // iOS App Store
+#
+# > TelegramASN
+# DC1
+IP-ASN,59930,no-resolve
+# DC2
+IP-ASN,44907,no-resolve
+# DC3
+IP-ASN,211157,no-resolve
+# DC4
+IP-ASN,62041,no-resolve
+# DC5
+IP-ASN,62014,no-resolve
 #
 #自用emby流媒体
 # Misakaf
