@@ -1,4 +1,4 @@
-# Description:合并block和增加auto
+# Description:整理优化
 # Update:2024.06.22
 #
 # Blocked
@@ -75,49 +75,25 @@ DOMAIN,7777777.buzz
 # 叔服
 DOMAIN,emby3.mcjoker.xyz
 #
-# Spotify
-DOMAIN,audio4-ak-spotify-com.akamaized.net
-DOMAIN,cdn-spotify-experiments.conductrics.com
-DOMAIN,heads-ak-spotify-com.akamaized.net
-DOMAIN,spotify.com.edgesuite.net
-DOMAIN,spotify.map.fastly.net
-DOMAIN,spotify.map.fastlylb.net
-DOMAIN-SUFFIX,audio-ak-spotify-com.akamaized.net
-DOMAIN-SUFFIX,byspotify.com
-DOMAIN-SUFFIX,heads4-ak-spotify-com.akamaized.net
-DOMAIN-SUFFIX,pscdn.co
-DOMAIN-SUFFIX,scdn.co
-DOMAIN-SUFFIX,spoti.fi
-DOMAIN-SUFFIX,spotify-com.akamaized.net
-DOMAIN-SUFFIX,spotify-everywhere.com
-DOMAIN-SUFFIX,spotify.com
-DOMAIN-SUFFIX,spotify.design
-DOMAIN-SUFFIX,spotifycdn.com
-DOMAIN-SUFFIX,spotifycdn.net
-DOMAIN-SUFFIX,spotifycharts.com
-DOMAIN-SUFFIX,spotifycodes.com
-DOMAIN-SUFFIX,spotifyforbrands.com
-DOMAIN-SUFFIX,spotifyjobs.com
-DOMAIN-SUFFIX,spotifynewsroom.jp
-DOMAIN-SUFFIX,spotilocal.com
-DOMAIN-SUFFIX,tospotify.com
-DOMAIN-KEYWORD,-spotify-
-DOMAIN-KEYWORD,spotify.com
-IP-CIDR,104.154.127.126/32,no-resolve
-IP-CIDR,35.186.224.47/32,no-resolve
-USER-AGENT,Spotify*
-#
 # Jabra
 DOMAIN-SUFFIX,jabra.com
 #
-# Other Domain
+# 逻辑规则（自用）
+AND,((NOT,((GEOIP,CN,no-resolve))), (DOMAIN-KEYWORD,mozilla,extended-matching))
+#
+# Log提取
+DOMAIN,global.poe.live-video.net
+#
+# Auto Self规则
+DOMAIN,cache.dciwx.com //佳明
+DOMAIN,sub-store.vercel.app //sub store
 DOMAIN,github.githubassets.com
 DOMAIN,mobile.jymhapp.com
 DOMAIN,91-mh.xyz
-DOMAIN,nnhanman.xyz
 DOMAIN,91mh03.xyz
-DOMAIN,www.ikanhm.top
+DOMAIN,nnhanman.xyz
 DOMAIN,nnhanman.org
+DOMAIN,www.ikanhm.top
 DOMAIN,www.jjmhw.cc
 DOMAIN,manual.nssurge.com
 DOMAIN,api.revenuecat.com
@@ -140,8 +116,6 @@ DOMAIN,api.player.okaapps.com
 DOMAIN,emby.bangumi.ca
 DOMAIN,emby.imetyou.top
 DOMAIN,bili.bili.rip
-DOMAIN,cache.dciwx.com //佳明
-DOMAIN,sub-store.vercel.app //sub store
 DOMAIN,gallery.scriptable.app
 DOMAIN,workers.fileball.app
 DOMAIN,in.appcenter.ms
@@ -164,13 +138,43 @@ DOMAIN,appservices.comcsoft.com
 DOMAIN,www.gravatar.com
 DOMAIN,rsms.me
 DOMAIN,webtoon-phinf.pstatic.net
-DOMAIN,pic1.tianshivc.com
 DOMAIN,cugspeed.chinaunicomglobal.com
 DOMAIN,httpbin.org
 DOMAIN,workingcopy.app
 DOMAIN,bitbucket.org
 DOMAIN,p4.jmpic.xyz
 DOMAIN,p4.jmpic.org
+DOMAIN,cloudflare-dns.com
+DOMAIN,18-comicblade.org
+DOMAIN,18-comicfrieren.me
+DOMAIN,99mh8a.com
+DOMAIN,azcomic.net
+DOMAIN,bakamh.com
+DOMAIN,bestgirlsexy.com
+DOMAIN,boylove.cc
+DOMAIN,dogemanga.com
+DOMAIN,fqdm.xyz
+DOMAIN,hanime1.me
+DOMAIN,mangadig.com
+DOMAIN,mangahere.today
+DOMAIN,mangakakalot.com
+DOMAIN,mangarock.club
+DOMAIN,manwav3.xyz
+DOMAIN,manwaz1.xyz
+DOMAIN,masiro.me
+DOMAIN,mega.nz
+DOMAIN,nnhanman6.com
+DOMAIN,qmanwu2.com
+DOMAIN,readcomic.top
+DOMAIN,se8.us
+DOMAIN,t.me
+DOMAIN,tangxin666.net
+DOMAIN,todayfine01.xyz
+DOMAIN,txydd.com
+DOMAIN,vvu9k.xyz
+DOMAIN,yinghuamh.net
+DOMAIN,yydsmh.com
+DOMAIN,zcymh.com
 DOMAIN-SUFFIX,github.io
 DOMAIN-SUFFIX,netflix.com
 DOMAIN-SUFFIX,netflix.net
@@ -203,44 +207,6 @@ DOMAIN-SUFFIX,11manhua.net
 DOMAIN-SUFFIX,happymh.com
 DOMAIN-SUFFIX,microsoftapp.net
 DOMAIN-SUFFIX,fsttls.t.co
-DOMAIN-KEYWORD,ttvnw
-AND,((NOT,((GEOIP,CN,no-resolve))), (DOMAIN-KEYWORD,mozilla,extended-matching))
-#
-# Log提取
-DOMAIN,global.poe.live-video.net
-#
-# Auto Self规则
-DOMAIN,cloudflare-dns.com
-DOMAIN,18-comicblade.org
-DOMAIN,18-comicfrieren.me
-DOMAIN,99mh8a.com
-DOMAIN,azcomic.net
-DOMAIN,bakamh.com
-DOMAIN,bestgirlsexy.com
-DOMAIN,boylove.cc
-DOMAIN,dogemanga.com
-DOMAIN,fqdm.xyz
-DOMAIN,hanime1.me
-DOMAIN,mangadig.com
-DOMAIN,mangahere.today
-DOMAIN,mangakakalot.com
-DOMAIN,mangarock.club
-DOMAIN,manwav3.xyz
-DOMAIN,manwaz1.xyz
-DOMAIN,masiro.me
-DOMAIN,mega.nz
-DOMAIN,nnhanman6.com
-DOMAIN,qmanwu2.com
-DOMAIN,readcomic.top
-DOMAIN,se8.us
-DOMAIN,t.me
-DOMAIN,tangxin666.net
-DOMAIN,todayfine01.xyz
-DOMAIN,txydd.com
-DOMAIN,vvu9k.xyz
-DOMAIN,yinghuamh.net
-DOMAIN,yydsmh.com
-DOMAIN,zcymh.com
 DOMAIN-SUFFIX,myweipin.com
 DOMAIN-SUFFIX,typekit.net
 DOMAIN-SUFFIX,ipinfo.io
@@ -399,3 +365,4 @@ DOMAIN-SUFFIX,ykmh.com
 DOMAIN-SUFFIX,youzibank.com
 DOMAIN-SUFFIX,yueriji.com
 DOMAIN-SUFFIX,yydsmh.com
+DOMAIN-KEYWORD,ttvnw
