@@ -1,10 +1,8 @@
 #!name = DNS防泄露
-#!desc = 专为小白设计的DNS防泄露
-#!openUrl = 
+#!desc = 专为小白设计的DNS防泄露 
 #!author = 非正常人类研究中心
 #!homepage = https://gitlab.com/lodepuly/vpn_tool/-/tree/master/Tool/Loon/Plugin
-#!date = 2024-01-11 21:38:24
-
+#!date = 2024-06-22
 # 你猜为什么会有这个插件呢？
 
 [Rule]
