@@ -1,5 +1,5 @@
-# Description:整理优化
-# Update:2024.06.22
+# Description:add auto rule
+# Update:2024.06.25
 #
 # Blocked
 DOMAIN-SUFFIX,tw
@@ -175,6 +175,8 @@ DOMAIN,vvu9k.xyz
 DOMAIN,yinghuamh.net
 DOMAIN,yydsmh.com
 DOMAIN,zcymh.com
+DOMAIN-SUFFIX,trip.com
+DOMAIN-SUFFIX,tripcdn.com
 DOMAIN-SUFFIX,github.io
 DOMAIN-SUFFIX,netflix.com
 DOMAIN-SUFFIX,netflix.net

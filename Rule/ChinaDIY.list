@@ -1,5 +1,5 @@
 # Description:增加Auto规则
-# Update:2024.06.16
+# Update:2024.06.25
 #
 # China Apps
 USER-AGENT,MicroMessenger Client
@@ -25,8 +25,88 @@ DOMAIN-SUFFIX,ke.com
 # 汽油价格
 DOMAIN,m.qiyoujiage.com
 # Auto Self规则
+DOMAIN,caiyunapp.com
+DOMAIN,doh.pub
+DOMAIN,jihulab.com
 DOMAIN-SUFFIX,163.com
 DOMAIN-SUFFIX,kugou.com
 DOMAIN-SUFFIX,qq.com
 DOMAIN-SUFFIX,bilivideo.com
 DOMAIN-SUFFIX,asus.com
+DOMAIN-SUFFIX,126.net
+DOMAIN-SUFFIX,360buyimg.com
+DOMAIN-SUFFIX,7littlemen.com
+DOMAIN-SUFFIX,95516.com
+DOMAIN-SUFFIX,aki-game.com
+DOMAIN-SUFFIX,alibaba.com
+DOMAIN-SUFFIX,alibabachengdun.com
+DOMAIN-SUFFIX,alibabachengdun.net
+DOMAIN-SUFFIX,alibabausercontent.com
+DOMAIN-SUFFIX,alidns.com
+DOMAIN-SUFFIX,alookweb.com
+DOMAIN-SUFFIX,amap.com
+DOMAIN-SUFFIX,auliking.com
+DOMAIN-SUFFIX,autonavi.com
+DOMAIN-SUFFIX,bdimg.com
+DOMAIN-SUFFIX,bdstatic.com
+DOMAIN-SUFFIX,biliapi.net
+DOMAIN-SUFFIX,bilibili.com
+DOMAIN-SUFFIX,biligame.com
+DOMAIN-SUFFIX,c-ctrip.com
+DOMAIN-SUFFIX,caifuxingketang.com
+DOMAIN-SUFFIX,caiyuncdn.com
+DOMAIN-SUFFIX,cmbchina.com
+DOMAIN-SUFFIX,cmbimg.com
+DOMAIN-SUFFIX,cmpassport.com
+DOMAIN-SUFFIX,colorfulclouds.net
+DOMAIN-SUFFIX,csjdeveloper.com
+DOMAIN-SUFFIX,ctrip.com
+DOMAIN-SUFFIX,d3games.com
+DOMAIN-SUFFIX,dianping.com
+DOMAIN-SUFFIX,dodomh.com
+DOMAIN-SUFFIX,douban.com
+DOMAIN-SUFFIX,douyinvod.com
+DOMAIN-SUFFIX,getui.net
+DOMAIN-SUFFIX,guoguomh.com
+DOMAIN-SUFFIX,hdslb.com
+DOMAIN-SUFFIX,hellobike.com
+DOMAIN-SUFFIX,heytea.com
+DOMAIN-SUFFIX,huya.com
+DOMAIN-SUFFIX,hwwt8.com
+DOMAIN-SUFFIX,ithome.com
+DOMAIN-SUFFIX,jd.com
+DOMAIN-SUFFIX,jdpay.com
+DOMAIN-SUFFIX,meitu.com
+DOMAIN-SUFFIX,meituan.com
+DOMAIN-SUFFIX,meituan.net
+DOMAIN-SUFFIX,meitudata.com
+DOMAIN-SUFFIX,miso-lab.com
+DOMAIN-SUFFIX,msstatic.com
+DOMAIN-SUFFIX,myapp.com
+DOMAIN-SUFFIX,mygolbs.com
+DOMAIN-SUFFIX,myqcloud.com
+DOMAIN-SUFFIX,myzaker.com
+DOMAIN-SUFFIX,netease.com
+DOMAIN-SUFFIX,nnkn.fun
+DOMAIN-SUFFIX,pki.goog
+DOMAIN-SUFFIX,ppio.cloud
+DOMAIN-SUFFIX,qidian.com
+DOMAIN-SUFFIX,ruanmei.com
+DOMAIN-SUFFIX,sdo.com
+DOMAIN-SUFFIX,servicewechat.com
+DOMAIN-SUFFIX,shayujizhang.com
+DOMAIN-SUFFIX,tanx.com
+DOMAIN-SUFFIX,tatstm.com
+DOMAIN-SUFFIX,tencentmusic.com
+DOMAIN-SUFFIX,volces.com
+DOMAIN-SUFFIX,weibo.com
+DOMAIN-SUFFIX,weibocdn.com
+DOMAIN-SUFFIX,weidian.com
+DOMAIN-SUFFIX,xhscdn.com
+DOMAIN-SUFFIX,xiaohongshu.com
+DOMAIN-SUFFIX,ximalaya.com
+DOMAIN-SUFFIX,xmcdn.com
+DOMAIN-SUFFIX,yksdks.com
+DOMAIN-SUFFIX,youdao.com
+DOMAIN-SUFFIX,yumchina.com
+DOMAIN-SUFFIX,zijieapi.com
