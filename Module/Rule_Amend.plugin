@@ -1,0 +1,21 @@
+#!name = 规则修正v2.4
+#!desc = 主修正和防暴力请求(带策略选择)
+#!author = Mr.Pan
+#!homepage = https://raw.githubusercontent.com/MrPan109/Self-use/maѕter/Module/Rule_Amend.plugin
+#!icon = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Static.png
+#!Date = 2024.06.25
+#!category=基础模块
+
+[Rule]
+# > 修正
+# > 暴力请求
+#B站刷屏
+IP-CIDR,203.107.1.0/24,中国,no-resolve
+DOMAIN,dataflow.biliapi.com,中国,extended-matching
+DOMAIN,data.bilibili.com,中国,extended-matching
+DOMAIN,cm.bilibili.com,中国,extended-matching
+DOMAIN,live-trace.bilibili.com,中国,extended-matching
+#
+[MITM]
+# > 修正腾讯视频不能下载
+hostname = %INSERT% -vv.video.qq.com
