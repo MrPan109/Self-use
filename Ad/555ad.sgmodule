@@ -1,0 +1,16 @@
+#!name=555Ad
+#!desc=555Ad
+#!data=2023.07.25
+
+
+[URL Rewrite]
+
+^https?:\/\/[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+){1,3}(:\d+)?\/api\/v\d\/advert - reject
+
+[Script]
+
+555Ad_11 = type=http-response, pattern="^https?:\/\/[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+){1,3}(:\d+)?\/api\/v\d\/movie\/index_recommend", requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/MrPan109/Self-use/Surge%26Loon/Advertisement/555ad.js, timeout=60, script-update-interval=0
+
+[MITM]
+
+hostname = %APPEND% run.api.qyfxgd.cn,*.weilai555.com,*.ecoliving168.com
