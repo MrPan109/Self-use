@@ -1,0 +1,20 @@
+#!Date = 2024.06.26
+# > 友盟
+DOMAIN-SUFFIX,umeng.com
+DOMAIN-SUFFIX,umengcloud.com
+# > pangolin
+DOMAIN,api-access.pangolin-sdk-toutiao-b.com
+# > 淘宝
+DOMAIN,wgo.mmstat.com
+DOMAIN,ifs.tanx.com
+DOMAIN,applog.uc.cn
+DOMAIN,kgb-ifs.tanx.com
+# > 华为商城APP
+DOMAIN,datacollector-drcn.dt.hicloud.com
+# > 其他
+DOMAIN,h.trace.qq.com
+DOMAIN,otheve.beacon.qq.com
+DOMAIN,s-gm.mmstat.com
+DOMAIN,px.effirst.com
+DOMAIN,px.ucweb.com
+DOMAIN,dw-online.ksosoft.com
