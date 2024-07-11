@@ -11,6 +11,8 @@ DOMAIN,applog.uc.cn
 DOMAIN,kgb-ifs.tanx.com
 # > 华为商城APP
 DOMAIN,datacollector-drcn.dt.hicloud.com
+# > apple
+#DOMAIN-SUFFIX,iadsdk.apple.com
 # > 其他
 DOMAIN,h.trace.qq.com
 DOMAIN,otheve.beacon.qq.com
