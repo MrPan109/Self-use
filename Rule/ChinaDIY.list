@@ -1,5 +1,22 @@
-# Description:增加Auto规则
-# Update:2024.06.25
+# Description:apple修正
+# Update:2024.10.16
+#
+# Apple
+DOMAIN,xp.apple.com // iOS & macOS System Upgrade
+DOMAIN,c.apple.news
+DOMAIN-SUFFIX,cdn-apple.com
+DOMAIN-SUFFIX,mzstatic.com // App Store & iTunes Images
+DOMAIN-SUFFIX,aaplimg.com
+DOMAIN-SUFFIX,apple.co
+DOMAIN-SUFFIX,apple.com
+DOMAIN-SUFFIX,icloud-content.com
+DOMAIN-SUFFIX,icloud.com
+DOMAIN-SUFFIX,itunes.com
+DOMAIN-SUFFIX,itunes.apple.com
+DOMAIN-SUFFIX,lookup-api.apple.com // Dictionary
+DOMAIN-SUFFIX,me.com
+PROCESS-NAME,storedownloadd // Mac App Store
+USER-AGENT,com.apple.appstored* // iOS App Store
 #
 # China Apps
 USER-AGENT,MicroMessenger Client

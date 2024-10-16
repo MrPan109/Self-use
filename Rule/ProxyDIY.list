@@ -1,5 +1,5 @@
-# Description:add auto rule
-# Update:2024.09.07
+# Description:apple修正
+# Update:2024.10.16
 #
 # Blocked
 DOMAIN-SUFFIX,tw
@@ -25,23 +25,6 @@ DOMAIN-SUFFIX,android.com
 DOMAIN-SUFFIX,ytimg.com
 DOMAIN-SUFFIX,githubusercontent.com
 DOMAIN-SUFFIX,github.com
-#
-# Apple
-DOMAIN,xp.apple.com // iOS & macOS System Upgrade
-DOMAIN,c.apple.news
-DOMAIN-SUFFIX,cdn-apple.com
-DOMAIN-SUFFIX,mzstatic.com // App Store & iTunes Images
-DOMAIN-SUFFIX,aaplimg.com
-DOMAIN-SUFFIX,apple.co
-DOMAIN-SUFFIX,apple.com
-DOMAIN-SUFFIX,icloud-content.com
-DOMAIN-SUFFIX,icloud.com
-DOMAIN-SUFFIX,itunes.com
-DOMAIN-SUFFIX,itunes.apple.com
-DOMAIN-SUFFIX,lookup-api.apple.com // Dictionary
-DOMAIN-SUFFIX,me.com
-PROCESS-NAME,storedownloadd // Mac App Store
-USER-AGENT,com.apple.appstored* // iOS App Store
 #
 # > TelegramASN
 # DC1
