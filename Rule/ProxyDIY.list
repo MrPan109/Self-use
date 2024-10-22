@@ -1,5 +1,5 @@
 # Description:apple修正
-# Update:2024.10.16
+# Update:2024.10.22
 #
 # Blocked
 DOMAIN-SUFFIX,tw
@@ -69,6 +69,9 @@ AND,((NOT,((GEOIP,CN,no-resolve))), (DOMAIN-KEYWORD,mozilla,extended-matching))
 #
 # Log提取
 DOMAIN,global.poe.live-video.net
+#
+# 可莉规则库
+DOMAIN,proxyresource.pages.dev
 #
 # Auto Self规则
 DOMAIN,cache.dciwx.com //佳明
