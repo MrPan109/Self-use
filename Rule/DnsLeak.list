@@ -4,8 +4,8 @@
 #!homepage = https://gitlab.com/lodepuly/vpn_tool/-/tree/master/Tool/Loon/Plugin
 #!date = 2024-06-22
 # 你猜为什么会有这个插件呢？
-
-[Rule]
+#
+#[Rule]
 # DNS Leak from Shadowrocket Default
 DOMAIN-SUFFIX,dnsleaktest.com
 DOMAIN-SUFFIX,dnsleak.com
