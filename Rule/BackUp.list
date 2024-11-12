@@ -1,0 +1,18 @@
+#Date:2024.11.12
+#
+[Rule]
+# OR,((DOMAIN-SET,http://self_rule/DnsFailed,extended-matching), (RULE-SET,http://ConnersHua/Tracking,extended-matching), (RULE-SET,http://ConnersHua/Malicious,extended-matching), (RULE-SET,http://ConnersHua/Advertising,extended-matching)),REJECT,pre-matching // REJECT合集（神机&DnsFailed）
+#
+OR,((RULE-SET,http://self_rule/DnsLeak,extended-matching), (RULE-SET,Rule/Foregn_Set.txt,no-resolve,extended-matching), (RULE-SET,http://self_rule/ProxyDIY,no-resolve,extended-matching)),守末 // 国外DIY&国外AutoRule&DnsLeak
+#
+# OR,((RULE-SET,Rule/Domestic_Set.txt,extended-matching), (RULE-SET,http://self_rule/ChinaDIY,extended-matching), (OR,((GEOIP,CN), (AND,((HOSTNAME-TYPE,DOMAIN), (SCRIPT,Save-Final-Rule))))), (OR,((HOSTNAME-TYPE,IPv6), (HOSTNAME-TYPE,IPv4), (SCRIPT,Save-China-Rule)))),中国 // ChinaDIY& 国内AutoRule
+# 
+# DEST-PORT,8130,DIRECT,always-capture=8140 //匹配此条件就抓包
+#
+# SCRIPT,Log,守末 // 打印域名
+#
+#
+[Script]
+# > NobyDa自动生成规则脚本
+# Save-Final-Rule = type=rule,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Rule-Storage/Rule-Storage.js,argument=region=global&quantity=5&interval=10,script-update-interval=0
+# Save-China-Rule = type=rule,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Rule-Storage/Rule-Storage.js,argument=region=china&matched=1&quantity=5&interval=10,script-update-interval=0
