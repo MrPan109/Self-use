@@ -3,15 +3,15 @@
 #!author = Mr.Pan
 #!homepage = https://raw.githubusercontent.com/MrPan109/Self-use/master/Module/Rule_Amend.plugin
 #!icon = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Static.png
-#!Date = 2024.10.27
+#!Date = 2024.11.13
 #!category=基础模块
 
 [Rule]
 # > 修正
 # > REJECT
-PROTOCOL,STUN,REJECT
+PROTOCOL,STUN,REJECT-DROP
 # > 指定策略
-DOMAIN,user.openx.ottcn.com,中国,extended-matching// NewTV扫码登录
+DOMAIN,user.openx.ottcn.com,中国,extended-matching // NewTV扫码登录
 DOMAIN,click.mz.simba.taobao.com,中国,extended-matching // 淘宝跳转
 DOMAIN,api-d.dutils.com,中国,extended-matching // 一汽丰田APP
 DOMAIN,tsis-ipv6.jpush.cn,中国,extended-matching // 一汽丰田APP
