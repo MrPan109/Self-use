@@ -1,6 +1,7 @@
 #Date:2024.11.12
 #
 [Rule]
+# OR,((DOMAIN-SET,http://self_rule/DnsFailed,extended-matching), (RULE-SET,https://adrules.top/adrules-surge.conf,no-resolve,extended-matching)),REJECT,pre-matching // REJECT合集（广告&DnsFailed）
 #http://script.hub/file/_start_/https://adrules.top/adrules-surge.conf/_end_/adrules-surge.list?type=rule-set&target=surge-rule-set&x=hwa.his.huawei.com&del=true
 # OR,((DOMAIN-SET,http://self_rule/DnsFailed,extended-matching), (RULE-SET,http://ConnersHua/Tracking,extended-matching), (RULE-SET,http://ConnersHua/Malicious,extended-matching), (RULE-SET,http://ConnersHua/Advertising,extended-matching)),REJECT,pre-matching // REJECT合集（神机&DnsFailed）
 #
