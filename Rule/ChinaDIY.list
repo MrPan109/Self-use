@@ -1,5 +1,5 @@
 # Description:apple修正
-# Update:2024.11.03
+# Update:2024.11.21
 #
 # Apple
 DOMAIN,xp.apple.com // iOS & macOS System Upgrade
@@ -126,5 +126,4 @@ DOMAIN-SUFFIX,yksdks.com
 DOMAIN-SUFFIX,youdao.com
 DOMAIN-SUFFIX,yumchina.com
 DOMAIN-SUFFIX,zijieapi.com
-DOMAIN-SUFFIX,agora.io
 DOMAIN-SUFFIX,bcebos.com
