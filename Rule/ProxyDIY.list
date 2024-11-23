@@ -1,5 +1,5 @@
-# Description:apple修正
-# Update:2024.11.06
+# Description:ProxyDIY
+# Update:2024.11.23
 #
 # Apple
 DOMAIN,xp.apple.com // iOS & macOS System Upgrade
@@ -88,6 +88,9 @@ DOMAIN,global.poe.live-video.net
 #
 # 可莉规则库
 DOMAIN,proxyresource.pages.dev
+#
+# 麻婆DNS
+DOMAIN,apad.pro
 #
 # Auto Self规则
 DOMAIN,cache.dciwx.com //佳明
