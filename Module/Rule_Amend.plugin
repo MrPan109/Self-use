@@ -1,15 +1,17 @@
-#!name = 规则修正v2.8
+#!name = 规则修正v2.9.3
 #!desc = 主修正和防暴力请求(带策略选择)
 #!author = Mr.Pan
 #!homepage = https://raw.githubusercontent.com/MrPan109/Self-use/master/Module/Rule_Amend.plugin
 #!icon = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Static.png
-#!Date = 2024.11.13
+#!Date = 2024.11.23
 #!category=基础模块
 
 [Rule]
 # > 修正
 # > REJECT
 PROTOCOL,STUN,REJECT-DROP
+# > LAN规则
+RULE-SET,LAN,DIRECT,no-resolve
 # > 指定策略
 DOMAIN,user.openx.ottcn.com,中国,extended-matching // NewTV扫码登录
 DOMAIN,click.mz.simba.taobao.com,中国,extended-matching // 淘宝跳转
@@ -19,6 +21,8 @@ DOMAIN,api-c.dutils.com,中国,extended-matching // 一汽丰田APP
 DOMAIN,stats.jpush.cn,中国,extended-matching // 经络APP
 DOMAIN,v1.cnzz.com,中国,extended-matching // 支付宝医保
 DOMAIN,hudong.alicdn.com,中国,extended-matching // 支付宝跳转淘宝
+DOMAIN,wbapp.uve.weibo.com,中国,extended-matching // 修正微博去广告模块策略
+DOMAIN,pilipili.club,香港,extended-matching // 修正pilipili选路
 #
 [MITM]
 # > 修正腾讯视频不能下载
