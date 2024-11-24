@@ -25,6 +25,9 @@ DOMAIN,mlvbdc.live.tlivesource.com
 DOMAIN-SUFFIX,ke.com
 # 汽油价格
 DOMAIN,m.qiyoujiage.com
+# hotmail邮箱
+DOMAIN,m.hotmail.com,中国 // hotmail邮箱
+#
 # Auto Self规则
 DOMAIN,caiyunapp.com
 DOMAIN,doh.pub
