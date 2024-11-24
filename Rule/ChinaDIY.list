@@ -19,6 +19,7 @@ DOMAIN-SUFFIX,CN
 DOMAIN-KEYWORD,baidu
 # Apple
 DOMAIN-SUFFIX,store.apple.com
+DOMAIN,tether.edge.apple // 苹果缓存服务，加速用
 # 贝壳
 DOMAIN,mlvbdc.live.tlivesource.com
 DOMAIN-SUFFIX,ke.com
