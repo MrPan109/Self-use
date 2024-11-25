@@ -1,5 +1,5 @@
 # Description:ProxyDIY
-# Update:2024.11.23
+# Update:2024.11.26
 #
 # Apple
 DOMAIN,xp.apple.com // iOS & macOS System Upgrade
@@ -75,6 +75,7 @@ DOMAIN,7777777.buzz
 DOMAIN,emby3.mcjoker.xyz
 # pilipili
 DOMAIN,pilipili.club
+DOMAIN,pilipili.misakaf.org
 #
 # Jabra
 DOMAIN-SUFFIX,jabra.com
@@ -91,6 +92,9 @@ DOMAIN,kelee.one
 #
 # 麻婆DNS
 DOMAIN,apad.pro
+#
+# forward
+DOMAIN,forward.inch.red
 #
 # Auto Self规则
 DOMAIN,cache.dciwx.com //佳明
