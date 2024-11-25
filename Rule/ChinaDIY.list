@@ -1,5 +1,5 @@
 # Description:ChinaDIY
-# Update:2024.11.23
+# Update:2024.11.25
 #
 # China Apps
 USER-AGENT,MicroMessenger Client
@@ -34,6 +34,7 @@ DOMAIN,m.hotmail.com // hotmail邮箱
 DOMAIN,caiyunapp.com
 DOMAIN,doh.pub
 DOMAIN,jihulab.com
+DOMAIN,crl.digicert-cn.com
 DOMAIN-SUFFIX,163.com
 DOMAIN-SUFFIX,kugou.com
 DOMAIN-SUFFIX,qq.com
