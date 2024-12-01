@@ -1,0 +1,32 @@
+name: Sync Repository to Specific Directory
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # 每天 00:00 运行一次
+
+  workflow_dispatch:  # 允许手动触发
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      # 检出目标仓库
+      - name: Checkout target repository
+        uses: actions/checkout@v3
+        with:
+          ref: refs/heads/master/Rule  # 目标分支，按需调整
+
+      # 克隆源仓库到一个临时目录
+      - name: Clone upstream repository
+        run: |
+          git clone https://kelee.one/Tool/Loon/Rule/AI.list source_repo  # 替换为源仓库的 URL
+          ls source_repo  # 列出源仓库内容（用于调试）
+
+      # 将源仓库的内容复制到目标仓库的指定目录
+      - name: Sync to specific directory
+        run: |
+          mkdir -p refs/heads/master/Rule/Ai.list  # 替换为目标目录路径
+          rsync -av --delete source_repo/ target-directory/  # 同步内容，--delete 确保删除目标中不再存在的文件
+          git add .
+          git commit -m "Sync with upstream to target-directory" || echo "No changes to commit"
+          git push origin main
