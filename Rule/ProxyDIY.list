@@ -98,6 +98,7 @@ DOMAIN,apad.pro
 DOMAIN,forward.inch.red
 #
 # Auto Self规则
+DOMAIN,api.swiftgram.app //Swiftgram
 DOMAIN,cache.dciwx.com //佳明
 DOMAIN,sub-store.vercel.app //sub store
 DOMAIN,github.githubassets.com
