@@ -38,6 +38,8 @@ IP-ASN,62041,no-resolve
 # DC5
 IP-ASN,62014,no-resolve
 #
+DOMAIN,core.telegram.org
+#
 #自用emby流媒体
 # Misakaf
 DOMAIN,emby.misakaf.org
