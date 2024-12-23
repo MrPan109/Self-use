@@ -67,9 +67,6 @@ DOMAIN,pilipili.misakaf.org
 # Jabra
 DOMAIN-SUFFIX,jabra.com
 #
-# 逻辑规则（自用）
-AND,((NOT,((GEOIP,CN,no-resolve))), (DOMAIN-KEYWORD,mozilla,extended-matching))
-#
 # Log提取
 DOMAIN,global.poe.live-video.net
 #
