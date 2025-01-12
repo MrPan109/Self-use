@@ -1,5 +1,5 @@
 # Description:ChinaDIY
-# Update:2024.12.27
+# Update:2025.01.12
 #
 # China Apps
 USER-AGENT,MicroMessenger Client
@@ -17,11 +17,12 @@ USER-AGENT,%E6%89%8B%E6%9C%BA%E6%B7%98%E5%AE%9D*
 # China
 DOMAIN-SUFFIX,CN
 DOMAIN-KEYWORD,baidu
-# Apple(前四CN)
+# Apple(前CN)
 DOMAIN,tether.edge.apple // 苹果缓存服务，加速用
 DOMAIN-SUFFIX,store.apple.com
 DOMAIN-SUFFIX,icloud-content.com
 DOMAIN-SUFFIX,icloud.com
+DOMAIN,xp.apple.com // iOS & macOS System Upgrade
 DOMAIN-SUFFIX,cdn-apple.com
 DOMAIN-SUFFIX,mzstatic.com // App Store & iTunes Images
 DOMAIN-SUFFIX,aaplimg.com
@@ -32,6 +33,16 @@ DOMAIN-SUFFIX,itunes.apple.com
 DOMAIN-SUFFIX,lookup-api.apple.com // Dictionary
 DOMAIN-SUFFIX,me.com
 USER-AGENT,com.apple.appstored* // iOS App Store
+IP-CIDR,139.178.128.0/18,no-resolve
+IP-CIDR,144.178.0.0/19,no-resolve
+IP-CIDR,144.178.36.0/22,no-resolve
+IP-CIDR,144.178.48.0/20,no-resolve
+IP-CIDR,17.0.0.0/8,no-resolve
+IP-CIDR,192.35.50.0/24,no-resolve
+IP-CIDR,198.183.17.0/24,no-resolve
+IP-CIDR,205.180.175.0/24,no-resolve
+IP-CIDR,63.92.224.0/19,no-resolve
+IP-CIDR,65.199.22.0/23,no-resolve
 #
 # 贝壳
 DOMAIN,mlvbdc.live.tlivesource.com
