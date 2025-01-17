@@ -1,5 +1,5 @@
 # Description:ProxyDIY
-# Update:2025.01.17.1
+# Update:2025.01.17.2
 #
 # Blocked
 DOMAIN-SUFFIX,tw
@@ -42,6 +42,8 @@ IP-CIDR6,2a0a:f280::/32,no-resolve
 DOMAIN,core.telegram.org
 #
 #自用emby流媒体
+# 纸片人
+DOMAIN-SUFFIX,embyplus.org
 # nyamedia
 DOMAIN,emby.bangumi.ca
 # paul_电报服
