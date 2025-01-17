@@ -42,11 +42,6 @@ IP-CIDR6,2a0a:f280::/32,no-resolve
 DOMAIN,core.telegram.org
 #
 #自用emby流媒体
-# Misakaf
-DOMAIN,emby.misakaf.org
-DOMAIN-WILDCARD,stream?.misakaf.org
-# 纸片人
-DOMAIN-SUFFIX,embyplus.org
 # nyamedia
 DOMAIN,emby.bangumi.ca
 # paul_电报服
@@ -63,9 +58,6 @@ DOMAIN,emby3.mcjoker.xyz
 # pilipili
 DOMAIN,pilipili.club
 DOMAIN,pilipili.misakaf.org
-#
-# Jabra
-DOMAIN-SUFFIX,jabra.com
 #
 # Log提取
 DOMAIN,global.poe.live-video.net
