@@ -42,24 +42,13 @@ IP-CIDR6,2a0a:f280::/32,no-resolve
 DOMAIN,core.telegram.org
 #
 #自用emby流媒体
-# 纸片人
-DOMAIN-SUFFIX,embyplus.org
-# nyamedia
-DOMAIN,emby.bangumi.ca
-# paul_电报服
-DOMAIN,emby.imetyou.top
-# hxdのemby
-DOMAIN,hxd.bili.rip
-# 江湖
-DOMAIN,film.reddust.link
-# 飞跃彩虹
-DOMAIN,581658.best
-DOMAIN,7777777.buzz
-# 叔服
-DOMAIN,emby3.mcjoker.xyz
-# pilipili
-DOMAIN,pilipili.club
-DOMAIN,pilipili.misakaf.org
+DOMAIN-SUFFIX,embyplus.org  //纸片人
+DOMAIN,emby.bangumi.ca  //nyamedia
+DOMAIN,emby.imetyou.top  //paul_电报服
+DOMAIN,hxd.bili.rip  //hxdのemby
+DOMAIN,581658.best  //飞跃彩虹
+DOMAIN,emby3.mcjoker.xyz  //叔服
+#DOMAIN,pilipili.club  //pilipili
 #
 # Log提取
 DOMAIN,global.poe.live-video.net
