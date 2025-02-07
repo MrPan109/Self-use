@@ -24,7 +24,6 @@ DOMAIN-SUFFIX,in.applicationinsights.azure.com
 #
 [Ruleset RNDs]
 DOMAIN,www.asusrouter.com // 防止访问路由器卡顿
-IP-CIDR,95.161.76.100/31 // 防止TG加载转圈
 DOMAIN-SUFFIX,mcdn.bilivideo.cn
 DOMAIN-SUFFIX,p2p.huya.com
 #
