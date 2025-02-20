@@ -1,5 +1,5 @@
 # Description:ProxyDIY
-# Update:2025.01.21
+# Update:2025.02.20
 #
 # Blocked
 DOMAIN-SUFFIX,tw
@@ -48,7 +48,7 @@ DOMAIN,emby.imetyou.top  //paul_电报服
 DOMAIN,hxd.bili.rip  //hxdのemby
 DOMAIN,581658.best  //飞跃彩虹
 DOMAIN,emby3.mcjoker.xyz  //叔服
-DOMAIN,pilipili.club  //pilipili
+DOMAIN,emby-direct.pilipiliultra.com  //pilipili
 #
 # Log提取
 DOMAIN,global.poe.live-video.net
