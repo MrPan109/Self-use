@@ -1,9 +1,9 @@
-#!name = 规则修正v3.0.0
+#!name = 规则修正v3.2.0
 #!desc = 主修正和防暴力请求(带策略选择)
 #!author = Mr.Pan
 #!homepage = https://raw.githubusercontent.com/MrPan109/Self-use/master/Module/Rule_Amend.plugin
 #!icon = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Static.png
-#!Date = 2025.02.07
+#!Date = 2025.03.17
 #!category=基础
 
 [Rule]
@@ -15,21 +15,26 @@ RULE-SET,PDirect,DIRECT,extended-matching
 RULE-SET,CNs,中国,extended-matching
 #
 [Ruleset RDs]
-PROTOCOL,STUN // 干掉STUN
+# > 修正规则
+AND,((NOT,((SUBNET,SSID:MyHome))), (IP-CIDR,172.16.16.254/32,no-resolve)),BTP.03 // AX86U(内)
+RULE-SET,RDs,REJECT-DROP,extended-matching,pre-matching
+RULE-SET,RNDs,REJECT-NO-DROP,extended-matching,pre-matching,no-resolve
+RULE-SET,PDirect,DIRECT,extended-matching
+#
+[Ruleset RDs]
+DOMAIN-WILDCARD,stun*.bilibili.com // 干掉B站STUN
+#PROTOCOL,STUN // 干掉所有STUN
 AND,((NOT,((GEOIP,CN,no-resolve))), (HOSTNAME-TYPE,IPv6)) // 干掉非国内V6
 DOMAIN-SUFFIX,null
 DOMAIN-SUFFIX,undefined
 DOMAIN-SUFFIX,geo2.adobe.com
 DOMAIN-SUFFIX,in.applicationinsights.azure.com
+DOMAIN,adservice.sigmob.cn  // 大师兄广告
 #
 [Ruleset RNDs]
 DOMAIN,www.asusrouter.com // 防止访问路由器卡顿
 DOMAIN-SUFFIX,mcdn.bilivideo.cn
 DOMAIN-SUFFIX,p2p.huya.com
-#
-[Ruleset NPre]
-# > 跳过pre-matching
-DOMAIN,ad.12306.cn // 修复12306去开屏失效
 #
 [Ruleset PDirect]
 DOMAIN,wawj0109.iok.la // AX86U(外)
@@ -38,14 +43,6 @@ DOMAIN-SUFFIX,huawei.com // welink
 DOMAIN-WILDCARD,ap?.agora.io // welink 
 DOMAIN-WILDCARD,ap?-tls.agora.io // welink
 AND,((DEST-PORT,8130), (PROTOCOL,UDP)) // welink
-#
-[Ruleset CNs]
-DOMAIN,user.openx.ottcn.com // NewTV扫码登录
-DOMAIN,click.mz.simba.taobao.com // 淘宝跳转
-DOMAIN,stats.jpush.cn // 经络APP
-DOMAIN,v1.cnzz.com // 支付宝医保
-DOMAIN,hudong.alicdn.com // 支付宝跳转淘宝
-DOMAIN,wbapp.uve.weibo.com // 修正微博去广告模块
 #
 #
 [General]
