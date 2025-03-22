@@ -1,30 +1,22 @@
-#!name = 规则修正v3.2.0
+#!name = 规则修正v3.3.0
 #!desc = 主修正和防暴力请求(带策略选择)
 #!author = Mr.Pan
 #!homepage = https://raw.githubusercontent.com/MrPan109/Self-use/master/Module/Rule_Amend.plugin
 #!icon = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Static.png
-#!Date = 2025.03.17
+#!Date = 2025.03.21
 #!category=基础
 
 [Rule]
 # > 修正规则
 AND,((NOT,((SUBNET,SSID:MyHome))), (IP-CIDR,172.16.16.254/32,no-resolve)),BTP.03 // AX86U(内)
+AND,((NOT,((GEOIP,CN,no-resolve))), (HOSTNAME-TYPE,IPv6)), REJECT-DROP // 干掉非国内V6
 RULE-SET,RDs,REJECT-DROP,extended-matching,pre-matching
 RULE-SET,RNDs,REJECT-NO-DROP,extended-matching,pre-matching,no-resolve
-RULE-SET,PDirect,DIRECT,extended-matching
-RULE-SET,CNs,中国,extended-matching
-#
-[Ruleset RDs]
-# > 修正规则
-AND,((NOT,((SUBNET,SSID:MyHome))), (IP-CIDR,172.16.16.254/32,no-resolve)),BTP.03 // AX86U(内)
-RULE-SET,RDs,REJECT-DROP,extended-matching,pre-matching
-RULE-SET,RNDs,REJECT-NO-DROP,extended-matching,pre-matching,no-resolve
+PROTOCOL,STUN // 干掉所有STUN
 RULE-SET,PDirect,DIRECT,extended-matching
 #
 [Ruleset RDs]
 DOMAIN-WILDCARD,stun*.bilibili.com // 干掉B站STUN
-#PROTOCOL,STUN // 干掉所有STUN
-AND,((NOT,((GEOIP,CN,no-resolve))), (HOSTNAME-TYPE,IPv6)) // 干掉非国内V6
 DOMAIN-SUFFIX,null
 DOMAIN-SUFFIX,undefined
 DOMAIN-SUFFIX,geo2.adobe.com
