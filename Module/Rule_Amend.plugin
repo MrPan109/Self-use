@@ -1,4 +1,4 @@
-#!name = 规则修正v3.3.0
+#!name = 规则修正v3.3.1
 #!desc = 主修正和防暴力请求(带策略选择)
 #!author = Mr.Pan
 #!homepage = https://raw.githubusercontent.com/MrPan109/Self-use/master/Module/Rule_Amend.plugin
@@ -9,10 +9,10 @@
 [Rule]
 # > 修正规则
 AND,((NOT,((SUBNET,SSID:MyHome))), (IP-CIDR,172.16.16.254/32,no-resolve)),BTP.03 // AX86U(内)
-AND,((NOT,((GEOIP,CN,no-resolve))), (HOSTNAME-TYPE,IPv6)), REJECT-DROP // 干掉非国内V6
+AND,((NOT,((GEOIP,CN,no-resolve))), (HOSTNAME-TYPE,IPv6)),REJECT-DROP // 干掉非国内V6
 RULE-SET,RDs,REJECT-DROP,extended-matching,pre-matching
 RULE-SET,RNDs,REJECT-NO-DROP,extended-matching,pre-matching,no-resolve
-PROTOCOL,STUN // 干掉所有STUN
+PROTOCOL,STUN,REJECT-DROP // 干掉所有STUN
 RULE-SET,PDirect,DIRECT,extended-matching
 #
 [Ruleset RDs]
