@@ -1,0 +1,20 @@
+#!name=掌上公交去广告
+#!desc=掌上公交去广告，掌上公交最下方新闻广告列表
+#!author=叮当猫iOS资源
+#!category=广告
+#!tag=去广告
+#!homepage=
+#!date=2025.04.20
+#
+[URL Rewrite]
+# 掌上公交去广告
+# hostname = *.mygolbs.com
+^http?:\/\/quanguo\.mygolbs\.com:8081 - reject
+^https?:\/\/remind\.mygolbs\.com\/remind-off\/query\/.+ - reject
+# 掌上公交最下方新闻广告列表
+# hostname = cpu-openapi.baidu.com, mobads.baidu.com
+^https?:\/\/(cpu-openapi|mobads)\.baidu\.com\/(api\/.+\/data\/list|ads\/.+) - reject
+#
+#
+[MITM]
+hostname = %APPEND% *.mygolbs.com, cpu-openapi.baidu.com, mobads.baidu.com
