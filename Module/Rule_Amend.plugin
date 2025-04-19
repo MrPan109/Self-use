@@ -1,4 +1,4 @@
-#!name = 规则修正v3.3.1
+#!name = 规则修正v3.3.3
 #!desc = 主修正和防暴力请求(带策略选择)
 #!author = Mr.Pan
 #!homepage = https://raw.githubusercontent.com/MrPan109/Self-use/master/Module/Rule_Amend.plugin
@@ -8,11 +8,10 @@
 
 [Rule]
 # > 修正规则
-AND,((NOT,((SUBNET,SSID:MyHome))), (IP-CIDR,172.16.16.254/32,no-resolve)),BTP.03 // AX86U(内)
-AND,((NOT,((GEOIP,CN,no-resolve))), (HOSTNAME-TYPE,IPv6)),REJECT-DROP // 干掉非国内V6
+AND,((NOT,((SUBNET,SSID:MyHome))), (IP-CIDR,172.16.16.254/32,no-resolve)),BTP.03 // AX86U(内)    
 RULE-SET,RDs,REJECT-DROP,extended-matching,pre-matching
 RULE-SET,RNDs,REJECT-NO-DROP,extended-matching,pre-matching,no-resolve
-PROTOCOL,STUN,REJECT-DROP // 干掉所有STUN
+PROTOCOL,STUN,REJECT     // 干掉所有STUN
 RULE-SET,PDirect,DIRECT,extended-matching
 #
 [Ruleset RDs]
@@ -21,12 +20,12 @@ DOMAIN-SUFFIX,null
 DOMAIN-SUFFIX,undefined
 DOMAIN-SUFFIX,geo2.adobe.com
 DOMAIN-SUFFIX,in.applicationinsights.azure.com
-DOMAIN,adservice.sigmob.cn  // 大师兄广告
 #
 [Ruleset RNDs]
 DOMAIN,www.asusrouter.com // 防止访问路由器卡顿
 DOMAIN-SUFFIX,mcdn.bilivideo.cn
 DOMAIN-SUFFIX,p2p.huya.com
+DOMAIN,adservice.sigmob.cn  // 大师兄广告
 #
 [Ruleset PDirect]
 DOMAIN,wawj0109.iok.la // AX86U(外)
@@ -36,6 +35,8 @@ DOMAIN-WILDCARD,ap?.agora.io // welink
 DOMAIN-WILDCARD,ap?-tls.agora.io // welink
 AND,((DEST-PORT,8130), (PROTOCOL,UDP)) // welink
 #
+[SSID Setting]
+SSID:{{{MyHome}}} dns-server=system,encrypted-dns-server=off  // 软路由接管下直连，且关闭加密 DNS，让软路由接管 DNS
 #
 [General]
 # > 跳过代理
