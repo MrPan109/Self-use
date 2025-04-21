@@ -41,6 +41,23 @@ IP-CIDR6,2001:b28:f23c::/48,no-resolve
 IP-CIDR6,2a0a:f280::/32,no-resolve
 DOMAIN,core.telegram.org
 #
+# Apple
+DOMAIN,xp.apple.com // iOS & macOS System Upgrade
+DOMAIN,c.apple.news
+DOMAIN-SUFFIX,cdn-apple.com
+DOMAIN-SUFFIX,mzstatic.com // App Store & iTunes Images
+DOMAIN-SUFFIX,aaplimg.com
+DOMAIN-SUFFIX,apple.co
+DOMAIN-SUFFIX,apple.com
+#DOMAIN-SUFFIX,icloud-content.com
+#DOMAIN-SUFFIX,icloud.com
+DOMAIN-SUFFIX,itunes.com
+DOMAIN-SUFFIX,itunes.apple.com
+DOMAIN-SUFFIX,lookup-api.apple.com // Dictionary
+DOMAIN-SUFFIX,me.com
+PROCESS-NAME,storedownloadd // Mac App Store
+USER-AGENT,com.apple.appstored* // iOS App Store
+#
 #自用emby流媒体
 DOMAIN-SUFFIX,embyplus.org  //纸片人
 DOMAIN,emby.bangumi.ca  //nyamedia
