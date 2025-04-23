@@ -3,7 +3,7 @@
 #!author = Mr.Pan
 #!homepage = https://raw.githubusercontent.com/MrPan109/Self-use/master/Module/Rule_Amend.plugin
 #!icon = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Static.png
-#!Date = 2025.03.21
+#!Date = 2025.04.23
 #!category=基础
 
 [Rule]
@@ -36,7 +36,7 @@ DOMAIN-WILDCARD,ap?-tls.agora.io // welink
 AND,((DEST-PORT,8130), (PROTOCOL,UDP)) // welink
 #
 [SSID Setting]
-SSID:{{{MyHome}}} dns-server=system,encrypted-dns-server=off  // 软路由接管下直连，且关闭加密 DNS，让软路由接管 DNS
+SSID:MyHome dns-server=system,encrypted-dns-server=off  // 软路由接管下直连，且关闭加密 DNS，让软路由接管 DNS
 #
 [General]
 # > 跳过代理
