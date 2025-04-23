@@ -36,7 +36,8 @@ DOMAIN-WILDCARD,ap?-tls.agora.io // welink
 AND,((DEST-PORT,8130), (PROTOCOL,UDP)) // welink
 #
 [SSID Setting]
-SSID:MyHome dns-server=system,encrypted-dns-server=off  // 软路由接管下直连，且关闭加密 DNS，让软路由接管 DNS
+SSID:MyHome dns-server=system,encrypted-dns-server=off  // AX86U关闭加密DNS，并接管DNS
+SSID:MyHomeS encrypted-dns-server=off // 使用非加密DNS
 #
 [General]
 # > 跳过代理
