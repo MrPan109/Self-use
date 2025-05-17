@@ -6,8 +6,8 @@
 #!homepage=
 #!date=2025.05.17
 #
-# > 车来了
-# hostname = pic1.chelaile.net.cn, api.chelaile.net.cn, atrace.chelaile.net.cn, web.chelaile.net.cn, cdn.*.chelaileapp.cn
+[MITM]
+hostname = %APPEND% pic1.chelaile.net.cn, api.chelaile.net.cn, atrace.chelaile.net.cn, web.chelaile.net.cn, cdn.*.chelaileapp.cn
 #
 [URL Rewrite]
 ^https?:\/\/pic1\.chelaile\.net\.cn\/adv\/ url reject
