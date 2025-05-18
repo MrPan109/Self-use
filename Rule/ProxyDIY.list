@@ -1,5 +1,5 @@
 # Description:ProxyDIY
-# Update:2025.05.17
+# Update:2025.05.18
 #
 # Blocked
 DOMAIN-SUFFIX,tw
@@ -46,8 +46,6 @@ DOMAIN-SUFFIX,embyplus.org  //纸片人
 DOMAIN,emby.bangumi.ca  //nyamedia
 DOMAIN,emby.imetyou.top  //paul_电报服
 DOMAIN,hxd.bili.rip  //hxdのemby
-DOMAIN,581658.best  //飞跃彩虹
-DOMAIN,emby3.mcjoker.xyz  //叔服
 DOMAIN,emby-direct.pilipiliultra.com  //pilipili
 #
 # 可莉规则库
