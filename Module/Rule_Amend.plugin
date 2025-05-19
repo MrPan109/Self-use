@@ -3,28 +3,18 @@
 #!author = Mr.Pan
 #!homepage = https://raw.githubusercontent.com/MrPan109/Self-use/master/Module/Rule_Amend.plugin
 #!icon = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Static.png
-#!Date = 2025.05.13
+#!Date = 2025.05.19
 #!category=基础
 
 [Rule]
 # > 修正规则
 AND,((NOT,((SUBNET,SSID:MyHome))), (IP-CIDR,172.16.16.254/32,no-resolve)),BTP.03 // AX86U(内)    
-RULE-SET,RDs,REJECT-DROP,extended-matching,pre-matching
 RULE-SET,RNDs,REJECT-NO-DROP,extended-matching,pre-matching,no-resolve
 PROTOCOL,STUN,REJECT     // 干掉所有STUN
 RULE-SET,PDirect,DIRECT,extended-matching
 #
-[Ruleset RDs]
-DOMAIN-WILDCARD,stun*.bilibili.com // 干掉B站STUN
-DOMAIN-SUFFIX,null
-DOMAIN-SUFFIX,undefined
-DOMAIN-SUFFIX,geo2.adobe.com
-DOMAIN-SUFFIX,in.applicationinsights.azure.com
-#
 [Ruleset RNDs]
 DOMAIN,www.asusrouter.com // 防止访问路由器卡顿
-DOMAIN-SUFFIX,mcdn.bilivideo.cn
-DOMAIN-SUFFIX,p2p.huya.com
 DOMAIN,adservice.sigmob.cn  // 大师兄广告
 #
 [Ruleset PDirect]
