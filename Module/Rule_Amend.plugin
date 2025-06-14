@@ -1,9 +1,9 @@
-#!name = 规则修正v3.3.3
+#!name = 规则修正v4.0.0
 #!desc = 主修正和防暴力请求(带策略选择)
 #!author = Mr.Pan
 #!homepage = https://raw.githubusercontent.com/MrPan109/Self-use/master/Module/Rule_Amend.plugin
 #!icon = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Static.png
-#!Date = 2025.05.19
+#!Date = 2025.06.14
 #!category=基础
 
 [Rule]
@@ -28,4 +28,4 @@ AND,((DEST-PORT,8130), (PROTOCOL,UDP)) // welink
 [SSID Setting]
 SSID:MyHome dns-server=system,encrypted-dns-server=off  // AX86U关闭加密DNS，并接管DNS
 SSID:MyHomeS encrypted-dns-server=off // 使用非加密DNS
-#
+SSID:* encrypted-dns-server = h3://223.6.6.6/dns-query, https://120.53.53.53/dns-query // 其他所有Wi-Fi用加密DNS
