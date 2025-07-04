@@ -1,0 +1,9 @@
+#!name = 规则修正(β)V1.0
+#!desc = 主修正和防暴力请求
+#!author = Mr.Pan
+#!homepage = https://raw.githubusercontent.com/MrPan109/Self-use/master/Module/Amend.lnplugin
+#!icon = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Static.png
+#!Date = 2025.07.4
+#!category=基础
+
+DOMAIN,hudong.alicdn.com,PROXY  // 支付宝跳转
