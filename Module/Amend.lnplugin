@@ -1,4 +1,4 @@
-#!name = 规则修正(β)V1.0.1
+#!name = 规则修正(β)V1.0.2
 #!desc = 主修正和防暴力请求
 #!author = Mr.Pan
 #!homepage = https://raw.githubusercontent.com/MrPan109/Self-use/refs/heads/master/Module/Amend.lnplugin
@@ -6,4 +6,5 @@
 #!Date = 2025.07.4
 #!category=基础
 
+[Rule]
 DOMAIN,hudong.alicdn.com,PROXY  // 支付宝跳转
