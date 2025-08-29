@@ -1,0 +1,12 @@
+# Description:PDirect
+# Update:2025.08.29
+#
+DOMAIN,wawj0109.iok.la // AX86U(外)
+IP-CIDR,110.41.29.62/32,no-resolve // welink
+DOMAIN-SUFFIX,huaweicloud.com // welink
+DOMAIN-SUFFIX,myhuaweicloud.com //welink
+DOMAIN-SUFFIX,huawei.cn // welink
+DOMAIN-SUFFIX,huawei.com // welink
+DOMAIN-WILDCARD,ap?.agora.io // welink 
+DOMAIN-WILDCARD,ap?-tls.agora.io // welink
+AND,((DEST-PORT,8130), (PROTOCOL,UDP)) // welink
