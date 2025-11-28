@@ -1,25 +1,4 @@
-#2025.09.07
+#2025.11.28
 #
 DOMAIN,www.asusrouter.com // 防止访问路由器卡顿
 DOMAIN,adservice.sigmob.cn  // 大师兄广告
-#番茄广告
-IP-CIDR,8.133.123.137/32 //  (tnc0-aliec2.zijieapi.com)
-IP-CIDR,8.133.123.138/32 //  (tnc0-aliec2.zijieapi.com)
-IP-CIDR,8.133.123.139/32 //  (tnc0-aliec2.zijieapi.com)
-IP-CIDR,8.133.123.140/32 //  (tnc0-aliec2.zijieapi.com)
-IP-CIDR,122.14.229.109/32 // (i.snssdk.com)
-IP-CIDR,122.14.229.110/32 //  (i.snssdk.com)
-IP-CIDR,122.14.229.147/32 //  (ads3-normal-lf.zijieapi.com)
-IP-CIDR,122.14.229.148/32 //  (ads3-normal-lf.zijieapi.com)
-IP-CIDR,122.14.229.149/32 //  (ads3-normal-lf.zijieapi.com)
-IP-CIDR,120.78.189.22/32 //  (tnc0-alisc1.zijieapi.com)
-IP-CIDR,120.78.234.27/32 //  (tnc0-alisc1.zijieapi.com)
-IP-CIDR,101.126.58.0/32 //  (ads3-normal-lf.zijieapi.com)
-IP-CIDR,101.126.58.6/32 //  (ads3-normal-lf.zijieapi.com)
-IP-CIDR,101.126.58.7/32 //  (ads5-normal-lf.zijieapi.com)
-IP-CIDR,101.36.166.16/32 //  (dig.bdurl.net)
-IP-CIDR,101.36.166.17/32 //  (dig.bdurl.net)
-IP-CIDR,101.36.166.18/32 //  (dig.bdurl.net)
-IP-CIDR,101.36.166.19/32 //  (dig.bdurl.net)
-IP-CIDR,47.106.88.76/32 //  (tnc0-alisc1.zijieapi.com)
-IP-CIDR,47.106.84.116/32 //  (tnc0-alisc1.zijieapi.com)
