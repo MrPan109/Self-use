@@ -54,6 +54,9 @@ DOMAIN,m.qiyoujiage.com
 # hotmail邮箱
 DOMAIN,m.hotmail.com // hotmail邮箱
 #
+# 华住会
+DOMAIN-SUFFIX,huazhu.com
+#
 # Auto Self规则
 DOMAIN,caiyunapp.com
 DOMAIN,doh.pub
