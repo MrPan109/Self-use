@@ -1,5 +1,5 @@
 # Description:ChinaDIY
-# Update:2025.08.09
+# Update:2026.04.08
 #
 # China Apps
 USER-AGENT,MicroMessenger Client
@@ -45,9 +45,6 @@ IP-CIDR,198.183.17.0/24,no-resolve
 IP-CIDR,205.180.175.0/24,no-resolve
 IP-CIDR,63.92.224.0/19,no-resolve
 IP-CIDR,65.199.22.0/23,no-resolve
-#
-#机场
-DOMAIN,5bx6h.net
 #
 # 贝壳
 DOMAIN,mlvbdc.live.tlivesource.com
