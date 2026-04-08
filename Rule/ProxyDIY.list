@@ -35,6 +35,20 @@ IP-ASN,44907,no-resolve
 IP-CIDR,5.28.192.0/18,no-resolve
 DOMAIN-SUFFIX,telegram.org
 #
+# Apple(proxy)
+DOMAIN-SUFFIX,cdn-apple.com
+DOMAIN-SUFFIX,mzstatic.com // App Store & iTunes Images
+DOMAIN-SUFFIX,aaplimg.com
+DOMAIN-SUFFIX,apple.co
+DOMAIN-SUFFIX,apple.com
+DOMAIN-SUFFIX,icloud-content.com
+DOMAIN-SUFFIX,icloud.com
+DOMAIN-SUFFIX,itunes.com
+DOMAIN-SUFFIX,itunes.apple.com
+DOMAIN-SUFFIX,lookup-api.apple.com // Dictionary
+DOMAIN-SUFFIX,me.com
+USER-AGENT,com.apple.appstored* // iOS App Store
+#
 #自用emby流媒体
 DOMAIN-SUFFIX,embyplus.org  //纸片人
 DOMAIN,emby.bangumi.ca  //nyamedia
