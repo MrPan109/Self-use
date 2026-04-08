@@ -55,4 +55,5 @@ DOMAIN,kelee.one
 DOMAIN,sub-store.vercel.app //substore
 #
 # 机场
-DOMAIN,sub.sesexiaozhan.top //色色小站
+DOMAIN-SUFFIX,sesexiaozhan.com //色色小站
+DOMAIN-SUFFIX,cordc.cc //cordcloud
