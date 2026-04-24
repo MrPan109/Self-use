@@ -1,4 +1,5 @@
-#2026.04.19
+#2026.04.24
 #
 DOMAIN,www.asusrouter.com // 防止访问路由器卡顿
 DOMAIN-SUFFIX,app-analytics-services.com // 谷歌匿名数据收集
+DOMAIN-WILDCARD,stun*.chat.bilibili.com // B站stun
