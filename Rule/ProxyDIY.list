@@ -1,62 +1,84 @@
 # Description:ProxyDIY
 # Update:2026.05.01
 #
-# Blocked
-DOMAIN-SUFFIX,tw
-DOMAIN-KEYWORD,google
-DOMAIN-SUFFIX,gstatic.com
-DOMAIN-SUFFIX,ampproject.org
+# --- A: Airport & Sites (机场与特定站点) ---
+DOMAIN,20.langge.tk    //大灰狼小说
+DOMAIN-SUFFIX,cordc.cc   //cord机场
+DOMAIN-SUFFIX,sesexiaozhan.com  //色色小站机场
+#
+# --- C: Communities & Social (社区与社交) ---
+# 包含 Telegram 增强 IP 规则及常用社交平台
+DOMAIN-KEYWORD,telegram
+DOMAIN-SUFFIX,discord.com
+DOMAIN-SUFFIX,discordapp.com
+DOMAIN-SUFFIX,discordapp.net
+DOMAIN-SUFFIX,line-apps.com
+DOMAIN-SUFFIX,line.me
+DOMAIN-SUFFIX,medium.com
+DOMAIN-SUFFIX,reddit.com
+DOMAIN-SUFFIX,redditmedia.com
+DOMAIN-SUFFIX,wikimedia.org
+DOMAIN-SUFFIX,wikipedia.org
+IP-CIDR,5.28.192.0/18,no-resolve
+IP-ASN,44907,no-resolve
+IP-ASN,59930,no-resolve
+IP-ASN,62014,no-resolve
+IP-ASN,62041,no-resolve
+IP-ASN,211157,no-resolve
+#
+# --- D: Development & Tech (开发者与技术) ---
+DOMAIN-KEYWORD,github
+DOMAIN-SUFFIX,docker.com
+DOMAIN-SUFFIX,docker.io
+DOMAIN-SUFFIX,github.io
+DOMAIN-SUFFIX,stackoverflow.com
+DOMAIN-SUFFIX,v2ray.com
+#
+# --- G: Google & YouTube (谷歌生态) ---
 DOMAIN-KEYWORD,gmail
+DOMAIN-KEYWORD,google
 DOMAIN-KEYWORD,youtube
+DOMAIN-SUFFIX,ampproject.org
+DOMAIN-SUFFIX,ggpht.com
+DOMAIN-SUFFIX,gvt1.com
+DOMAIN-SUFFIX,youtu.be
+#
+# --- M: Meta Family (脸书/印迹/瓦茨普) ---
 DOMAIN-KEYWORD,facebook
+DOMAIN-KEYWORD,instagram
+DOMAIN-KEYWORD,whatsapp
+DOMAIN-SUFFIX,cdninstagram.com
 DOMAIN-SUFFIX,fb.me
 DOMAIN-SUFFIX,fbcdn.net
-DOMAIN-KEYWORD,twitter
-DOMAIN-KEYWORD,instagram
-DOMAIN-KEYWORD,dropbox
-DOMAIN-SUFFIX,twimg.com
-DOMAIN-KEYWORD,blogspot
-DOMAIN-SUFFIX,youtu.be
-DOMAIN-SUFFIX,oculuscdn.com
+DOMAIN-SUFFIX,fbsbx.com
 DOMAIN-SUFFIX,oculus.com
-DOMAIN-KEYWORD,whatsapp
-DOMAIN-SUFFIX,letsencrypt.org
+DOMAIN-SUFFIX,oculuscdn.com
+DOMAIN-SUFFIX,whatsapp.net
+#
+# --- O: Others (其他综合) ---
+DOMAIN-KEYWORD,blogspot
+DOMAIN-KEYWORD,dropbox
 DOMAIN-SUFFIX,android.com
-DOMAIN-SUFFIX,ytimg.com
-DOMAIN-SUFFIX,githubusercontent.com
-DOMAIN-SUFFIX,github.com
+DOMAIN-SUFFIX,bit.ly
+DOMAIN-SUFFIX,duckduckgo.com
+DOMAIN-SUFFIX,letsencrypt.org
+DOMAIN-SUFFIX,tw
+DOMAIN-SUFFIX,vimeo.com
 #
-# > Telegram
-IP-ASN,62041,no-resolve
-IP-ASN,62014,no-resolve
-IP-ASN,59930,no-resolve
-IP-ASN,211157,no-resolve
-IP-ASN,44907,no-resolve
-IP-CIDR,5.28.192.0/18,no-resolve
-DOMAIN-SUFFIX,telegram.org
+# --- P: Proxy & Tools (代理与工具) ---
+# 包含可莉规则库、Substore 等
+DOMAIN,kelee.one
+DOMAIN,proxyresource.pages.dev
+DOMAIN,sub-store.vercel.app
 #
-# Apple(proxy)
-#DOMAIN-SUFFIX,push.apple.com  //海外app推送
+# --- X: X (Twitter) ---
+DOMAIN-KEYWORD,twitter
+DOMAIN-SUFFIX,t.co
+DOMAIN-SUFFIX,twimg.com
+DOMAIN-SUFFIX,x.com
 #
-#自用emby流媒体
-DOMAIN-SUFFIX,embyplus.org  //纸片人
+# 自用emby流媒体
 DOMAIN,emby.bangumi.ca  //nyamedia
+DOMAIN-SUFFIX,embyplus.org  //纸片人
 DOMAIN-SUFFIX,pilipiliultra.com  //pilipili
 DOMAIN-SUFFIX,easyemby.com //ENET机场服
-#
-#大灰狼小说
-DOMAIN,20.langge.tk  //vip7地址
-#
-#DuckDuckGo搜索
-DOMAIN-SUFFIX,duckduckgo.com
-#
-# 可莉规则库
-DOMAIN,proxyresource.pages.dev
-DOMAIN,kelee.one
-#
-# substore
-DOMAIN,sub-store.vercel.app //substore
-#
-# 机场
-DOMAIN-SUFFIX,sesexiaozhan.com //色色小站
-DOMAIN-SUFFIX,cordc.cc //cordcloud
