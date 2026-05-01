@@ -14,9 +14,83 @@ DOMAIN-KEYWORD,.tmall.
 IP-CIDR,198.11.188.0/25,no-resolve
 IP-CIDR,198.11.136.0/24,no-resolve
 USER-AGENT,%E6%89%8B%E6%9C%BA%E6%B7%98%E5%AE%9D*
-# China
-DOMAIN-SUFFIX,CN
-DOMAIN-KEYWORD,baidu
+# AppleCN
+DOMAIN,gs-loc-cn.apple.com
+DOMAIN,appleintelligencefeedback.care.apple.com
+DOMAIN-SUFFIX,gspe19-cn-ssl.ls.apple.com
+DOMAIN-SUFFIX,cn-ssl.ls.apple.com
+DOMAIN-SUFFIX,cn.ls.apple.com
+DOMAIN-SUFFIX,cn.apple.com
+# AppleCDN
+# --- Apple 静态资源 (精确匹配编号与特定前缀) ---
+DOMAIN-WILDCARD,a[1-5].mzstatic.com
+DOMAIN-WILDCARD,is[1-5].mzstatic.com
+DOMAIN-WILDCARD,is[1-5]-ssl.mzstatic.com
+DOMAIN,s.mzstatic.com
+DOMAIN,apps.mzstatic.com
+# --- 地图与位置服务 (锁定 apple-mapkit 与 gs-loc) ---
+DOMAIN-WILDCARD,cdn*.apple-mapkit.com
+DOMAIN-WILDCARD,cdn-cn*.apple-mapkit.com
+DOMAIN-WILDCARD,gs-loc*.apple.com
+DOMAIN,cdn.apple-mapkit.com
+# --- 软件更新与分发 (锁定 aaplimg 及更新组件) ---
+DOMAIN-SUFFIX,g.aaplimg.com
+DOMAIN-SUFFIX,v.aaplimg.com
+DOMAIN-SUFFIX,cdn-apple.com
+DOMAIN-KEYWORD,swcdn
+DOMAIN-KEYWORD,swdist
+DOMAIN-KEYWORD,swscan
+DOMAIN-KEYWORD,swcatalog
+DOMAIN-KEYWORD,mesu-cdn
+# --- 推送、初始化与设备管理 (精确匹配 init 与 pod 模式) ---
+DOMAIN-WILDCARD,init-*.apple.com
+DOMAIN-WILDCARD,init-*.push.apple.com
+DOMAIN-WILDCARD,*-pod*-smp-device.apple.com
+DOMAIN,smp-device-content.apple.com
+DOMAIN-SUFFIX,push-apple.com.akadns.net
+# --- 位置服务子域 (精确匹配 ls 业务簇) ---
+# 覆盖 gsp10, gsp12, gsp4, gspe19, gspe79 等及其 TLS 版本
+URL-REGEX,^http(s)?:\/\/(gsp|gspe)[0-9a-z-]*\.ls\.apple\.com
+DOMAIN-SUFFIX,ls-apple.com.akadns.net
+# --- 证书、天气与 Siri (精确关键词锁定) ---
+DOMAIN,ocsp.apple.com
+DOMAIN,ocsp2.apple.com
+DOMAIN,certs.apple.com
+DOMAIN,crl.apple.com
+DOMAIN,valid.apple.com
+DOMAIN-SUFFIX,lb.apple.com.akadns.net
+DOMAIN-WILDCARD,weather-*.apple.com
+DOMAIN,weatherkit.apple.com
+DOMAIN-KEYWORD,siri.apple.com
+# --- 复杂重定向链与特定路径 (使用正则精确压减) ---
+# 1. 覆盖 cl1-cl5 相关(包含 .cn, -cdn, 及 origin-apple 跳转)
+URL-REGEX,^http(s)?:\/\/cl[1-5](-cn)?(-cdn)?(\.apple\.com|\.origin-apple\.com\.akadns\.net)
+# 2. 覆盖 edgekey.net 相关的全球重定向
+URL-REGEX,^http(s)?:\/\/.*\.apple\.com\.edgekey\.net
+# --- 列表内其余无规律独立域名 (DOMAIN 精确匹配) ---
+DOMAIN,adcdownload.apple.com
+DOMAIN,amp-api.media.apple.com
+DOMAIN,amp-api-updates.apps.apple.com
+DOMAIN,apps.apple.com
+DOMAIN,itunes.apple.com
+DOMAIN,music.apple.com
+DOMAIN,itunesconnect.apple.com
+DOMAIN,configuration.apple.com
+DOMAIN,cstat.apple.com
+DOMAIN,dejavu.apple.com
+DOMAIN,experiments.apple.com
+DOMAIN,iadsdk.apple.com
+DOMAIN,pancake.apple.com
+DOMAIN,pba0.apple.com
+DOMAIN,reserve-prime.apple.com
+DOMAIN,sequoia.apple.com
+DOMAIN,static.gc.apple.com
+DOMAIN,stocks-sparkline.apple.com
+DOMAIN,support.apple.com
+DOMAIN,support-china.apple-support.akadns.net
+DOMAIN,sylvan.apple.com
+DOMAIN,www.apple.com
+DOMAIN,xp.apple.com
 #
 # 贝壳
 DOMAIN,mlvbdc.live.tlivesource.com
@@ -30,6 +104,10 @@ DOMAIN,m.hotmail.com // hotmail邮箱
 DOMAIN-SUFFIX,huazhu.com
 #
 DEST-PORT,123 //时间同步
+#
+# China
+DOMAIN-SUFFIX,CN
+DOMAIN-KEYWORD,baidu
 #
 # Auto Self规则
 DOMAIN,caiyunapp.com
