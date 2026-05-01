@@ -36,7 +36,7 @@ IP-CIDR,5.28.192.0/18,no-resolve
 DOMAIN-SUFFIX,telegram.org
 #
 # Apple(proxy)
-DOMAIN-SUFFIX,push.apple.com  //海外app推送
+#DOMAIN-SUFFIX,push.apple.com  //海外app推送
 #
 #自用emby流媒体
 DOMAIN-SUFFIX,embyplus.org  //纸片人
