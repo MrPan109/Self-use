@@ -3,7 +3,7 @@
 #!author = Mr.Pan
 #!homepage = https://raw.githubusercontent.com/MrPan109/Self-use/master/Module/Rule_Amend.plugin
 #!icon = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Static.png
-#!Date = 2025.08.29
+#!Date = 2026.05.04
 #!category=基础
 
 [Rule]
@@ -14,7 +14,6 @@ PROTOCOL,STUN,REJECT     // 干掉所有STUN
 #
 [Ruleset RNDs]
 DOMAIN,www.asusrouter.com // 防止访问路由器卡顿
-DOMAIN,adservice.sigmob.cn  // 大师兄广告
 #
 [SSID Setting]
 SSID:MyHome dns-server=system,encrypted-dns-server=off  // AX86U关闭加密DNS，并接管DNS
