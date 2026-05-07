@@ -1,27 +1,35 @@
 # Description:ChinaDIY
-# Update:2026.05.01
+# Update:2026.05.07
 #
-# >>> A - Ali (阿里巴巴 / 支付宝 / 淘宝)
+# 阿里巴巴
 DOMAIN-KEYWORD,alicdn
 DOMAIN-KEYWORD,alipay
 DOMAIN-KEYWORD,aliyun
 DOMAIN-KEYWORD,taobao
 DOMAIN-KEYWORD,tmall
+DOMAIN-SUFFIX,alibaba.com
+DOMAIN-SUFFIX,alibabachengdun.com
+DOMAIN-SUFFIX,alibabachengdun.net
+DOMAIN-SUFFIX,alibabausercontent.com
+DOMAIN-SUFFIX,alidns.com
 USER-AGENT,%E6%89%8B%E6%9C%BA%E6%B7%98%E5%AE%9D*
 IP-CIDR,198.11.136.0/24,no-resolve
 IP-CIDR,198.11.188.0/25,no-resolve
 
-# >>> A - Apple (CDN / 静态资源)
+# Alook
+DOMAIN-SUFFIX,alookweb.com
+
+# Apple CDN
 DOMAIN,apps.mzstatic.com
 DOMAIN,s.mzstatic.com
 DOMAIN-WILDCARD,a[1-5].mzstatic.com
 DOMAIN-WILDCARD,is[1-5]*.mzstatic.com
-DOMAIN-SUFFIX,g.aaplimg.com
-DOMAIN-SUFFIX,v.aaplimg.com
 DOMAIN-SUFFIX,cdn-apple.com
+DOMAIN-SUFFIX,g.aaplimg.com
 DOMAIN-SUFFIX,storeimages.cdn-apple.com
+DOMAIN-SUFFIX,v.aaplimg.com
 
-# >>> A - Apple (核心服务: 地图 / 位置 / 天气 / Siri)
+# Apple 地图 / Siri / 天气
 DOMAIN,cdn.apple-mapkit.com
 DOMAIN,gs-loc-cn.apple.com
 DOMAIN,weatherkit.apple.com
@@ -35,7 +43,7 @@ DOMAIN-SUFFIX,ls.apple.com
 DOMAIN-SUFFIX,ls-apple.com.akadns.net
 URL-REGEX,^https?:\/\/(gsp|gspe)[0-9a-z-]*\.ls\.apple\.com
 
-# >>> A - Apple (分发 / 推送 / 验证 / 系统)
+# Apple 系统 / 推送
 DOMAIN,appleintelligencefeedback.care.apple.com
 DOMAIN,certs.apple.com
 DOMAIN,crl.apple.com
@@ -53,10 +61,10 @@ DOMAIN-KEYWORD,swdist
 DOMAIN-KEYWORD,swscan
 DOMAIN-SUFFIX,lb.apple.com.akadns.net
 DOMAIN-SUFFIX,push-apple.com.akadns.net
-URL-REGEX,^https?:\/\/cl[1-5](-cn)?(-cdn)?(\.apple\.com|\.origin-apple\.com\.akadns\.net)
 URL-REGEX,^https?:\/\/.*\.apple\.com\.edgekey\.net
+URL-REGEX,^https?:\/\/cl[1-5](-cn)?(-cdn)?(\.apple\.com|\.origin-apple\.com\.akadns\.net)
 
-# >>> A - Apple (其他独立业务)
+# Apple 服务
 DOMAIN,adcdownload.apple.com
 DOMAIN,amp-api.media.apple.com
 DOMAIN,amp-api-updates.apps.apple.com
@@ -82,110 +90,161 @@ DOMAIN,sylvan.apple.com
 DOMAIN,www.apple.com
 DOMAIN,xp.apple.com
 
-# >>> B - Beike (贝壳)
-DOMAIN,mlvbdc.live.tlivesource.com
-DOMAIN-SUFFIX,ke.com
-
-# >>> C - China General (国内通用自动规则)
-DOMAIN,caiyunapp.com
-DOMAIN,crl.digicert-cn.com
-DOMAIN,doh.pub
-DOMAIN,jihulab.com
-DOMAIN-KEYWORD,baidu
-DOMAIN-SUFFIX,cn
-DOMAIN-SUFFIX,126.net
-DOMAIN-SUFFIX,163.com
-DOMAIN-SUFFIX,360buyimg.com
-DOMAIN-SUFFIX,7littlemen.com
-DOMAIN-SUFFIX,95516.com
-DOMAIN-SUFFIX,aki-game.com
-DOMAIN-SUFFIX,alibaba.com
-DOMAIN-SUFFIX,alibabachengdun.com
-DOMAIN-SUFFIX,alibabachengdun.net
-DOMAIN-SUFFIX,alibabausercontent.com
-DOMAIN-SUFFIX,alidns.com
-DOMAIN-SUFFIX,alookweb.com
-DOMAIN-SUFFIX,amap.com
+# 华硕
 DOMAIN-SUFFIX,asus.com
-DOMAIN-SUFFIX,auliking.com
-DOMAIN-SUFFIX,autonavi.com
+
+# 百度
+DOMAIN-KEYWORD,baidu
 DOMAIN-SUFFIX,bcebos.com
 DOMAIN-SUFFIX,bdimg.com
 DOMAIN-SUFFIX,bdstatic.com
+
+# 贝壳
+DOMAIN,mlvbdc.live.tlivesource.com
+DOMAIN-SUFFIX,ke.com
+
+# 哔哩哔哩
 DOMAIN-SUFFIX,biliapi.net
 DOMAIN-SUFFIX,bilibili.com
 DOMAIN-SUFFIX,biligame.com
 DOMAIN-SUFFIX,bilivideo.com
-DOMAIN-SUFFIX,c-ctrip.com
-DOMAIN-SUFFIX,caifuxingketang.com
-DOMAIN-SUFFIX,caiyuncdn.com
-DOMAIN-SUFFIX,cmbchina.com
-DOMAIN-SUFFIX,cmbimg.com
-DOMAIN-SUFFIX,cmpassport.com
-DOMAIN-SUFFIX,colorfulclouds.net
-DOMAIN-SUFFIX,csjdeveloper.com
-DOMAIN-SUFFIX,ctrip.com
-DOMAIN-SUFFIX,d3games.com
-DOMAIN-SUFFIX,dianping.com
-DOMAIN-SUFFIX,dodomh.com
-DOMAIN-SUFFIX,douban.com
-DOMAIN-SUFFIX,douyinvod.com
-DOMAIN-SUFFIX,getui.net
-DOMAIN-SUFFIX,guoguomh.com
 DOMAIN-SUFFIX,hdslb.com
-DOMAIN-SUFFIX,hellobike.com
-DOMAIN-SUFFIX,heytea.com
-DOMAIN-SUFFIX,huya.com
-DOMAIN-SUFFIX,hwwt8.com
-DOMAIN-SUFFIX,ithome.com
-DOMAIN-SUFFIX,jd.com
-DOMAIN-SUFFIX,jdpay.com
-DOMAIN-SUFFIX,kugou.com
-DOMAIN-SUFFIX,meitu.com
-DOMAIN-SUFFIX,meituan.com
-DOMAIN-SUFFIX,meituan.net
-DOMAIN-SUFFIX,meitudata.com
-DOMAIN-SUFFIX,miso-lab.com
-DOMAIN-SUFFIX,msstatic.com
-DOMAIN-SUFFIX,myapp.com
-DOMAIN-SUFFIX,mygolbs.com
-DOMAIN-SUFFIX,myqcloud.com
-DOMAIN-SUFFIX,myzaker.com
-DOMAIN-SUFFIX,netease.com
-DOMAIN-SUFFIX,nnkn.fun
-DOMAIN-SUFFIX,pki.goog
-DOMAIN-SUFFIX,ppio.cloud
-DOMAIN-SUFFIX,qidian.com
-DOMAIN-SUFFIX,ruanmei.com
-DOMAIN-SUFFIX,sdo.com
-DOMAIN-SUFFIX,tanx.com
-DOMAIN-SUFFIX,tatstm.com
-DOMAIN-SUFFIX,tencentmusic.com
-DOMAIN-SUFFIX,volces.com
-DOMAIN-SUFFIX,weibo.com
-DOMAIN-SUFFIX,weibocdn.com
-DOMAIN-SUFFIX,weidian.com
-DOMAIN-SUFFIX,xhscdn.com
-DOMAIN-SUFFIX,xiaohongshu.com
-DOMAIN-SUFFIX,ximalaya.com
-DOMAIN-SUFFIX,xmcdn.com
-DOMAIN-SUFFIX,yksdks.com
-DOMAIN-SUFFIX,youdao.com
-DOMAIN-SUFFIX,yumchina.com
-DOMAIN-SUFFIX,zijieapi.com
 
-# >>> H - Hotel & Hotmail (华住 / 邮箱)
+# 字节跳动
+DOMAIN-SUFFIX,douyinvod.com
+DOMAIN-SUFFIX,volces.com
+DOMAIN-SUFFIX,zijieapi.com
+DOMAIN-SUFFIX,zjcdn.com
+
+# 彩云
+DOMAIN,caiyunapp.com
+DOMAIN-SUFFIX,caiyuncdn.com
+DOMAIN-SUFFIX,colorfulclouds.net
+
+# 中国移动
+DOMAIN-SUFFIX,cmpassport.com
+
+# 携程
+DOMAIN-SUFFIX,c-ctrip.com
+DOMAIN-SUFFIX,ctrip.com
+
+# 开发 / 资讯
+DOMAIN,jihulab.com
+DOMAIN-SUFFIX,csjdeveloper.com
+DOMAIN-SUFFIX,ithome.com
+DOMAIN-SUFFIX,ruanmei.com
+
+# DNS / PKI
+DOMAIN,doh.pub
+DOMAIN,crl.digicert-cn.com
+DOMAIN-SUFFIX,pki.goog
+
+# 豆瓣
+DOMAIN-SUFFIX,douban.com
+
+# 游戏
+DOMAIN-SUFFIX,aki-game.com
+DOMAIN-SUFFIX,d3games.com
+DOMAIN-SUFFIX,sdo.com
+
+# 哈啰
+DOMAIN-SUFFIX,hellobike.com
+
+# 喜茶
+DOMAIN-SUFFIX,heytea.com
+
+# Hotmail
 DOMAIN,m.hotmail.com
+
+# 华住
 DOMAIN-SUFFIX,huazhu.com
 
-# >>> Q - Qiyou (汽油价格)
+# 虎牙
+DOMAIN-SUFFIX,huya.com
+
+# 京东
+DOMAIN-SUFFIX,360buyimg.com
+DOMAIN-SUFFIX,jd.com
+DOMAIN-SUFFIX,jdpay.com
+
+# 酷狗
+DOMAIN-SUFFIX,kugou.com
+
+# 美图
+DOMAIN-SUFFIX,meitu.com
+DOMAIN-SUFFIX,meitudata.com
+
+# 美团
+DOMAIN-SUFFIX,dianping.com
+DOMAIN-SUFFIX,meituan.com
+DOMAIN-SUFFIX,meituan.net
+
+# 网易
+DOMAIN-SUFFIX,126.net
+DOMAIN-SUFFIX,163.com
+DOMAIN-SUFFIX,netease.com
+
+# 其它
+DOMAIN-SUFFIX,auliking.com
+DOMAIN-SUFFIX,caifuxingketang.com
+DOMAIN-SUFFIX,mygolbs.com
+DOMAIN-SUFFIX,tatstm.com
+
+# 云服务 / 推送
+DOMAIN-SUFFIX,getui.net
+DOMAIN-SUFFIX,myqcloud.com
+DOMAIN-SUFFIX,ppio.cloud
+
+# 起点
+DOMAIN-SUFFIX,qidian.com
+
+# 汽油价格
 DOMAIN,m.qiyoujiage.com
 
-# >>> T - Tencent (腾讯 / 微信)
+# 银联
+DOMAIN-SUFFIX,95516.com
+
+# 腾讯 / 微信
 DOMAIN-SUFFIX,qq.com
 DOMAIN-SUFFIX,servicewechat.com
 USER-AGENT,MicroMessenger Client
 USER-AGENT,WeChat*
 
-# >>> T - Time (时间同步)
+# 时间同步
 DEST-PORT,123
+
+# 微博
+DOMAIN-SUFFIX,weibo.com
+DOMAIN-SUFFIX,weibocdn.com
+
+# 微店
+DOMAIN-SUFFIX,weidian.com
+
+# 小红书
+DOMAIN-SUFFIX,xhscdn.com
+DOMAIN-SUFFIX,xiaohongshu.com
+
+# 喜马拉雅
+DOMAIN-SUFFIX,ximalaya.com
+DOMAIN-SUFFIX,xmcdn.com
+
+# 百胜中国
+DOMAIN-SUFFIX,yumchina.com
+
+# 有道
+DOMAIN-SUFFIX,youdao.com
+
+# Zaker
+DOMAIN-SUFFIX,myzaker.com
+
+# 漫画 / ACG
+DOMAIN-SUFFIX,7littlemen.com
+DOMAIN-SUFFIX,dodomh.com
+DOMAIN-SUFFIX,guoguomh.com
+DOMAIN-SUFFIX,hwwt8.com
+DOMAIN-SUFFIX,miso-lab.com
+DOMAIN-SUFFIX,nnkn.fun
+DOMAIN-SUFFIX,yksdks.com
+
+# 中国通用
+DOMAIN-SUFFIX,cn
