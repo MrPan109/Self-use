@@ -1,4 +1,4 @@
-DOMAIN-SUFFIX,local
+#2026.05.07
 
 IP-CIDR,0.0.0.0/8,no-resolve
 IP-CIDR,10.0.0.0/8,no-resolve
