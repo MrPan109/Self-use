@@ -1,4 +1,6 @@
-#2026.05.04
+#2026.05.11
 #
 DOMAIN,www.asusrouter.com // 防止访问路由器卡顿
 DOMAIN-SUFFIX,app-analytics-services.com // 谷歌匿名数据收集
+#
+URL-REGEX ^http:\/\/.+\/amdc\/mobileDispatch // 阿里
