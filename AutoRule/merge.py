@@ -1,48 +1,95 @@
 import urllib.request
 import os
+from datetime import datetime, timezone, timedelta
 
-# 1. 想要合并的远程规则集链接（换成你自己的链接）
+
+# 要合并的远程规则集
 URLS = [
     "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Surge-RULE-SET.list",
     "https://raw.githubusercontent.com/MrPan109/Self-use/refs/heads/master/Rule/RNDs.list"
 ]
 
+
 def fetch_and_merge():
     merged_lines = set()
     output_lines = []
-    
-    # 标头注释
-    output_lines.append("// ======= 专属自动合并规则集 =======")
-    output_lines.append("// 生成时间: 自动更新\n")
-    
+
+    # GitHub Actions 默认 UTC，这里转北京时间
+    china_tz = timezone(timedelta(hours=8))
+    now = datetime.now(china_tz).strftime("%Y-%m-%d %H:%M:%S")
+
+    # 文件头
+    output_lines.extend([
+        "// ======= 专属自动合并规则集 =======",
+        f"// 生成时间: {now} (UTC+8)",
+        f"// 规则源数量: {len(URLS)}",
+        ""
+    ])
+
     for url in URLS:
         try:
             print(f"正在抓取: {url}")
-            req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-            with urllib.request.urlopen(req, timeout=15) as response:
-                content = response.read().decode('utf-8')
-                
+
+            req = urllib.request.Request(
+                url,
+                headers={
+                    "User-Agent": "Mozilla/5.0"
+                }
+            )
+
+            with urllib.request.urlopen(
+                req,
+                timeout=15
+            ) as response:
+
+                # 自动去 BOM
+                content = response.read().decode(
+                    "utf-8-sig"
+                )
+
                 for line in content.splitlines():
                     line = line.strip()
-                    # 略过空行和纯注释行
-                    if not line or line.startswith("//") or line.startswith("#"):
+
+                    # 跳过空行和注释
+                    if not line:
                         continue
-                    
-                    # 去重逻辑
+
+                    if line.startswith("//"):
+                        continue
+
+                    if line.startswith("#"):
+                        continue
+
+                    # 去重
                     if line not in merged_lines:
                         merged_lines.add(line)
                         output_lines.append(line)
+
         except Exception as e:
             print(f"抓取失败 {url}: {e}")
 
-    # 2. 显式指定生成文件的路径为：当前运行目录的根目录下的 AdDIY.list
-    current_dir = os.path.dirname(os.path.abspath(__file__))
-    output_path = os.path.join(current_dir, "AdDIY.list")
+    # 输出文件
+    current_dir = os.path.dirname(
+        os.path.abspath(__file__)
+    )
 
-    # 保存为新文件
-    with open(output_path, "w", encoding="utf-8") as f:
+    output_path = os.path.join(
+        current_dir,
+        "AdDIY.list"
+    )
+
+    with open(
+        output_path,
+        "w",
+        encoding="utf-8",
+        newline="\n"
+    ) as f:
         f.write("\n".join(output_lines))
-    print(f"规则合并完成，已生成至路径: {output_path}")
+
+    print("规则合并完成")
+    print(f"总规则数: {len(merged_lines)}")
+    print(f"输出路径: {output_path}")
+
 
 if __name__ == "__main__":
     fetch_and_merge()
