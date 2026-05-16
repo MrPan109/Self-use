@@ -3,40 +3,45 @@ name: Auto Merge Surge Rules
 on:
   schedule:
     - cron: '0 20 * * *'
-  workflow_dispatch: # 保持手动触发按钮
+  workflow_dispatch:
 
 jobs:
   merge-job:
     runs-on: ubuntu-latest
+
     permissions:
       contents: write
 
-    env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true # 消除 Node.js 20 弃用警告
-
     steps:
-    - name: 检出仓库代码
-      uses: actions/checkout@v4
+      - name: 检出仓库代码
+        uses: actions/checkout@v4
 
-    - name: 设置 Python 环境
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.10'
+      - name: 设置 Python 环境
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
 
-    - name: 执行合并脚本
-      # ⚡️ 路径已修改为 AutoRule
-      run: python AutoRule/merge.py
+      - name: 下载私有 merge.py
+        run: |
+          curl \
+          -H "Authorization: token ${{ secrets.PRIVATE_REPO_TOKEN }}" \
+          -L \
+          https://raw.githubusercontent.com/MrPan109/LSS-IN/refs/heads/master/Auto/merge.py \
+          -o merge.py
 
-    - name: 检查文件是否有变动并提交
-      run: |
-        git config --local user.email "github-actions[bot]@users.noreply.github.com"
-        git config --local user.name "github-actions[bot]"
-        
-        # ⚡️ 追踪路径已修改为 AutoRule/AdDIY.list
-        git add AutoRule/AdDIY.list
-        if ! git diff --cached --quiet; then
-          git commit -m "chore: 自动更新 AutoRule/AdDIY.list"
-          git push
-        else
-          echo "规则没有变化，无需更新。"
-        fi
+      - name: 执行合并脚本
+        run: python merge.py
+
+      - name: 提交更新
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+
+          git add AutoRule/AdDIY.list
+
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: 自动更新规则"
+            git push
+          else
+            echo "规则没有变化"
+          fi
