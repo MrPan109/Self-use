@@ -12,19 +12,10 @@ URLS = [
 
 def fetch_and_merge():
     merged_lines = set()
-    output_lines = []
 
     # GitHub Actions 默认 UTC，这里转北京时间
     china_tz = timezone(timedelta(hours=8))
     now = datetime.now(china_tz).strftime("%Y-%m-%d %H:%M:%S")
-
-    # 文件头
-    output_lines.extend([
-        "// ======= 专属自动合并规则集 =======",
-        f"// 生成时间: {now} (UTC+8)",
-        f"// 规则源数量: {len(URLS)}",
-        ""
-    ])
 
     for url in URLS:
         try:
@@ -61,12 +52,25 @@ def fetch_and_merge():
                         continue
 
                     # 去重
-                    if line not in merged_lines:
-                        merged_lines.add(line)
-                        output_lines.append(line)
+                    merged_lines.add(line)
 
         except Exception as e:
             print(f"抓取失败 {url}: {e}")
+
+    # 统计最终条目数
+    total_rules = len(merged_lines)
+
+    # 文件头
+    output_lines = [
+        "// ======= 专属自动合并规则集 =======",
+        f"// 生成时间: {now} (UTC+8)",
+        f"// 规则源数量: {len(URLS)}",
+        f"// 规则条目总数: {total_rules}",
+        ""
+    ]
+
+    # 加入规则内容
+    output_lines.extend(sorted(merged_lines))
 
     # 输出文件
     current_dir = os.path.dirname(
@@ -87,7 +91,7 @@ def fetch_and_merge():
         f.write("\n".join(output_lines))
 
     print("规则合并完成")
-    print(f"总规则数: {len(merged_lines)}")
+    print(f"总规则数: {total_rules}")
     print(f"输出路径: {output_path}")
 
 
