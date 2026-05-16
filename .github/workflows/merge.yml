@@ -11,6 +11,9 @@ jobs:
     permissions:
       contents: write
 
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true # 消除 Node.js 20 弃用警告
+
     steps:
     - name: 检出仓库代码
       uses: actions/checkout@v4
@@ -21,17 +24,18 @@ jobs:
         python-version: '3.10'
 
     - name: 执行合并脚本
-      # ⚡️注意：因为你把脚本放在 Rule 文件夹下，这里要加上路径
-      run: python Rule/merge.py
+      # ⚡️ 路径已修改为 AutoRule
+      run: python AutoRule/merge.py
 
     - name: 检查文件是否有变动并提交
       run: |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
-        # ⚡️注意：这里同样修改为指定追踪 rule 文件夹下的 AdDIY.list
-        git add Rule/AdDIY.list
+        
+        # ⚡️ 追踪路径已修改为 AutoRule/AdDIY.list
+        git add AutoRule/AdDIY.list
         if ! git diff --cached --quiet; then
-          git commit -m "chore: 自动更新 Rule/AdDIY.list"
+          git commit -m "chore: 自动更新 AutoRule/AdDIY.list"
           git push
         else
           echo "规则没有变化，无需更新。"
