@@ -1,7 +1,8 @@
 import urllib.request
 import os
+from datetime import datetime, timedelta, timezone
 
-# 1. 想要合并的远程规则集链接（换成你自己的链接）
+# 1. 想要合并的远程规则集链接
 URLS = [
     "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Surge-RULE-SET.list",
     "https://raw.githubusercontent.com/MrPan109/Self-use/refs/heads/master/Rule/RNDs.list"
@@ -11,9 +12,13 @@ def fetch_and_merge():
     merged_lines = set()
     output_lines = []
     
-    # 标头注释
+    # ⚡️ 核心改动：利用 timedelta 强制锁定东八区北京时间
+    tz_bj = timezone(timedelta(hours=8))
+    bj_time = datetime.now(tz_bj).strftime('%Y-%m-%d %H:%M:%S')
+    
+    # 标头注释（加入动态北京时间）
     output_lines.append("// ======= 专属自动合并规则集 =======")
-    output_lines.append("// 生成时间: 自动更新\n")
+    output_lines.append(f"// 生成时间 (北京时间): {bj_time}\n")
     
     for url in URLS:
         try:
@@ -35,7 +40,7 @@ def fetch_and_merge():
         except Exception as e:
             print(f"抓取失败 {url}: {e}")
 
-    # 2. 显式指定生成文件的路径为：当前运行目录的根目录下的 AdDIY.list
+    # 2. 动态获取当前脚本所在目录（即 AutoRule 文件夹），并精准定位 AdDIY.list
     current_dir = os.path.dirname(os.path.abspath(__file__))
     output_path = os.path.join(current_dir, "AdDIY.list")
 
@@ -44,5 +49,5 @@ def fetch_and_merge():
         f.write("\n".join(output_lines))
     print(f"规则合并完成，已生成至路径: {output_path}")
 
-if __name__ == "__main__":
+if name == "__main__":
     fetch_and_merge()
