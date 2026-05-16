@@ -12,11 +12,11 @@ def fetch_and_merge():
     merged_lines = set()
     output_lines = []
     
-    # ⚡️ 核心改动：利用 timedelta 强制锁定东八区北京时间
+    # ⚡️ 利用 timedelta 强制锁定东八区北京时间
     tz_bj = timezone(timedelta(hours=8))
     bj_time = datetime.now(tz_bj).strftime('%Y-%m-%d %H:%M:%S')
     
-    # 标头注释（加入动态北京时间）
+    # 标头注释
     output_lines.append("// ======= 专属自动合并规则集 =======")
     output_lines.append(f"// 生成时间 (北京时间): {bj_time}\n")
     
@@ -49,5 +49,6 @@ def fetch_and_merge():
         f.write("\n".join(output_lines))
     print(f"规则合并完成，已生成至路径: {output_path}")
 
+# ⚡️ 修复此处双下划线
 if name == "__main__":
     fetch_and_merge()
