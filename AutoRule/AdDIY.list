@@ -1,6 +1,7 @@
 // ======= 专属自动合并规则集 =======
-// 生成时间: 2026-05-16 09:19:43 (UTC+8)
+// 生成时间: 2026-05-16 09:22:43 (UTC+8)
 // 规则源数量: 2
+// 规则条目总数: 914
 
 DOMAIN,1500020991.vodplayer.wxamedia.com
 DOMAIN,1500022744.vodplayer.wxamedia.com
@@ -871,6 +872,7 @@ DOMAIN,ws-keyboard.shouji.sogou.com
 DOMAIN,ws.sj.qq.com
 DOMAIN,wv.inner-active.mobi
 DOMAIN,wwads.cn
+DOMAIN,www.asusrouter.com // 防止访问路由器卡顿
 DOMAIN,wxa.wxs.qq.com
 DOMAIN,wxaintpcos.wxqcloud.qq.com.cn
 DOMAIN,wximg.wxs.qq.com
@@ -897,22 +899,21 @@ DOMAIN,zeus.ad.xiaomi.com
 DOMAIN,zhihu-web-analytics.zhihu.com
 DOMAIN,zjres-ad.kajicam.com
 DOMAIN,zxid-m.mobileservice.cn
+DOMAIN-KEYWORD,-ad.sm.cn
+DOMAIN-KEYWORD,-ad.video.yximgs.com
+DOMAIN-KEYWORD,-ad.wtzw.com
+DOMAIN-KEYWORD,-be-pack-sign.pglstatp-toutiao.com
+DOMAIN-KEYWORD,-normal.zijieapi.com
 DOMAIN-SUFFIX,1rtb.com
 DOMAIN-SUFFIX,a.market.xiaomi.com
 DOMAIN-SUFFIX,ad.gameley.com
 DOMAIN-SUFFIX,adintl.cn
 DOMAIN-SUFFIX,adx.adwangmai.com
+DOMAIN-SUFFIX,app-analytics-services.com // 谷歌匿名数据收集
 DOMAIN-SUFFIX,data.hicloud.com
 DOMAIN-SUFFIX,log.aliyuncs.com
 DOMAIN-SUFFIX,ubixioe.com
 DOMAIN-SUFFIX,vlion.cn
 DOMAIN-SUFFIX,yfanads.com
 DOMAIN-SUFFIX,zhangyuyidong.cn
-DOMAIN-KEYWORD,-ad.sm.cn
-DOMAIN-KEYWORD,-ad.video.yximgs.com
-DOMAIN-KEYWORD,-ad.wtzw.com
-DOMAIN-KEYWORD,-be-pack-sign.pglstatp-toutiao.com
-DOMAIN-KEYWORD,-normal.zijieapi.com
-DOMAIN,www.asusrouter.com // 防止访问路由器卡顿
-DOMAIN-SUFFIX,app-analytics-services.com // 谷歌匿名数据收集
 URL-REGEX,"^http:\/\/.+\/amdc\/mobileDispatch" // 阿里
