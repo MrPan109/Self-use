@@ -1,19 +1,10 @@
-#!name = 规则修正v5.0.0
-#!desc = 主修正和防暴力请求(带策略选择)
+#!name = 基础修正V6.0.0
+#!desc = 基础修正
 #!author = Mr.Pan
 #!homepage = https://raw.githubusercontent.com/MrPan109/Self-use/master/Module/Rule_Amend.plugin
 #!icon = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Static.png
-#!Date = 2026.05.04
+#!Date = 2026.05.16
 #!category=基础
-
-[Rule]
-# > 修正规则
-AND,((NOT,((SUBNET,SSID:MyHome))), (IP-CIDR,172.16.16.254/32,no-resolve)),BTP.03 // AX86U(内)    
-RULE-SET,RNDs,REJECT-NO-DROP,extended-matching,pre-matching,no-resolve
-PROTOCOL,STUN,REJECT     // 干掉所有STUN
-#
-[Ruleset RNDs]
-DOMAIN,www.asusrouter.com // 防止访问路由器卡顿
 #
 [SSID Setting]
 SSID:MyHome dns-server=system,encrypted-dns-server=off  // AX86U关闭加密DNS，并接管DNS
