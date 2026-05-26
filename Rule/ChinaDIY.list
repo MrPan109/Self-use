@@ -255,6 +255,3 @@ DOMAIN-SUFFIX,yksdks.com
 
 # 中国通用
 DOMAIN-SUFFIX,cn
-
-# 国内IP
-GEOIP,CN
