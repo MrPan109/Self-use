@@ -1,5 +1,5 @@
-// ===== auto merged rules =====
-// time: 2026-05-26 05:15:19 (UTC+8)
+// ===== optimized AdDIY rules =====
+// time: 2026-05-26 22:00:06 (UTC+8)
 // sources: 2/2
 // count: 915
 
@@ -899,11 +899,6 @@ DOMAIN,zeus.ad.xiaomi.com
 DOMAIN,zhihu-web-analytics.zhihu.com
 DOMAIN,zjres-ad.kajicam.com
 DOMAIN,zxid-m.mobileservice.cn
-DOMAIN-KEYWORD,-ad.sm.cn
-DOMAIN-KEYWORD,-ad.video.yximgs.com
-DOMAIN-KEYWORD,-ad.wtzw.com
-DOMAIN-KEYWORD,-be-pack-sign.pglstatp-toutiao.com
-DOMAIN-KEYWORD,-normal.zijieapi.com
 DOMAIN-SUFFIX,1rtb.com
 DOMAIN-SUFFIX,a.market.xiaomi.com
 DOMAIN-SUFFIX,ad.gameley.com
@@ -917,4 +912,9 @@ DOMAIN-SUFFIX,vlion.cn
 DOMAIN-SUFFIX,yfanads.com
 DOMAIN-SUFFIX,zhangyuyidong.cn
 DOMAIN-WILDCARD,stun*.chat.bilibili.com // B站stun
-URL-REGEX,"^http:\/\/.+\/amdc\/mobileDispatch" // 阿里
+DOMAIN-KEYWORD,-ad.sm.cn
+DOMAIN-KEYWORD,-ad.video.yximgs.com
+DOMAIN-KEYWORD,-ad.wtzw.com
+DOMAIN-KEYWORD,-be-pack-sign.pglstatp-toutiao.com
+DOMAIN-KEYWORD,-normal.zijieapi.com
+PROTOCOL,STUN  // 干掉所有STUN
