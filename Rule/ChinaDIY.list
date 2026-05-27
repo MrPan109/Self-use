@@ -1,5 +1,5 @@
 # Description:ChinaDIY
-# Update:2026.05.26
+# Update:2026.05.27
 #
 # 阿里巴巴
 DOMAIN-KEYWORD,alicdn
@@ -255,3 +255,6 @@ DOMAIN-SUFFIX,yksdks.com
 
 # 中国通用
 DOMAIN-SUFFIX,cn
+
+# 中国GeoIP/触发dns解析
+GEOIP,CN
