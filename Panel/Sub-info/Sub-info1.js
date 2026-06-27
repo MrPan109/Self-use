@@ -4,7 +4,7 @@
  * 由@mrpan109修改
  * 百分比显示优化版
  * 适用于：总流量套餐 / 不按月重置机场
- * 2026.06.27
+ * 2026.06.27（优化版）
  */
 
 let args = getArgs();
@@ -59,12 +59,10 @@ function getArgs() {
 }
 
 function getUserInfo(url) {
-  // 核心优化1：默认使用 GET 请求，大部分机场防爬虫机制会拦截 HEAD 请求
   let method = args.method || "get"; 
 
   let request = {
     headers: {
-      // 核心优化2：模拟 Surge 客户端的 User-Agent
       "User-Agent": "Surge/3000 (iPhone; iOS 17.0; Scale/3.00)",
       "Accept": "*/*"
     },
@@ -83,17 +81,27 @@ function getUserInfo(url) {
         return;
       }
 
-      // 兼容大小写不规范的响应头
+      // 1. 优先尝试从 HTTP 响应头获取
       let header = Object.keys(resp.headers).find(
         (key) => key.toLowerCase() === "subscription-userinfo"
       );
 
-      if (header) {
+      if (header && resp.headers[header]) {
         resolve(resp.headers[header]);
         return;
       }
 
-      reject("链接响应头中未包含流量信息 (subscription-userinfo)");
+      // 2. 核心优化：响应头没有，则尝试从返回的文本主体（Body）中匹配流量信息
+      if (resp.body) {
+        // 匹配类似于 upload=xxx; download=xxx; total=xxx 的标准流量文本
+        let trafficMatch = resp.body.match(/\w+=[\d.eE+-]+/g);
+        if (trafficMatch && resp.body.includes("total=")) {
+          resolve(resp.body); // 将正文直接传给下一步解析
+          return;
+        }
+      }
+
+      reject("链接响应头和正文中均未包含标准流量信息");
     })
   );
 }
@@ -108,12 +116,21 @@ async function getDataInfo(url) {
     return;
   }
 
-  return Object.fromEntries(
+  // 从获取到的字符串中提取 total, download, upload, expire
+  let info = Object.fromEntries(
     data
       .match(/\w+=[\d.eE+-]+/g)
       .map((item) => item.split("="))
       .map(([k, v]) => [k, Number(v)])
   );
+  
+  // 补齐字段，防止缺失报错
+  return {
+    download: info.download || 0,
+    upload: info.upload || 0,
+    total: info.total || 0,
+    expire: info.expire || null
+  };
 }
 
 function bytesToSize(bytes) {
