@@ -4,7 +4,7 @@
  * 由@mrpan109修改
  * 百分比显示优化版
  * 适用于：总流量套餐 / 不按月重置机场
- * 2026.06.27（优化版）
+ * 2026.06.27（优化版V1.2）
  */
 
 let args = getArgs();
@@ -63,7 +63,8 @@ function getUserInfo(url) {
 
   let request = {
     headers: {
-      "User-Agent": "Surge/3000 (iPhone; iOS 17.0; Scale/3.00)",
+      // 核心修改：精准伪装成 clash.meta (Mihomo) 客户端 UA
+      "User-Agent": "clash.meta",
       "Accept": "*/*"
     },
     url
@@ -81,34 +82,30 @@ function getUserInfo(url) {
         return;
       }
 
-      // 1. 优先尝试从 HTTP 响应头获取
+      // 1. 优先尝试从响应头获取
       let header = Object.keys(resp.headers).find(
         (key) => key.toLowerCase() === "subscription-userinfo"
       );
 
       if (header && resp.headers[header]) {
-        resolve(resp.headers[header]);
+        resolve({ type: "header", data: resp.headers[header] });
         return;
       }
 
-      // 2. 核心优化：响应头没有，则尝试从返回的文本主体（Body）中匹配流量信息
+      // 2. 核心抢救：处理返回的正文
       if (resp.body) {
-        // 匹配类似于 upload=xxx; download=xxx; total=xxx 的标准流量文本
-        let trafficMatch = resp.body.match(/\w+=[\d.eE+-]+/g);
-        if (trafficMatch && resp.body.includes("total=")) {
-          resolve(resp.body); // 将正文直接传给下一步解析
-          return;
-        }
+        resolve({ type: "body", data: resp.body });
+        return;
       }
 
-      reject("链接响应头和正文中均未包含标准流量信息");
+      reject("链接响应头和正文均为空");
     })
   );
 }
 
 async function getDataInfo(url) {
-  const [err, data] = await getUserInfo(url)
-    .then((data) => [null, data])
+  const [err, result] = await getUserInfo(url)
+    .then((res) => [null, res])
     .catch((err) => [err, null]);
 
   if (err) {
@@ -116,40 +113,71 @@ async function getDataInfo(url) {
     return;
   }
 
-  // 从获取到的字符串中提取 total, download, upload, expire
-  let info = Object.fromEntries(
-    data
-      .match(/\w+=[\d.eE+-]+/g)
-      .map((item) => item.split("="))
-      .map(([k, v]) => [k, Number(v)])
-  );
-  
-  // 补齐字段，防止缺失报错
-  return {
-    download: info.download || 0,
-    upload: info.upload || 0,
-    total: info.total || 0,
-    expire: info.expire || null
-  };
+  let rawStr = result.data;
+
+  if (result.type === "body") {
+    // 自动判定并处理 Base64 解码
+    try {
+      if (!/^[A-Za-z0-9+/=\s]+$/.test(rawStr)) throw new Error("Not base64");
+      if (typeof $utils !== "undefined" && $utils.base64Decode) {
+        rawStr = $utils.base64Decode(rawStr);
+      } else {
+        rawStr = atob(rawStr.replace(/[\s\r\n]+/g, ""));
+      }
+    } catch (e) {
+      // 解码失败说明本来就是明文（如 YAML），保持原样
+    }
+
+    try { rawStr = decodeURIComponent(rawStr); } catch(e) {}
+
+    // 从返回的正文（包含伪装流量节点）中疯狂搜刮类似 total=, download=, upload= 的关键字
+    let totalMatch = rawStr.match(/total[=:][\s"']?([\d.eE+-]+)/i);
+    let downloadMatch = rawStr.match(/download[=:][\s"']?([\d.eE+-]+)/i);
+    let uploadMatch = rawStr.match(/upload[=:][\s"']?([\d.eE+-]+)/i);
+    let expireMatch = rawStr.match(/expire[=:][\s"']?([\d.eE+-]+)/i);
+
+    if (totalMatch) {
+      return {
+        total: Number(totalMatch[1]),
+        download: downloadMatch ? Number(downloadMatch[1]) : 0,
+        upload: uploadMatch ? Number(uploadMatch[1]) : 0,
+        expire: expireMatch ? Number(expireMatch[1]) : null
+      };
+    }
+  }
+
+  // 兜底逻辑：处理标准 HTTP Header 或者正文纯文本符合标准 KV 格式的数据
+  try {
+    let info = Object.fromEntries(
+      rawStr
+        .match(/\w+=[\d.eE+-]+/g)
+        .map((item) => item.split("="))
+        .map(([k, v]) => [k, Number(v)])
+    );
+    return {
+      download: info.download || 0,
+      upload: info.upload || 0,
+      total: info.total || 0,
+      expire: info.expire || null
+    };
+  } catch (e) {
+    console.log("解析流量数据失败，抓取到的文本前300个字符为:\n" + rawStr.slice(0, 300));
+    return null;
+  }
 }
 
 function bytesToSize(bytes) {
   if (bytes === 0) return "0 B";
-
   let k = 1024;
   let sizes = ["B", "KB", "MB", "GB", "TB", "PB"];
-
   let i = Math.floor(Math.log(bytes) / Math.log(k));
-
   return (bytes / Math.pow(k, i)).toFixed(2) + " " + sizes[i];
 }
 
 function formatTime(time) {
   let dateObj = new Date(time);
-
   let year = dateObj.getFullYear();
   let month = dateObj.getMonth() + 1;
   let day = dateObj.getDate();
-
   return `${year}年${month}月${day}日`;
 }
