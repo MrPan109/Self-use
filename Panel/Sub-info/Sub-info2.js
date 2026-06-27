@@ -1,29 +1,34 @@
 /*
  * Surge 流量面板增强版
  * 每月重置机场专用
- * 2026.06.27（优化版V1.1）
+ * 2026.06.27（优化版V1.2）
  */
 
-(async () => {
+// 全局入口流控：严格遵守 Surge 的异步生命周期规范，确保请求完成后才释放线程
+main()
+  .then((result) => {
+    $done(result);
+  })
+  .catch((err) => {
+    console.log("脚本执行异常: " + err);
+    $done();
+  });
+
+async function main() {
   let args = getArgs();
 
-  let info = await getDataInfo(args.url);
-  if (!info) $done();
+  // 将 args 挂载到全局或直接传递，确保 getUserInfo 内部能正确读取
+  let info = await getDataInfo(args);
+  if (!info) return null;
 
-  let resetDayLeft = getRmainingDays(
-    parseInt(args["reset_day"])
-  );
+  let resetDayLeft = getRmainingDays(parseInt(args["reset_day"]));
 
   let used = info.download + info.upload;
   let total = info.total;
-
   let expire = args.expire || info.expire;
 
   // 已用百分比
-  let usedPercent =
-    total > 0
-      ? ((used / total) * 100).toFixed(1)
-      : "0.0";
+  let usedPercent = total > 0 ? ((used / total) * 100).toFixed(1) : "0.0";
 
   // 第一行内容
   let content = [
@@ -53,15 +58,16 @@
   let hour = String(now.getHours()).padStart(2, "0");
   let minutes = String(now.getMinutes()).padStart(2, "0");
 
-  $done({
+  return {
     title: `${args.title} ｜ ${hour}:${minutes}`,
     content: content.join("\n"),
     icon: args.icon || "airplane.circle",
     "icon-color": args.color || "#007aff",
-  });
-})();
+  };
+}
 
 function getArgs() {
+  if (typeof $argument === "undefined" || !$argument) return {};
   return Object.fromEntries(
     $argument
       .split("&")
@@ -70,21 +76,23 @@ function getArgs() {
   );
 }
 
-function getUserInfo(url) {
+function getUserInfo(args) {
   let method = args.method || "get";
 
   let request = {
     headers: {
       "User-Agent": "clash.meta",
       "Accept": "*/*",
-      // 核心优化：强制要求机场只返回用户流量信息，不下载庞大的节点列表，解决超时
-      "X-Fetch-User-Info": "1" 
+      "X-Fetch-User-Info": "1"
     },
-    url
+    url: args.url
   };
 
-  return new Promise((resolve, reject) =>
-    $httpClient[method.toLowerCase()](request, (err, resp) => {
+  return new Promise((resolve, reject) => {
+    // 显式指定请求方法，规避动态调用可能产生的上下文丢失
+    let httpClientMethod = method.toLowerCase() === "head" ? "head" : "get";
+    
+    $httpClient[httpClientMethod](request, (err, resp, body) => {
       if (err != null) {
         reject(`网络请求错误: ${err}`);
         return;
@@ -94,6 +102,9 @@ function getUserInfo(url) {
         reject(`服务器返回错误状态码: ${resp.status}`);
         return;
       }
+
+      // 兼容部分旧版环境使用 resp.body，新版环境优先使用标准回调参数 body
+      let responseBody = body || resp.body;
 
       // 优先从响应头获取
       let header = Object.keys(resp.headers).find(
@@ -105,18 +116,23 @@ function getUserInfo(url) {
         return;
       }
 
-      if (resp.body) {
-        resolve({ type: "body", data: resp.body });
+      if (responseBody) {
+        resolve({ type: "body", data: responseBody });
         return;
       }
 
       reject("链接响应头和正文均为空");
-    })
-  );
+    });
+  });
 }
 
-async function getDataInfo(url) {
-  const [err, result] = await getUserInfo(url)
+async function getDataInfo(args) {
+  if (!args.url) {
+    console.log("未检测到传入的 url 参数");
+    return null;
+  }
+
+  const [err, result] = await getUserInfo(args)
     .then((res) => [null, res])
     .catch((err) => [err, null]);
 
@@ -128,7 +144,7 @@ async function getDataInfo(url) {
   let rawStr = result.data;
 
   if (result.type === "body") {
-    // 自动判定并处理 Base64 解码
+    // Base64 自动判定解码
     try {
       if (!/^[A-Za-z0-9+/=\s]+$/.test(rawStr)) throw new Error("Not base64");
       if (typeof $utils !== "undefined" && $utils.base64Decode) {
@@ -137,7 +153,7 @@ async function getDataInfo(url) {
         rawStr = atob(rawStr.replace(/[\s\r\n]+/g, ""));
       }
     } catch (e) {
-      // 解码失败说明是明文 YAML
+      // 说明是明文 YAML
     }
 
     try { rawStr = decodeURIComponent(rawStr); } catch(e) {}
@@ -179,7 +195,7 @@ async function getDataInfo(url) {
 }
 
 function getRmainingDays(resetDay) {
-  if (!resetDay) return;
+  if (!resetDay) return null;
 
   let now = new Date();
   let today = now.getDate();
