@@ -1,7 +1,7 @@
 /*
  * Surge 流量面板增强版
  * 每月重置机场专用
- * 2026.06.27（优化版V1.0）
+ * 2026.06.27（优化版V1.1）
  */
 
 (async () => {
@@ -75,9 +75,10 @@ function getUserInfo(url) {
 
   let request = {
     headers: {
-      // 优化1：伪装成 clash.meta 确保下发包含 VLESS 协议的完整节点和流量信息
       "User-Agent": "clash.meta",
-      "Accept": "*/*"
+      "Accept": "*/*",
+      // 核心优化：强制要求机场只返回用户流量信息，不下载庞大的节点列表，解决超时
+      "X-Fetch-User-Info": "1" 
     },
     url
   };
@@ -104,7 +105,6 @@ function getUserInfo(url) {
         return;
       }
 
-      // 响应头没有，则托管正文交给下一步兜底解密
       if (resp.body) {
         resolve({ type: "body", data: resp.body });
         return;
@@ -191,7 +191,6 @@ function getRmainingDays(resetDay) {
   if (resetDay > today) {
     daysInMonth = 0;
   } else {
-    // 自动获取当前月总天数
     daysInMonth = new Date(year, month + 1, 0).getDate();
   }
 
