@@ -4,7 +4,7 @@
  * 由@mrpan109修改
  * 百分比显示优化版
  * 适用于：总流量套餐 / 不按月重置机场
- * 2026.05.23
+ * 2026.06.27
  */
 
 let args = getArgs();
@@ -59,27 +59,31 @@ function getArgs() {
 }
 
 function getUserInfo(url) {
-  let method = args.method || "head";
+  // 核心优化1：默认使用 GET 请求，大部分机场防爬虫机制会拦截 HEAD 请求
+  let method = args.method || "get"; 
 
   let request = {
     headers: {
-      "User-Agent": "Quantumult%20X"
+      // 核心优化2：模拟 Surge 客户端的 User-Agent
+      "User-Agent": "Surge/3000 (iPhone; iOS 17.0; Scale/3.00)",
+      "Accept": "*/*"
     },
     url
   };
 
   return new Promise((resolve, reject) =>
-    $httpClient[method](request, (err, resp) => {
+    $httpClient[method.toLowerCase()](request, (err, resp) => {
       if (err != null) {
-        reject(err);
+        reject(`网络请求错误: ${err}`);
         return;
       }
 
       if (resp.status !== 200) {
-        reject(resp.status);
+        reject(`服务器返回错误状态码: ${resp.status}`);
         return;
       }
 
+      // 兼容大小写不规范的响应头
       let header = Object.keys(resp.headers).find(
         (key) => key.toLowerCase() === "subscription-userinfo"
       );
@@ -89,7 +93,7 @@ function getUserInfo(url) {
         return;
       }
 
-      reject("链接响应头不带有流量信息");
+      reject("链接响应头中未包含流量信息 (subscription-userinfo)");
     })
   );
 }
