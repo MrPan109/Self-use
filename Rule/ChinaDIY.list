@@ -1,5 +1,5 @@
 # Description:ChinaDIY
-# Update:2026.05.27
+# Update:2026.07.07
 #
 # 阿里巴巴
 DOMAIN-KEYWORD,alicdn
@@ -99,10 +99,6 @@ DOMAIN-SUFFIX,bcebos.com
 DOMAIN-SUFFIX,bdimg.com
 DOMAIN-SUFFIX,bdstatic.com
 
-# 贝壳
-DOMAIN,mlvbdc.live.tlivesource.com
-DOMAIN-SUFFIX,ke.com
-
 # 哔哩哔哩
 DOMAIN-SUFFIX,biliapi.net
 DOMAIN-SUFFIX,bilibili.com
@@ -128,31 +124,9 @@ DOMAIN,caiyunapp.com
 DOMAIN-SUFFIX,caiyuncdn.com
 DOMAIN-SUFFIX,colorfulclouds.net
 
-# 中国移动
-DOMAIN-SUFFIX,cmpassport.com
-
 # 携程
 DOMAIN-SUFFIX,c-ctrip.com
 DOMAIN-SUFFIX,ctrip.com
-
-# 开发 / 资讯
-DOMAIN,jihulab.com
-DOMAIN-SUFFIX,csjdeveloper.com
-DOMAIN-SUFFIX,ithome.com
-DOMAIN-SUFFIX,ruanmei.com
-
-# DNS / PKI
-DOMAIN,doh.pub
-DOMAIN,crl.digicert-cn.com
-DOMAIN-SUFFIX,pki.goog
-
-# 豆瓣
-DOMAIN-SUFFIX,douban.com
-
-# 游戏
-DOMAIN-SUFFIX,aki-game.com
-DOMAIN-SUFFIX,d3games.com
-DOMAIN-SUFFIX,sdo.com
 
 # 哈啰
 DOMAIN-SUFFIX,hellobike.com
@@ -189,18 +163,6 @@ DOMAIN-SUFFIX,meituan.net
 # 网易
 DOMAIN-SUFFIX,126.net
 DOMAIN-SUFFIX,163.com
-DOMAIN-SUFFIX,netease.com
-
-# 其它
-DOMAIN-SUFFIX,auliking.com
-DOMAIN-SUFFIX,caifuxingketang.com
-DOMAIN-SUFFIX,mygolbs.com
-DOMAIN-SUFFIX,tatstm.com
-
-# 云服务 / 推送
-DOMAIN-SUFFIX,getui.net
-DOMAIN-SUFFIX,myqcloud.com
-DOMAIN-SUFFIX,ppio.cloud
 
 # 起点
 DOMAIN-SUFFIX,qidian.com
@@ -220,38 +182,9 @@ USER-AGENT,WeChat*
 # 时间同步
 DEST-PORT,123
 
-# 微博
-DOMAIN-SUFFIX,weibo.com
-DOMAIN-SUFFIX,weibocdn.com
-
-# 微店
-DOMAIN-SUFFIX,weidian.com
-
 # 小红书
 DOMAIN-SUFFIX,xhscdn.com
 DOMAIN-SUFFIX,xiaohongshu.com
-
-# 喜马拉雅
-DOMAIN-SUFFIX,ximalaya.com
-DOMAIN-SUFFIX,xmcdn.com
-
-# 百胜中国
-DOMAIN-SUFFIX,yumchina.com
-
-# 有道
-DOMAIN-SUFFIX,youdao.com
-
-# Zaker
-DOMAIN-SUFFIX,myzaker.com
-
-# 漫画 / ACG
-DOMAIN-SUFFIX,7littlemen.com
-DOMAIN-SUFFIX,dodomh.com
-DOMAIN-SUFFIX,guoguomh.com
-DOMAIN-SUFFIX,hwwt8.com
-DOMAIN-SUFFIX,miso-lab.com
-DOMAIN-SUFFIX,nnkn.fun
-DOMAIN-SUFFIX,yksdks.com
 
 # 中国通用
 DOMAIN-SUFFIX,cn
