@@ -1,7 +1,7 @@
 // ===== optimized AdDIY rules =====
-// time: 2026-07-21 05:15:12 (UTC+8)
+// time: 2026-07-22 05:14:29 (UTC+8)
 // sources: 2/2
-// count: 909
+// count: 907
 
 DOMAIN,1500020991.vodplayer.wxamedia.com
 DOMAIN,1500022744.vodplayer.wxamedia.com
@@ -331,7 +331,6 @@ DOMAIN,datacollection.uve.weibo.com
 DOMAIN,dc.sigmob.cn
 DOMAIN,de.tynt.com
 DOMAIN,diagnosis.ad.xiaomi.com
-DOMAIN,dig.bdurl.net
 DOMAIN,dlogs.bwton.com
 DOMAIN,dm.toutiao.com
 DOMAIN,domain.aishengji.com
@@ -526,7 +525,6 @@ DOMAIN,mapi.m.jd.com
 DOMAIN,masdkv6.3g.qq.com
 DOMAIN,mazu.m.qq.com
 DOMAIN,mbdlog.iqiyi.com
-DOMAIN,mcs.zijieapi.com
 DOMAIN,medproad.com
 DOMAIN,metrics.data.hicloud.com
 DOMAIN,metrics.icloud.com
