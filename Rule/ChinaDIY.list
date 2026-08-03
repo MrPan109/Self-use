@@ -90,6 +90,9 @@ DOMAIN,sylvan.apple.com
 DOMAIN,www.apple.com
 DOMAIN,xp.apple.com
 
+# 自用通信服务更新
+DOMAIN-SUFFIX,5bx6h.net
+
 # 华硕
 DOMAIN-SUFFIX,asus.com
 
