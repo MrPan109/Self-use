@@ -46,7 +46,7 @@ DOMAIN-SUFFIX,ls.apple.com
 DOMAIN-SUFFIX,ls-apple.com.akadns.net
 URL-REGEX,^https?:\/\/(gsp|gspe)[0-9a-z-]*\.ls\.apple\.com
 
-# --- Apple 系统 / 推送 / 验证 / 更新 ---
+# --- Apple 系统 / 验证 / 更新（已剔除海外推送服务） ---
 DOMAIN,appleintelligencefeedback.care.apple.com
 DOMAIN,certs.apple.com
 DOMAIN,crl.apple.com
@@ -56,15 +56,12 @@ DOMAIN,smp-device-content.apple.com
 DOMAIN,valid.apple.com
 DOMAIN-WILDCARD,*-pod*-smp-device.apple.com
 DOMAIN-WILDCARD,init-*.apple.com
-DOMAIN-WILDCARD,init-*.push.apple.com
 DOMAIN-KEYWORD,mesu-cdn
 DOMAIN-KEYWORD,swcatalog
 DOMAIN-KEYWORD,swcdn
 DOMAIN-KEYWORD,swdist
 DOMAIN-KEYWORD,swscan
 DOMAIN-SUFFIX,lb.apple.com.akadns.net
-DOMAIN-SUFFIX,push-apple.com.akadns.net
-DOMAIN-SUFFIX,push.apple.com
 URL-REGEX,^https?:\/\/.*\.apple\.com\.edgekey\.net
 URL-REGEX,^https?:\/\/cl[1-5](-cn)?(-cdn)?(\.apple\.com|\.origin-apple\.com\.akadns\.net)
 
