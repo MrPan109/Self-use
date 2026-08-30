@@ -1,7 +1,7 @@
 // ===== optimized AdDIY rules =====
-// time: 2026-08-08 04:46:04 (UTC+8)
+// time: 2026-08-30 06:30:27 (UTC+8)
 // sources: 2/2
-// count: 907
+// count: 906
 
 DOMAIN,1500020991.vodplayer.wxamedia.com
 DOMAIN,1500022744.vodplayer.wxamedia.com
@@ -898,7 +898,6 @@ DOMAIN-SUFFIX,adintl.cn
 DOMAIN-SUFFIX,adx.adwangmai.com
 DOMAIN-SUFFIX,app-analytics-services.com // 谷歌匿名数据收集
 DOMAIN-SUFFIX,data.hicloud.com
-DOMAIN-SUFFIX,log.aliyuncs.com
 DOMAIN-SUFFIX,ubixioe.com
 DOMAIN-SUFFIX,vlion.cn
 DOMAIN-SUFFIX,yfanads.com
