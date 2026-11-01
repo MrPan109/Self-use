@@ -1,7 +1,7 @@
 // ===== optimized AdDIY rules =====
-// time: 2026-11-01 07:13:21 (UTC+8)
+// time: 2026-11-01 10:16:13 (UTC+8)
 // sources: 2/2
-// count: 980
+// count: 988
 
 DOMAIN,1500020991.vodplayer.wxamedia.com
 DOMAIN,1500022744.vodplayer.wxamedia.com
@@ -309,6 +309,7 @@ DOMAIN,c.gj.qq.com
 DOMAIN,c.kuaiduizuoye.com
 DOMAIN,c.sayhi.360.cn
 DOMAIN,c2.gdt.qq.com
+DOMAIN,c3.gdt.qq.com // 腾讯广点通
 DOMAIN,canvas-cdn.gdt.qq.com
 DOMAIN,catalog.fjwhcbsh.com
 DOMAIN,cbjs.baidu.com
@@ -397,6 +398,7 @@ DOMAIN,file.daihuo.qq.com
 DOMAIN,firebaselogging-pa.googleapis.com
 DOMAIN,flurry.com
 DOMAIN,frontend-perf-service.e.kuaishou.com
+DOMAIN,fx.service.kugou.com // 酷狗分享推广
 DOMAIN,fxgate.baidu.com
 DOMAIN,g-adnet.hiaiabc.com
 DOMAIN,g-staic.ganjingworld.com
@@ -576,6 +578,7 @@ DOMAIN,mapi.m.jd.com
 DOMAIN,masdkv6.3g.qq.com
 DOMAIN,mazu.m.qq.com
 DOMAIN,mbdlog.iqiyi.com
+DOMAIN,mc.tencentmusic.com // 腾讯音乐广告SDK
 DOMAIN,medproad.com
 DOMAIN,metrics.data.hicloud.com
 DOMAIN,metrics.icloud.com
@@ -618,6 +621,7 @@ DOMAIN,mssdk.volces.com
 DOMAIN,mssdk.zijieapi.com
 DOMAIN,mtj.baidu.com
 DOMAIN,nadvideo2.baidu.com
+DOMAIN,nbcollect.kugou.com // 酷狗数据收集
 DOMAIN,newvoice.chiq5.smart-tv.cn
 DOMAIN,nex.163.com
 DOMAIN,nmetrics.samsung.com
@@ -752,6 +756,7 @@ DOMAIN,sdkconfig.play.aiseet.atianqi.com
 DOMAIN,sdkconfig.video.qq.com
 DOMAIN,sdklog.zhangyuyidong.cn
 DOMAIN,sdkoptedge.chinanetcenter.com
+DOMAIN,sdkquic.e.qq.com // 腾讯广告SDK
 DOMAIN,sdkreport.e.qq.com
 DOMAIN,sdktmp.hubcloud.com.cn
 DOMAIN,sdownload.stargame.com
@@ -825,6 +830,7 @@ DOMAIN,tj.video.qq.com
 DOMAIN,tk.anythinktech.com
 DOMAIN,tmead.y.qq.com
 DOMAIN,tmeadcomm.y.qq.com
+DOMAIN,tmeadcommquic.y.qq.com // 腾讯音乐广告通信(QUIC)
 DOMAIN,tmfmazu-wangka.m.qq.com
 DOMAIN,tmfmazu.m.qq.com
 DOMAIN,tmfsdk.m.qq.com
@@ -890,6 +896,7 @@ DOMAIN,update0.aiclk.com
 DOMAIN,upgrade-update.hismarttv.com
 DOMAIN,uranus.jd.com
 DOMAIN,us.l.qq.com
+DOMAIN,us.l.qq.com // 腾讯广告
 DOMAIN,usr-api.aiclk.com
 DOMAIN,utoken.umeng.com
 DOMAIN,v.110route.cn
@@ -926,6 +933,7 @@ DOMAIN,weather-analytics-events.apple.com
 DOMAIN,weather-community-drcn.weather.dbankcloud.cn
 DOMAIN,webstat.qiumibao.com
 DOMAIN,webview.unityads.unity3d.com
+DOMAIN,welfare.kugou.com // 酷狗福利推广
 DOMAIN,widgets.outbrain.com
 DOMAIN,widgets.pinterest.com
 DOMAIN,wildcard.moatads.com.edgekey.net
