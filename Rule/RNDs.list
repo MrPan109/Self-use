@@ -1,24 +1,22 @@
-#2026.05.26
+# Description:RNDs
+# Update:2026.11.01
 #
+# --- 基础规则 ---
 DOMAIN,www.asusrouter.com // 防止访问路由器卡顿
 DOMAIN-SUFFIX,app-analytics-services.com // 谷歌匿名数据收集
 DOMAIN-WILDCARD,stun*.chat.bilibili.com // B站stun
-PROTOCOL,STUN  // 干掉所有STUN
-
-#2026.11.01 酷狗音乐 & 车来了 去广告（抓包分析）
-# 腾讯音乐广告SDK
-DOMAIN,mc.tencentmusic.com
-# 腾讯音乐广告通信（QUIC）
-DOMAIN,tmeadcommquic.y.qq.com
-# 腾讯广告SDK
-DOMAIN,sdkquic.e.qq.com
-DOMAIN,c3.gdt.qq.com
-DOMAIN,us.l.qq.com
-# 酷狗广告网关路径
-URL-REGEX,gateway\.kugou\.com/ads\.gateway
-# 酷狗数据收集/追踪
-DOMAIN,nbcollect.kugou.com
-# 酷狗福利/推广
-DOMAIN,welfare.kugou.com
-# 酷狗分享/推广服务
-DOMAIN,fx.service.kugou.com
+PROTOCOL,STUN // 干掉所有STUN
+#
+# --- 酷狗音乐去广告 ---
+DOMAIN,mc.tencentmusic.com // 腾讯音乐广告SDK
+DOMAIN,tmeadcommquic.y.qq.com // 腾讯音乐广告通信(QUIC)
+DOMAIN,sdkquic.e.qq.com // 腾讯广告SDK
+DOMAIN,c3.gdt.qq.com // 腾讯广点通
+DOMAIN,us.l.qq.com // 腾讯广告
+URL-REGEX,gateway\.kugou\.com/ads\.gateway // 酷狗广告网关
+DOMAIN,nbcollect.kugou.com // 酷狗数据收集
+DOMAIN,welfare.kugou.com // 酷狗福利推广
+DOMAIN,fx.service.kugou.com // 酷狗分享推广
+#
+# --- 车来了去广告 ---
+# 待抓包分析补充
