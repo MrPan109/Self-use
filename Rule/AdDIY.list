@@ -1,18 +1,18 @@
-# ============================================
+# ==================================================
 # AdDIY - 合并广告拦截规则
-# ============================================
-# 更新时间: 2026-11-05 11:03:11 (UTC+8)
-# 规则总数: 988
-# 数据源:   2/2 成功
-# --------------------------------------------
+# ==================================================
+# 更新时间：2026-11-05 11:57:09 (UTC+8)
+# 规则总数：989
+# 数据源：  2/2 成功
+# --------------------------------------------------
 # 规则分布:
-#   DOMAIN                   968 条  (精确域名)
-#   DOMAIN-KEYWORD             4 条  (域名关键词)
-#   DOMAIN-SUFFIX             13 条  (域名后缀)
-#   DOMAIN-WILDCARD            1 条  (域名通配符)
-#   URL-REGEX                  1 条  (URL 正则)
-#   PROTOCOL                   1 条  (协议)
-# ============================================
+#   DOMAIN           969条 (精确域名)
+#   DOMAIN-KEYWORD     4条 (域名关键词)
+#   DOMAIN-SUFFIX     13条 (域名后缀)
+#   DOMAIN-WILDCARD    1条 (域名通配符)
+#   URL-REGEX          1条 (URL正则)
+#   PROTOCOL           1条 (协议)
+# ==================================================
 
 DOMAIN,1500020991.vodplayer.wxamedia.com
 DOMAIN,1500022744.vodplayer.wxamedia.com
@@ -906,6 +906,7 @@ DOMAIN,update.lejiao.tv
 DOMAIN,update0.aiclk.com
 DOMAIN,upgrade-update.hismarttv.com
 DOMAIN,uranus.jd.com
+DOMAIN,us.l.qq.com
 DOMAIN,us.l.qq.com // 腾讯广告
 DOMAIN,usr-api.aiclk.com
 DOMAIN,utoken.umeng.com
@@ -982,10 +983,6 @@ DOMAIN,zeus.ad.xiaomi.com
 DOMAIN,zhihu-web-analytics.zhihu.com
 DOMAIN,zjres-ad.kajicam.com
 DOMAIN,zxid-m.mobileservice.cn
-DOMAIN-KEYWORD,-ad.sm.cn
-DOMAIN-KEYWORD,-ad.video.yximgs.com
-DOMAIN-KEYWORD,-ad.wtzw.com
-DOMAIN-KEYWORD,-be-pack-sign.pglstatp-toutiao.com
 DOMAIN-SUFFIX,1rtb.com
 DOMAIN-SUFFIX,a.market.xiaomi.com
 DOMAIN-SUFFIX,ad.gameley.com
@@ -1000,5 +997,9 @@ DOMAIN-SUFFIX,vlion.cn
 DOMAIN-SUFFIX,yfanads.com
 DOMAIN-SUFFIX,zhangyuyidong.cn
 DOMAIN-WILDCARD,stun*.chat.bilibili.com // B站stun
-URL-REGEX,gateway\.kugou\.com/ads\.gateway // 酷狗广告网关
+DOMAIN-KEYWORD,-ad.sm.cn
+DOMAIN-KEYWORD,-ad.video.yximgs.com
+DOMAIN-KEYWORD,-ad.wtzw.com
+DOMAIN-KEYWORD,-be-pack-sign.pglstatp-toutiao.com
 PROTOCOL,STUN // 干掉所有STUN
+URL-REGEX,gateway\.kugou\.com/ads\.gateway // 酷狗广告网关
