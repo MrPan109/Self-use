@@ -1,7 +1,18 @@
-// ===== optimized AdDIY rules =====
-// time: 2026-11-05 10:07:05 (UTC+8)
-// sources: 2/2
-// count: 988
+# ============================================
+# AdDIY - 合并广告拦截规则
+# ============================================
+# 更新时间: 2026-11-05 11:03:11 (UTC+8)
+# 规则总数: 988
+# 数据源:   2/2 成功
+# --------------------------------------------
+# 规则分布:
+#   DOMAIN                   968 条  (精确域名)
+#   DOMAIN-KEYWORD             4 条  (域名关键词)
+#   DOMAIN-SUFFIX             13 条  (域名后缀)
+#   DOMAIN-WILDCARD            1 条  (域名通配符)
+#   URL-REGEX                  1 条  (URL 正则)
+#   PROTOCOL                   1 条  (协议)
+# ============================================
 
 DOMAIN,1500020991.vodplayer.wxamedia.com
 DOMAIN,1500022744.vodplayer.wxamedia.com
@@ -989,5 +1000,5 @@ DOMAIN-SUFFIX,vlion.cn
 DOMAIN-SUFFIX,yfanads.com
 DOMAIN-SUFFIX,zhangyuyidong.cn
 DOMAIN-WILDCARD,stun*.chat.bilibili.com // B站stun
-PROTOCOL,STUN // 干掉所有STUN
 URL-REGEX,gateway\.kugou\.com/ads\.gateway // 酷狗广告网关
+PROTOCOL,STUN // 干掉所有STUN
