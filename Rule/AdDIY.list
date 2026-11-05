@@ -1,7 +1,7 @@
 // ===== optimized AdDIY rules =====
-// time: 2026-11-05 08:47:06 (UTC+8)
-// sources: 2/2
-// count: 988
+// time: 2026-11-05 10:01:44 (UTC+8)
+// sources: 1/2
+// count: 976
 
 DOMAIN,1500020991.vodplayer.wxamedia.com
 DOMAIN,1500022744.vodplayer.wxamedia.com
@@ -309,7 +309,6 @@ DOMAIN,c.gj.qq.com
 DOMAIN,c.kuaiduizuoye.com
 DOMAIN,c.sayhi.360.cn
 DOMAIN,c2.gdt.qq.com
-DOMAIN,c3.gdt.qq.com // 腾讯广点通
 DOMAIN,canvas-cdn.gdt.qq.com
 DOMAIN,catalog.fjwhcbsh.com
 DOMAIN,cbjs.baidu.com
@@ -398,7 +397,6 @@ DOMAIN,file.daihuo.qq.com
 DOMAIN,firebaselogging-pa.googleapis.com
 DOMAIN,flurry.com
 DOMAIN,frontend-perf-service.e.kuaishou.com
-DOMAIN,fx.service.kugou.com // 酷狗分享推广
 DOMAIN,fxgate.baidu.com
 DOMAIN,g-adnet.hiaiabc.com
 DOMAIN,g-staic.ganjingworld.com
@@ -578,7 +576,6 @@ DOMAIN,mapi.m.jd.com
 DOMAIN,masdkv6.3g.qq.com
 DOMAIN,mazu.m.qq.com
 DOMAIN,mbdlog.iqiyi.com
-DOMAIN,mc.tencentmusic.com // 腾讯音乐广告SDK
 DOMAIN,medproad.com
 DOMAIN,metrics.data.hicloud.com
 DOMAIN,metrics.icloud.com
@@ -621,7 +618,6 @@ DOMAIN,mssdk.volces.com
 DOMAIN,mssdk.zijieapi.com
 DOMAIN,mtj.baidu.com
 DOMAIN,nadvideo2.baidu.com
-DOMAIN,nbcollect.kugou.com // 酷狗数据收集
 DOMAIN,newvoice.chiq5.smart-tv.cn
 DOMAIN,nex.163.com
 DOMAIN,nmetrics.samsung.com
@@ -756,7 +752,6 @@ DOMAIN,sdkconfig.play.aiseet.atianqi.com
 DOMAIN,sdkconfig.video.qq.com
 DOMAIN,sdklog.zhangyuyidong.cn
 DOMAIN,sdkoptedge.chinanetcenter.com
-DOMAIN,sdkquic.e.qq.com // 腾讯广告SDK
 DOMAIN,sdkreport.e.qq.com
 DOMAIN,sdktmp.hubcloud.com.cn
 DOMAIN,sdownload.stargame.com
@@ -830,7 +825,6 @@ DOMAIN,tj.video.qq.com
 DOMAIN,tk.anythinktech.com
 DOMAIN,tmead.y.qq.com
 DOMAIN,tmeadcomm.y.qq.com
-DOMAIN,tmeadcommquic.y.qq.com // 腾讯音乐广告通信(QUIC)
 DOMAIN,tmfmazu-wangka.m.qq.com
 DOMAIN,tmfmazu.m.qq.com
 DOMAIN,tmfsdk.m.qq.com
@@ -896,7 +890,6 @@ DOMAIN,update0.aiclk.com
 DOMAIN,upgrade-update.hismarttv.com
 DOMAIN,uranus.jd.com
 DOMAIN,us.l.qq.com
-DOMAIN,us.l.qq.com // 腾讯广告
 DOMAIN,usr-api.aiclk.com
 DOMAIN,utoken.umeng.com
 DOMAIN,v.110route.cn
@@ -933,7 +926,6 @@ DOMAIN,weather-analytics-events.apple.com
 DOMAIN,weather-community-drcn.weather.dbankcloud.cn
 DOMAIN,webstat.qiumibao.com
 DOMAIN,webview.unityads.unity3d.com
-DOMAIN,welfare.kugou.com // 酷狗福利推广
 DOMAIN,widgets.outbrain.com
 DOMAIN,widgets.pinterest.com
 DOMAIN,wildcard.moatads.com.edgekey.net
@@ -944,7 +936,6 @@ DOMAIN,ws.sj.qq.com
 DOMAIN,ws.tapjoyads.com
 DOMAIN,wv.inner-active.mobi
 DOMAIN,wwads.cn
-DOMAIN,www.asusrouter.com // 防止访问路由器卡顿
 DOMAIN,wxa.wxs.qq.com
 DOMAIN,wxaintpcos.wxqcloud.qq.com.cn
 DOMAIN,wximg.wxs.qq.com
@@ -972,22 +963,19 @@ DOMAIN,zeus.ad.xiaomi.com
 DOMAIN,zhihu-web-analytics.zhihu.com
 DOMAIN,zjres-ad.kajicam.com
 DOMAIN,zxid-m.mobileservice.cn
+DOMAIN-KEYWORD,-ad.sm.cn
+DOMAIN-KEYWORD,-ad.video.yximgs.com
+DOMAIN-KEYWORD,-ad.wtzw.com
+DOMAIN-KEYWORD,-be-pack-sign.pglstatp-toutiao.com
 DOMAIN-SUFFIX,1rtb.com
 DOMAIN-SUFFIX,a.market.xiaomi.com
 DOMAIN-SUFFIX,ad.gameley.com
 DOMAIN-SUFFIX,adintl.cn
 DOMAIN-SUFFIX,adsmoloco.com
 DOMAIN-SUFFIX,adx.adwangmai.com
-DOMAIN-SUFFIX,app-analytics-services.com // 谷歌匿名数据收集
 DOMAIN-SUFFIX,data.hicloud.com
 DOMAIN-SUFFIX,ubixioe.com
 DOMAIN-SUFFIX,unityads.unity3d.com
 DOMAIN-SUFFIX,vlion.cn
 DOMAIN-SUFFIX,yfanads.com
 DOMAIN-SUFFIX,zhangyuyidong.cn
-DOMAIN-WILDCARD,stun*.chat.bilibili.com // B站stun
-DOMAIN-KEYWORD,-ad.sm.cn
-DOMAIN-KEYWORD,-ad.video.yximgs.com
-DOMAIN-KEYWORD,-ad.wtzw.com
-DOMAIN-KEYWORD,-be-pack-sign.pglstatp-toutiao.com
-PROTOCOL,STUN // 干掉所有STUN
