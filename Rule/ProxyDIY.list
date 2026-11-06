@@ -1,11 +1,11 @@
 # ================================
 # ProxyDIY - 国外网站分流规则
 # ================================
-# 规则总数：64
+# 规则总数：71
 # 数据源：自用域名与 IP 分流规则
 # 规则分布：
 #   DOMAIN           5条
-#   DOMAIN-SUFFIX   42条
+#   DOMAIN-SUFFIX   49条
 #   DOMAIN-KEYWORD  11条
 #   IP-CIDR          1条
 #   IP-ASN           5条
@@ -15,6 +15,8 @@ DOMAIN-SUFFIX,cordc.cc   //cord机场
 DOMAIN-SUFFIX,sesexiaozhan.com  //色色小站机场
 # 社区与社交
 DOMAIN-SUFFIX,t.me
+DOMAIN-SUFFIX,telegra.ph
+DOMAIN-SUFFIX,tiktok.com
 DOMAIN-KEYWORD,telegram
 DOMAIN-SUFFIX,discord.com
 DOMAIN-SUFFIX,discordapp.com
@@ -39,6 +41,9 @@ DOMAIN-KEYWORD,github
 DOMAIN-SUFFIX,docker.com
 DOMAIN-SUFFIX,docker.io
 DOMAIN-SUFFIX,stackoverflow.com
+DOMAIN-SUFFIX,npmjs.org
+DOMAIN-SUFFIX,hf.co
+DOMAIN-SUFFIX,huggingface.co
 DOMAIN-SUFFIX,v2ray.com
 # Google 与 YouTube
 DOMAIN-SUFFIX,gstatic.com
@@ -82,5 +87,8 @@ DOMAIN,emby.bangumi.ca  //nyamedia
 DOMAIN-SUFFIX,embyplus.org  //纸片人
 DOMAIN-SUFFIX,pilipiliultra.com  //pilipili
 DOMAIN-SUFFIX,easyemby.com //ENET机场服
+# Notion
+DOMAIN-SUFFIX,notion.so
+DOMAIN-SUFFIX,notion.com
 # AI 静态资源
 DOMAIN-SUFFIX,oaiusercontent.com
