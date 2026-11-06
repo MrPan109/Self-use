@@ -15,6 +15,7 @@
 #   GEOIP             1条
 # ================================
 # 阿里
+# 阿里
 DOMAIN-KEYWORD,alicdn
 DOMAIN-KEYWORD,alipay
 DOMAIN-KEYWORD,aliyun
@@ -84,6 +85,7 @@ DOMAIN-SUFFIX,appleid.cdn-apple.com
 DOMAIN-SUFFIX,bag.itunes.apple.com
 DOMAIN-SUFFIX,buy.itunes.apple.com
 DOMAIN-SUFFIX,cds.apple.com
+DOMAIN,cl2-cn.apple.com
 DOMAIN-SUFFIX,cds.apple.com.akadns.net
 DOMAIN-SUFFIX,cdsassets.apple.com
 DOMAIN-SUFFIX,clientflow.apple.com
