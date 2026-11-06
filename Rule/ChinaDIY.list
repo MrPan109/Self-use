@@ -1,20 +1,19 @@
 # ================================
 # ChinaDIY - 国内网站分流规则
 # ================================
-# 规则总数：167
+# 规则总数：152
 # 数据源：自用域名规则 + GEOIP CN 兜底
 # 规则分布：
-#   DOMAIN           16条
-#   DOMAIN-SUFFIX   121条
+#   DOMAIN           13条
+#   DOMAIN-SUFFIX   112条
 #   DOMAIN-KEYWORD   12条
-#   DOMAIN-WILDCARD   8条
+#   DOMAIN-WILDCARD   5条
 #   IP-CIDR           2条
 #   URL-REGEX         3条
 #   USER-AGENT        3条
 #   DEST-PORT         1条
 #   GEOIP             1条
 # ================================
-# 阿里
 # 阿里
 DOMAIN-KEYWORD,alicdn
 DOMAIN-KEYWORD,alipay
@@ -32,22 +31,12 @@ IP-CIDR,198.11.188.0/25,no-resolve
 # Alook
 DOMAIN-SUFFIX,alookweb.com
 # --- Apple CDN / 静态资源 ---
-DOMAIN,apps.mzstatic.com
-DOMAIN,s.mzstatic.com
-DOMAIN-WILDCARD,a[1-5].mzstatic.com
-DOMAIN-WILDCARD,is[1-5]*.mzstatic.com
 DOMAIN-SUFFIX,cdn-apple.com
 DOMAIN-SUFFIX,g.aaplimg.com
-DOMAIN-SUFFIX,storeimages.cdn-apple.com
 DOMAIN-SUFFIX,v.aaplimg.com
-DOMAIN-SUFFIX,appldnld.g.aaplimg.com
-DOMAIN-SUFFIX,app-site-association.cdn-apple.com
 DOMAIN-SUFFIX,mzstatic.com
 # --- Apple 地图 / Siri / 天气 ---
-DOMAIN,cdn.apple-mapkit.com
-DOMAIN,gs-loc-cn.apple.com
 DOMAIN,weatherkit.apple.com
-DOMAIN-WILDCARD,cdn-cn*.apple-mapkit.com
 DOMAIN-WILDCARD,cdn*.apple-mapkit.com
 DOMAIN-WILDCARD,gs-loc*.apple.com
 DOMAIN-WILDCARD,weather-*.apple.com
@@ -78,12 +67,8 @@ URL-REGEX,^https?:\/\/cl[1-5](-cn)?(-cdn)?(\.apple\.com|\.origin-apple\.com\.aka
 DOMAIN-SUFFIX,adcdownload.apple.com
 DOMAIN-SUFFIX,adcdownload.apple.com.akadns.net
 DOMAIN-SUFFIX,amp-api.media.apple.com
-DOMAIN-SUFFIX,amp-api-updates.apps.apple.com
 DOMAIN-SUFFIX,appldnld.apple.com
 DOMAIN-SUFFIX,apps.apple.com
-DOMAIN-SUFFIX,appleid.cdn-apple.com
-DOMAIN-SUFFIX,bag.itunes.apple.com
-DOMAIN-SUFFIX,buy.itunes.apple.com
 DOMAIN-SUFFIX,cds.apple.com
 DOMAIN,cl2-cn.apple.com
 DOMAIN-SUFFIX,cds.apple.com.akadns.net
@@ -105,14 +90,12 @@ DOMAIN-SUFFIX,pancake.apple.com
 DOMAIN-SUFFIX,pba0.apple.com
 DOMAIN-SUFFIX,reserve-prime.apple.com
 DOMAIN-SUFFIX,sequoia.apple.com
-DOMAIN-SUFFIX,shazam-insights.cdn-apple.com
 DOMAIN-SUFFIX,static.gc.apple.com
 DOMAIN-SUFFIX,stocks-sparkline.apple.com
 DOMAIN-SUFFIX,support.apple.com
 DOMAIN-SUFFIX,support-china.apple-support.akadns.net
 DOMAIN-SUFFIX,sylvan.apple.com
 DOMAIN-SUFFIX,update.crashlytics.com
-DOMAIN-SUFFIX,updates.cdn-apple.com
 DOMAIN-SUFFIX,weather-analytics-events.apple.com
 DOMAIN-SUFFIX,www.apple.com
 DOMAIN-SUFFIX,xp.apple.com
