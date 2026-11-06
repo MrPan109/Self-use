@@ -1,7 +1,15 @@
-# ProxyDIY｜国外分流
-# Update: 2026-11-06
-# Total: 63 | DOMAIN: 4 | DOMAIN-KEYWORD: 11 | DOMAIN-SUFFIX: 42 | IP-ASN: 5 | IP-CIDR: 1
-# Statistics count rules only; no traffic data.
+# ================================
+# ProxyDIY - 国外网站分流规则
+# ================================
+# 规则总数：63
+# 数据源：自用域名与 IP 分流规则
+# 规则分布：
+#   DOMAIN           4条
+#   DOMAIN-SUFFIX   42条
+#   DOMAIN-KEYWORD  11条
+#   IP-CIDR          1条
+#   IP-ASN           5条
+# ================================
 # 机场与站点
 DOMAIN-SUFFIX,cordc.cc   //cord机场
 DOMAIN-SUFFIX,sesexiaozhan.com  //色色小站机场
