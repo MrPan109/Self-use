@@ -1,12 +1,12 @@
-# Description:ProxyDIY
-# Update:2026.05.01
-#
-# --- A: Airport & Sites (机场与特定站点) ---
+# ProxyDIY｜国外分流
+# Update: 2026-11-06
+# Total: 63 | DOMAIN: 4 | DOMAIN-KEYWORD: 11 | DOMAIN-SUFFIX: 42 | IP-ASN: 5 | IP-CIDR: 1
+# Statistics count rules only; no traffic data.
+# 机场与站点
 DOMAIN-SUFFIX,cordc.cc   //cord机场
 DOMAIN-SUFFIX,sesexiaozhan.com  //色色小站机场
-#
-# --- C: Communities & Social (社区与社交) ---
-# 包含 Telegram 增强 IP 规则及常用社交平台
+# 社区与社交
+DOMAIN-SUFFIX,t.me
 DOMAIN-KEYWORD,telegram
 DOMAIN-SUFFIX,discord.com
 DOMAIN-SUFFIX,discordapp.com
@@ -24,16 +24,16 @@ IP-ASN,59930,no-resolve
 IP-ASN,62014,no-resolve
 IP-ASN,62041,no-resolve
 IP-ASN,211157,no-resolve
-#
-# --- D: Development & Tech (开发者与技术) ---
+# 开发者与技术
+DOMAIN-SUFFIX,cursor.com
+DOMAIN-SUFFIX,typesafe.ai
 DOMAIN-KEYWORD,github
 DOMAIN-SUFFIX,docker.com
 DOMAIN-SUFFIX,docker.io
-DOMAIN-SUFFIX,github.io
 DOMAIN-SUFFIX,stackoverflow.com
 DOMAIN-SUFFIX,v2ray.com
-#
-# --- G: Google & YouTube (谷歌生态) ---
+# Google 与 YouTube
+DOMAIN-SUFFIX,gstatic.com
 DOMAIN-KEYWORD,gmail
 DOMAIN-KEYWORD,google
 DOMAIN-KEYWORD,youtube
@@ -41,20 +41,16 @@ DOMAIN-SUFFIX,ampproject.org
 DOMAIN-SUFFIX,ggpht.com
 DOMAIN-SUFFIX,gvt1.com
 DOMAIN-SUFFIX,youtu.be
-#
-# --- M: Meta Family (脸书/印迹/瓦茨普) ---
+# Meta
 DOMAIN-KEYWORD,facebook
 DOMAIN-KEYWORD,instagram
 DOMAIN-KEYWORD,whatsapp
-DOMAIN-SUFFIX,cdninstagram.com
 DOMAIN-SUFFIX,fb.me
 DOMAIN-SUFFIX,fbcdn.net
 DOMAIN-SUFFIX,fbsbx.com
 DOMAIN-SUFFIX,oculus.com
 DOMAIN-SUFFIX,oculuscdn.com
-DOMAIN-SUFFIX,whatsapp.net
-#
-# --- O: Others (其他综合) ---
+# 其他
 DOMAIN-KEYWORD,blogspot
 DOMAIN-KEYWORD,dropbox
 DOMAIN-SUFFIX,android.com
@@ -63,21 +59,19 @@ DOMAIN-SUFFIX,duckduckgo.com
 DOMAIN-SUFFIX,letsencrypt.org
 DOMAIN-SUFFIX,tw
 DOMAIN-SUFFIX,vimeo.com
-#
-# --- P: Proxy & Tools (代理与工具) ---
-# 包含可莉规则库、Substore 等
+# 代理工具
 DOMAIN,kelee.one
 DOMAIN,proxyresource.pages.dev
 DOMAIN,sub-store.vercel.app
-#
-# --- X: X (Twitter) ---
+# X / Twitter
 DOMAIN-KEYWORD,twitter
 DOMAIN-SUFFIX,t.co
 DOMAIN-SUFFIX,twimg.com
 DOMAIN-SUFFIX,x.com
-#
-# 自用emby流媒体
+# Emby 流媒体
 DOMAIN,emby.bangumi.ca  //nyamedia
 DOMAIN-SUFFIX,embyplus.org  //纸片人
 DOMAIN-SUFFIX,pilipiliultra.com  //pilipili
 DOMAIN-SUFFIX,easyemby.com //ENET机场服
+# AI 静态资源
+DOMAIN-SUFFIX,oaiusercontent.com
