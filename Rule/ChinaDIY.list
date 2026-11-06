@@ -4,7 +4,7 @@
 # 规则总数：151
 # 数据源：自用域名规则 + GEOIP CN 兜底
 # 规则分布：
-#   DOMAIN           13条
+#   DOMAIN           12条
 #   DOMAIN-SUFFIX   112条
 #   DOMAIN-KEYWORD   12条
 #   DOMAIN-WILDCARD   5条
