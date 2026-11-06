@@ -1,10 +1,10 @@
 # ================================
 # ProxyDIY - 国外网站分流规则
 # ================================
-# 规则总数：63
+# 规则总数：64
 # 数据源：自用域名与 IP 分流规则
 # 规则分布：
-#   DOMAIN           4条
+#   DOMAIN           5条
 #   DOMAIN-SUFFIX   42条
 #   DOMAIN-KEYWORD  11条
 #   IP-CIDR          1条
@@ -67,6 +67,7 @@ DOMAIN-SUFFIX,duckduckgo.com
 DOMAIN-SUFFIX,letsencrypt.org
 DOMAIN-SUFFIX,tw
 DOMAIN-SUFFIX,vimeo.com
+DOMAIN,api.muteki.site //AI 中转站
 # 代理工具
 DOMAIN,kelee.one
 DOMAIN,proxyresource.pages.dev
