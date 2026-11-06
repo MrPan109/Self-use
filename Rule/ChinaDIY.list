@@ -1,7 +1,7 @@
 # ================================
 # ChinaDIY - 国内网站分流规则
 # ================================
-# 规则总数：152
+# 规则总数：151
 # 数据源：自用域名规则 + GEOIP CN 兜底
 # 规则分布：
 #   DOMAIN           13条
@@ -70,7 +70,6 @@ DOMAIN-SUFFIX,amp-api.media.apple.com
 DOMAIN-SUFFIX,appldnld.apple.com
 DOMAIN-SUFFIX,apps.apple.com
 DOMAIN-SUFFIX,cds.apple.com
-DOMAIN,cl2-cn.apple.com
 DOMAIN-SUFFIX,cds.apple.com.akadns.net
 DOMAIN-SUFFIX,cdsassets.apple.com
 DOMAIN-SUFFIX,clientflow.apple.com
