@@ -1,7 +1,7 @@
 # ================================
 # AdDIY - 合并广告拦截规则
 # ================================
-# 更新时间：2026-11-22 08:11:04 (UTC+8)
+# 更新时间：2026-11-23 08:38:49 (UTC+8)
 # 规则总数：1011
 # 数据源：  2/2 成功
 # --------------------------------
@@ -1011,17 +1011,17 @@ DOMAIN-KEYWORD,-ad.video.yximgs.com
 DOMAIN-KEYWORD,-ad.wtzw.com
 DOMAIN-KEYWORD,-be-pack-sign.pglstatp-toutiao.com
 PROTOCOL,STUN // 干掉所有STUN
-IP-CIDR,111.20.26.186/32
-IP-CIDR,112.84.130.73/32
-IP-CIDR,116.142.251.100/32
-IP-CIDR,116.177.251.215/32
-IP-CIDR,120.77.173.114/32
-IP-CIDR,123.56.23.22/32
-IP-CIDR,14.29.101.160/32
-IP-CIDR,14.29.101.168/32
-IP-CIDR,14.29.101.169/32
-IP-CIDR,182.254.116.116/32
-IP-CIDR,203.205.137.89/32
-IP-CIDR,218.77.192.51/32
-IP-CIDR,38.190.225.166/32
+IP-CIDR,111.20.26.186/32,no-resolve
+IP-CIDR,112.84.130.73/32,no-resolve
+IP-CIDR,116.142.251.100/32,no-resolve
+IP-CIDR,116.177.251.215/32,no-resolve
+IP-CIDR,120.77.173.114/32,no-resolve
+IP-CIDR,123.56.23.22/32,no-resolve
+IP-CIDR,14.29.101.160/32,no-resolve
+IP-CIDR,14.29.101.168/32,no-resolve
+IP-CIDR,14.29.101.169/32,no-resolve
+IP-CIDR,182.254.116.116/32,no-resolve
+IP-CIDR,203.205.137.89/32,no-resolve
+IP-CIDR,218.77.192.51/32,no-resolve
+IP-CIDR,38.190.225.166/32,no-resolve
 URL-REGEX,gateway\.kugou\.com/ads\.gateway // 酷狗广告网关
