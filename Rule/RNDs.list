@@ -1,5 +1,5 @@
 # Description:RNDs
-# Update:2026.11.01
+# Update:2026.11.26
 #
 # --- 基础规则 ---
 DOMAIN,www.asusrouter.com // 防止访问路由器卡顿
@@ -18,5 +18,5 @@ DOMAIN,nbcollect.kugou.com // 酷狗数据收集
 DOMAIN,welfare.kugou.com // 酷狗福利推广
 DOMAIN,fx.service.kugou.com // 酷狗分享推广
 #
-# --- 车来了去广告 ---
-# 待抓包分析补充
+# --- 去掉农行VPN检测 ---
+DOMAIN-SUFFIX,msmp.abchina.com.cn // 去掉农行VPN检测
