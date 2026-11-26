@@ -1,14 +1,14 @@
 # ================================
 # AdDIY - 合并广告拦截规则
 # ================================
-# 更新时间：2026-11-25 11:25:43 (UTC+8)
-# 规则总数：1011
+# 更新时间：2026-11-26 10:42:13 (UTC+8)
+# 规则总数：1012
 # 数据源：  2/2 成功
 # --------------------------------
 # 规则分布:
 #   DOMAIN           978条 (精确域名)
 #   DOMAIN-KEYWORD     4条 (域名关键词)
-#   DOMAIN-SUFFIX     13条 (域名后缀)
+#   DOMAIN-SUFFIX     14条 (域名后缀)
 #   DOMAIN-WILDCARD    1条 (域名通配符)
 #   URL-REGEX          1条 (URL正则)
 #   PROTOCOL           1条 (协议)
@@ -1000,6 +1000,7 @@ DOMAIN-SUFFIX,adsmoloco.com
 DOMAIN-SUFFIX,adx.adwangmai.com
 DOMAIN-SUFFIX,app-analytics-services.com // 谷歌匿名数据收集
 DOMAIN-SUFFIX,data.hicloud.com
+DOMAIN-SUFFIX,msmp.abchina.com.cn // 去掉农行VPN检测
 DOMAIN-SUFFIX,ubixioe.com
 DOMAIN-SUFFIX,unityads.unity3d.com
 DOMAIN-SUFFIX,vlion.cn
